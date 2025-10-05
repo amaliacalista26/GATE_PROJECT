@@ -1,0 +1,475 @@
+:root {
+  --background: #ffffff; /* White background universal */
+  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #000000;
+  --muted: #f5f5f5;
+  --muted-foreground: #666666;
+  --accent: #f5f5f5;
+  --accent-foreground: #000000;
+  --destructive: #dc3545;
+  --destructive-foreground: #dc3545;
+  --border: #dee2e6;
+  --input: #dee2e6;
+  --ring: #6c757d;
+  --role-freelancer: #567c8d; /* Cyan untuk pencari kerja */
+  --role-employer: #2f4156; /* Dark Blue untuk pemberi kerja */
+  --role-foundation: #c8d9e6; /* Light Blue untuk yayasan */
+  --role-foundation-beige: #f5efeb; /* Beige untuk kombinasi yayasan */
+  --section-transparency: #c8d9e6;
+  --navbar-blue: #2f4156; /* Warna biru untuk navbar */
+}
+
+* {
+  font-family: 'Josefin Sans', sans-serif !important; /* Force Josefin Sans di semua elemen */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground); /* Hitam default */
+}
+
+/* Dashboard role background dengan teks hitam */
+.role-dashboard {
+  background-color: var(--role-background);
+  color: var(--foreground); /* Hitam */
+}
+
+.role-dashboard h1, .role-dashboard p, .role-dashboard a, .role-dashboard label, .role-dashboard input, .role-dashboard textarea, .role-dashboard select, .role-dashboard button, .role-dashboard span, .role-dashboard li, .role-dashboard time {
+  color: var(--foreground) !important; /* Pastikan semua teks hitam */
+}
+
+.role-dashboard .navbar {
+  background-color: var(--navbar-blue); /* Warna biru untuk navbar */
+}
+
+/* Kustomisasi Bootstrap 4.3.1 */
+.btn-role {
+  border-radius: 0.625rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  font-weight: 700;
+}
+
+.btn-role-freelancer {
+  background-color: var(--role-freelancer);
+  color: var(--foreground); /* Hitam */
+  border: none;
+}
+
+.btn-role-freelancer:hover {
+  background-color: #456b7c;
+  color: var(--foreground);
+}
+
+.btn-role-employer {
+  background-color: var(--role-employer);
+  color: var(--foreground);
+  border: none;
+}
+
+.btn-role-employer:hover {
+  background-color: #223345;
+  color: var(--foreground);
+}
+
+.btn-role-foundation {
+  background-color: var(--role-foundation);
+  color: var(--foreground);
+  border: 1px solid var(--role-foundation-beige);
+}
+
+.btn-role-foundation:hover {
+  background-color: #b8c9d6;
+  color: var(--foreground);
+}
+
+.footer-dark {
+  background-color: var(--role-employer);
+  color: var(--foreground); /* Hitam, tapi adjust jika perlu */
+}
+
+.section-transparency {
+  background-color: var(--section-transparency);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Shadow lebih dalam */
+}
+
+.text-foreground-70 {
+  color: rgba(0,0,0,0.7);
+}
+
+.text-muted-foreground {
+  color: var(--muted-foreground);
+}
+
+/* Override Bootstrap untuk konsistensi */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: 9999px; /* Rounded full untuk tombol */
+}
+
+.btn-primary:hover {
+  background-color: #333333;
+  border-color: #333333;
+}
+
+.btn-outline-primary {
+  border-color: var(--primary);
+  color: var(--primary);
+  border-radius: 9999px;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.card {
+  border-color: var(--border);
+  border-radius: 1.25rem; /* Lebih rounded */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Shadow lebih lembut */
+  transition: transform 0.3s ease; /* Animasi hover */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.form-control {
+  border-color: var(--input);
+  border-radius: 0.75rem; /* Rounded input */
+}
+
+/* Tambahan CSS untuk lebih cantik */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--role-freelancer), var(--role-employer), var(--role-foundation)); /* Gradient multi-color */
+  color: var(--foreground); /* Hitam */
+}
+
+.rounded-lg {
+  border-radius: 1.25rem;
+}
+
+.shadow-md {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* Animasi sederhana */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Gaya chat */
+.chat-window {
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid var(--border);
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 1rem;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.chat-message {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  max-width: 80%;
+}
+
+.chat-message.sent {
+  background-color: var(--primary);
+  color: white;
+  margin-left: auto;
+}
+
+.chat-message.received {
+  background-color: var(--secondary);
+  color: var(--foreground);
+  margin-right: auto;
+}
+
+/* Gaya rating */
+.rating-stars {
+  color: #ffd700;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.rating-stars i:hover {
+  color: #ffcc00;
+}
+
+/* Sortable table */
+.sortable th {
+  cursor: pointer;
+  color: var(--foreground);
+}
+
+/* Ribbon filter */
+.ribbon-filter {
+  background-color: var(--secondary);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between; /* Kesamping untuk filter */
+}
+
+.ribbon-filter .form-group {
+  margin-bottom: 0; /* No margin bottom for side by side */
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.ribbon-filter .form-group:last-child {
+  margin-right: 0;
+}
+
+/* Favorite list */
+.favorite-list {
+  background-color: #e9ecef;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* GatePay card */
+.gatepay-card {
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  border-radius: 1.25rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Task harian lebih menarik */
+.task-card {
+  background-color: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.task-card:hover {
+  transform: scale(1.05);
+}
+
+.task-progress {
+  height: 10px;
+  border-radius: 5px;
+  background-color: #ffc107;
+}
+
+.task-icon {
+  font-size: 1.5rem;
+  color: #ffc107;
+}
+
+/* Dampak donasi seperti feeds IG */
+.donasi-feed {
+  background-color: #f8f9fa;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.donasi-feed img, .donasi-feed video {
+  width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.donasi-feed p {
+  font-style: italic;
+}
+
+/* Review list seperti Gojek */
+.review-list {
+  overflow-y: scroll;
+  max-height: 300px;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+.review-item {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.review-item:last-child {
+  border-bottom: none;
+}
+
+/* Notifikasi dengan ikon kategori */
+.notif-item {
+  display: flex;
+  align-items: center;
+}
+
+.notif-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+/* Filter waktu notifikasi */
+.filter-waktu {
+  margin-bottom: 1rem;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #f9fbfd;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+
+
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+main {
+  margin-top: 5rem;
+}
+
+/* Chat window */
+.chat-window {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.chat-message {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 20px;
+  max-width: 70%;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease;
+}
+
+.chat-message.sent {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: #fff;
+  margin-left: auto;
+}
+
+.chat-message.received {
+  background: #e9f1f9;
+  color: #333;
+  margin-right: auto;
+}
+
+/* Input */
+.input-group input {
+  border-radius: 30px;
+}
+
+.input-group .btn {
+  border-radius: 30px;
+  padding: 0.5rem 1.2rem;
+}
+
+/* List group */
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #eee;
+}
+
+.favorite-btn {
+  border-radius: 20px;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(5px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* === NAVBAR UMUM GATE === */
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  letter-spacing: 0.3px;
+}
+
+.navbar-nav .nav-link {
+  color: #333 !important;
+  transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #0d6efd !important;
+  transform: translateY(-1px);
+}
+
+/* === BODY === */
+body {
+  padding-top: 80px;
+  background-color: #fdfdfd;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* === CARD STYLE === */
+.card {
+  border: none;
+  border-radius: 15px;
+}
+
+.card-header {
+  background: #fff;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #f8f9fa;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
