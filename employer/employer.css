@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap');
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #f9fafc;
+}
+
+h1, .card-header {
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #0066d1, #00a3e4);
+}
+
+.btn-outline-primary:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+.table th {
+  background: #f2f6fc;
+}
+
+.progress {
+  height: 10px;
+  border-radius: 8px;
+}
+
