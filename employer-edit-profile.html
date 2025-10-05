@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GATE - Edit Profil Usaha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../globals.css">
+  <link rel="stylesheet" href="employer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">GATE <span class="text-dark">- Employer</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#">🏠 Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">👤 Profil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">🔔 Notifikasi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">💬 Chat</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">💰 GatePay</a></li>
+          <li class="nav-item"><a class="nav-link text-danger" href="#">🚪 Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5 pt-5">
+    <!-- Header -->
+    <header class="text-center mb-5">
+      <h1 class="fw-bold text-primary">Edit Profil Usaha Anda</h1>
+      <p class="text-muted">Perbarui informasi bisnis agar freelancer mudah mengenal dan percaya pada usaha Anda.</p>
+    </header>
+
+    <!-- Form Edit Profil -->
+    <div class="card shadow-sm rounded-4 p-4 mb-5">
+      <form>
+        <!-- Foto Profil -->
+        <div class="text-center mb-4">
+          <img src="../placeholder-photo.jpg" alt="Logo Usaha" class="rounded-circle border" style="width: 120px; height: 120px;">
+          <div class="mt-2">
+            <input type="file" class="form-control w-50 mx-auto rounded-pill">
+          </div>
+        </div>
+
+        <!-- Data Usaha -->
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Nama Usaha</label>
+            <input type="text" class="form-control rounded-pill" placeholder="Contoh: Startup Tech">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Lokasi</label>
+            <input type="text" class="form-control rounded-pill" placeholder="Contoh: Jakarta / Remote">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Deskripsi Usaha</label>
+          <textarea class="form-control rounded-4" rows="4" placeholder="Deskripsikan secara singkat bidang usaha, visi, dan budaya kerja Anda..."></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Dokumen Verifikasi Usaha</label>
+          <input type="file" class="form-control rounded-pill">
+          <small class="text-muted">Format PDF/JPG/PNG. Contoh: SIUP, NIB, atau dokumen legal lainnya.</small>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 rounded-pill mt-3">Simpan Perubahan</button>
+      </form>
+    </div>
+
+    <!-- Review Section -->
+    <section class="text-center mb-5">
+      <h3 class="fw-bold text-primary mb-3">Review dari Freelancer</h3>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm rounded-4 mb-3 p-3 text-start">
+            <div class="d-flex align-items-center mb-2">
+              <img src="../placeholder-photo1.jpg" alt="Freelancer A" class="rounded-circle me-2" style="width: 45px; height: 45px;">
+              <div>
+                <strong>Freelancer A</strong><br>
+                <small class="text-muted">01/10/2025</small>
+              </div>
+            </div>
+            <div class="rating-stars text-warning mb-2">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <p class="text-muted">“Pembayaran cepat dan komunikasi jelas. Sangat direkomendasikan!”</p>
+          </div>
+
+          <div class="card border-0 shadow-sm rounded-4 mb-3 p-3 text-start">
+            <div class="d-flex align-items-center mb-2">
+              <img src="../placeholder-photo2.jpg" alt="Freelancer B" class="rounded-circle me-2" style="width: 45px; height: 45px;">
+              <div>
+                <strong>Freelancer B</strong><br>
+                <small class="text-muted">02/10/2025</small>
+              </div>
+            </div>
+            <div class="rating-stars text-warning mb-2">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <p class="text-muted">“Tim responsif dan mudah diajak kerja sama.”</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-3 text-muted">⭐ Rata-rata rating: <strong>4.5 / 5</strong></p>
+      <a href="#" class="btn btn-outline-primary rounded-pill px-4">Lihat Semua Review</a>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

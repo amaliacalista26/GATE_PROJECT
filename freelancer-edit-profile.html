@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GATE - Freelancer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../globals.css">
+  <link rel="stylesheet" href="freelancer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">GATE <span class="text-dark">- Freelancer</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#">🏠 Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">👤 Profil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">🔔 Notifikasi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">💬 Chat</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">💰 GatePay</a></li>
+          <li class="nav-item"><a class="nav-link text-danger" href="#">🚪 Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Konten -->
+  <main class="container mt-5 pt-5">
+    <header class="text-center mb-5">
+      <h1 class="fw-bold text-primary">Edit Profil Freelancer</h1>
+      <p class="text-muted">Tingkatkan visibilitas Anda dengan memperbarui profil dan portofolio terbaik Anda.</p>
+    </header>
+
+    <div class="card shadow-sm rounded-4 p-4 mb-5">
+      <form>
+        <!-- Foto Profil -->
+        <div class="text-center mb-4">
+          <img src="../placeholder-photo.jpg" alt="Foto Profil" class="rounded-circle border" style="width: 120px; height: 120px;">
+          <div class="mt-2">
+            <input type="file" class="form-control w-50 mx-auto rounded-pill">
+          </div>
+        </div>
+
+        <!-- Identitas -->
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Nama</label>
+            <input type="text" class="form-control rounded-pill" placeholder="Nama lengkap">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Usia</label>
+            <input type="number" class="form-control rounded-pill" placeholder="Usia">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Status</label>
+            <select class="form-select rounded-pill">
+              <option>Single</option>
+              <option>Married</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Skill dan Lokasi -->
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Skill Utama</label>
+            <select class="form-select rounded-pill">
+              <option>UI/UX</option>
+              <option>Frontend Developer</option>
+              <option>Backend Developer</option>
+              <option>Graphic Designer</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Lokasi</label>
+            <input type="text" class="form-control rounded-pill" placeholder="Contoh: Bandung / Remote">
+          </div>
+        </div>
+
+        <!-- Pendidikan & Pengalaman -->
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Pendidikan Terakhir</label>
+            <select class="form-select rounded-pill">
+              <option>SMA/SMK</option>
+              <option>Sarjana (S1)</option>
+              <option>Magister (S2)</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Pengalaman Kerja</label>
+            <textarea class="form-control rounded-4" rows="2" placeholder="Deskripsikan pengalaman kerja..."></textarea>
+          </div>
+        </div>
+
+        <!-- Portofolio -->
+        <div class="mb-3">
+          <label class="form-label">Portofolio (Opsional)</label>
+          <input type="file" class="form-control rounded-pill">
+        </div>
+
+        <!-- Agama -->
+        <div class="mb-3">
+          <label class="form-label">Opsi Agama (untuk Notifikasi Keagamaan)</label>
+          <select class="form-select rounded-pill">
+            <option>Islam</option>
+            <option>Kristen</option>
+            <option>Katolik</option>
+            <option>Hindu</option>
+            <option>Buddha</option>
+            <option>Lainnya</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 rounded-pill mt-3">Simpan Perubahan</button>
+      </form>
+    </div>
+
+    <!-- Rating & Review -->
+    <section class="text-center mb-5">
+      <h3 class="fw-bold text-primary">Rating & Review</h3>
+      <div class="rating-stars mb-3">
+        <i class="fas fa-star text-warning"></i>
+        <i class="fas fa-star text-warning"></i>
+        <i class="fas fa-star text-warning"></i>
+        <i class="fas fa-star text-warning"></i>
+        <i class="far fa-star text-warning"></i>
+        <span class="text-muted ms-2">(4.0 / 5)</span>
+      </div>
+      <p>"Kerja bagus, cepat dan komunikatif!" - Employer X</p>
+      <a href="review.html" class="btn btn-outline-primary rounded-pill px-4">Lihat Semua Review</a>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

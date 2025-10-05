@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Target & Posting Kegiatan - GATE Foundation</title>
+
+  <!-- ✅ FONT & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../global.css">
+
+  <!-- ✅ JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body class="role-dashboard" style="--role-background: var(--role-foundation);">
+
+  <!-- ✅ NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">
+        GATE <span class="text-dark">– Foundation</span>
+      </a>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#">🎯 Target & Posting</a></li>
+          <li class="nav-item"><a class="nav-link" href="../feeds/feeds.html">🌍 Feed</a></li>
+          <li class="nav-item"><a class="nav-link text-danger" href="#">🚪 Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5 pt-5" style="max-width: 36rem;">
+
+    <!-- ===== FORM BUAT TARGET DONASI ===== -->
+    <div class="card rounded-lg shadow-sm mb-4">
+      <div class="card-header text-center bg-white">
+        <h2 class="fw-bold text-primary">🎯 Buat Target Donasi Baru</h2>
+        <p class="text-muted mb-0">Hanya 1 target aktif yang diperbolehkan. Selesaikan dulu sebelum buat baru.</p>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-group mb-3">
+            <label class="fw-semibold">Judul Target</label>
+            <input type="text" class="form-control rounded-lg" placeholder="Bantuan Pendidikan Anak Panti Asuhan">
+          </div>
+
+          <div class="form-group mb-3">
+            <label class="fw-semibold">Deskripsi Singkat</label>
+            <textarea class="form-control rounded-lg" rows="3" placeholder="Dana akan digunakan untuk pembelian buku dan alat tulis..."></textarea>
+          </div>
+
+          <div class="form-group mb-3">
+            <label class="fw-semibold">Target Donasi (Rp)</label>
+            <input type="number" class="form-control rounded-lg" placeholder="Contoh: 10000000">
+          </div>
+
+          <div class="form-group mb-3">
+            <label class="fw-semibold">Deadline Donasi</label>
+            <input type="date" class="form-control rounded-lg">
+          </div>
+
+          <div class="form-group mb-3">
+            <label class="fw-semibold">Foto Cover</label>
+            <input type="file" class="form-control rounded-lg">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block rounded-pill mt-3">🚀 Buat Target</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== FORM POSTING KEGIATAN ===== -->
+    <div class="card rounded-lg shadow-sm">
+      <div class="card-header text-center bg-white">
+        <h2 class="fw-bold text-primary">📢 Posting Kegiatan Sosial</h2>
+        <p class="text-muted mb-0">Laporkan hasil kegiatan setelah target donasi terpenuhi.</p>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-group mb-3">
+            <label class="fw-semibold">Judul Kegiatan</label>
+            <input type="text" class="form-control rounded-lg" placeholder="Penyaluran Donasi Pendidikan ke Panti Asuhan Kasih Ibu">
+          </div>
+
+          <div class="form-group mb-3">
+            <label class="fw-semibold">Deskripsi Kegiatan</label>
+            <textarea class="form-control rounded-lg" rows="3" placeholder="Kegiatan dilaksanakan pada tanggal..."></textarea>
+          </div>
+
+          <div class="form-group mb-3">
+            <label class="fw-semibold">Unggah Foto Dokumentasi</label>
+            <input type="file" class="form-control rounded-lg">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block rounded-pill mt-3">📤 Posting Kegiatan</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="text-center py-4 text-muted small">
+    © 2025 GATE Foundation | Kolaborasi Sosial Nyata
+  </footer>
+
+</body>
+</html>

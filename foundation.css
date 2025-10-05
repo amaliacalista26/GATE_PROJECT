@@ -1,0 +1,70 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #f9fbfd;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+}
+.nav-link:hover {
+  color: #007bff !important;
+}
+
+/* Header (Hero atas) */
+.header-section {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  padding: 7rem 1rem 5rem;
+  border-radius: 0 0 60px 60px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Sub-header mirip halaman freelancer/employer */
+.sub-header {
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-radius: 20px;
+  margin: -40px auto 40px;
+  width: 90%;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+/* Card Donasi */
+.donation-card {
+  transition: all 0.3s ease;
+  border-radius: 16px;
+}
+.donation-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.15);
+}
+
+/* Tombol */
+.btn-primary {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  border: none;
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #005ecf, #00a0e6);
+}
+
+/* Progress bar */
+.progress-bar {
+  border-radius: 4px;
+}
+
+/* Footer */
+footer {
+  background: #ffffff;
+  border-top: 1px solid #eaeaea;
+  margin-top: 60px;
+}
