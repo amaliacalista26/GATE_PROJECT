@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Yayasan - GATE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="foundation.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">GATE <span class="text-dark">- Foundation</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#">🏠 Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">👤 Profil</a></li>
+          <li class="nav-item"><a class="nav-link" href="foundation-posting.html">📸 Posting</a></li>
+          <li class="nav-item"><a class="nav-link text-danger" href="#">🚪 Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="header-section text-center text-white">
+    <div class="container">
+      <h1 class="fw-bold mb-2">Kelola Donasi dengan Transparansi dan Dampak Nyata</h1>
+      <p class="mb-0">Pantau target, aktivitas, dan laporan donasi untuk setiap proyek sosial Anda.</p>
+    </div>
+  </section>
+
+  <!-- Sub Header (mirip freelancer/employer) -->
+  <section class="sub-header text-center py-4">
+    <h3 class="fw-bold mb-2 text-primary">Jelajahi Proyek Sosial</h3>
+    <p class="text-muted mb-0">Temukan inisiatif sosial sesuai visi yayasan Anda. Rekomendasi AI berdasarkan aktivitas dan lokasi proyek.</p>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container mt-5">
+    <!-- Target Donasi -->
+    <section class="mb-5 text-center">
+      <h4 class="fw-bold text-primary mb-3">🎯 Target Donasi</h4>
+      <p class="text-muted">Transparansi penuh: post target, laporan dengan foto/video, dan riwayat dana.</p>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm rounded-4 donation-card">
+            <div class="card-body">
+              <h4 class="fw-bold">Beasiswa Coding</h4>
+              <p>Raised: <span class="text-success fw-bold">Rp25M</span> / Target: <strong>Rp100M</strong></p>
+              <div class="progress mb-3" style="height: 8px;">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 25%;"></div>
+              </div>
+              <button class="btn btn-primary rounded-pill w-100">📸 Post Update (Foto/Video)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aktivitas Terbaru -->
+    <section class="mb-5">
+      <h1 class="fw-bold text-primary text-center mb-3">📰 Aktivitas Terbaru</h1>
+      <ul class="list-group shadow-sm">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span>💰 Donasi Rp150K dari proyek</span>
+          <span class="badge bg-light text-secondary">Baru saja</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span>🎯 Target baru ditambahkan: “Laptop untuk Sekolah Desa”</span>
+          <span class="badge bg-light text-secondary">2 jam lalu</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Generate Laporan -->
+    <section class="text-center mb-5">
+      <h4 class="fw-bold text-primary">📄 Generate Laporan</h4>
+      <p class="text-muted">Buat laporan keuangan dan dampak sosial proyek Anda.</p>
+      <button class="btn btn-primary rounded-pill px-4 py-2 shadow-sm">Buat Laporan Keuangan / Dampak</button>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 text-muted small mt-5">
+    © 2025 GATE Foundation | Transparansi Sosial, Teknologi, dan Kepercayaan
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
