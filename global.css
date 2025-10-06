@@ -23,18 +23,6 @@
   --section-transparency: #c8d9e6;
   --navbar-blue: #2f4156; /* Warna biru untuk navbar */
 }
-body {
-  font-family: 'Josefin Sans', sans-serif;
-  scroll-behavior: smooth;
-  margin-top: 70px;
-}
-
-/* NAVBAR */
-.text-brand {
-  color: #2F4156 !important;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-}
 
 * {
   font-family: 'Josefin Sans', sans-serif !important; /* Force Josefin Sans di semua elemen */
@@ -377,9 +365,6 @@ body {
   font-weight: 700;
 }
 
-main {
-  margin-top: 5rem;
-}
 
 /* Chat window */
 .chat-window {
@@ -463,7 +448,7 @@ main {
 
 /* === BODY === */
 body {
-  padding-top: 80px;
+  padding-top: 100px;
   background-color: #fdfdfd;
   font-family: 'Josefin Sans', sans-serif;
 }
@@ -485,9 +470,55 @@ footer {
   border-top: 1px solid #e5e5e5;
 }
 
-/* Warna khusus untuk judul halaman Sign In / Sign Up */
-.text-signin {
-  color: #2F4156 !important;
+
+/* === Modal Styling === */
+.modal-content {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
 }
 
+.modal-header {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.modal-header .close {
+  color: white;
+  opacity: 1;
+  font-size: 1.5rem;
+}
+
+.modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+  line-height: 1.6;
+  color: #333;
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  border-top: none;
+  padding-bottom: 1.2rem;
+}
+
+.modal-footer .btn {
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+}
+
+/* Animasi muncul dari bawah */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 

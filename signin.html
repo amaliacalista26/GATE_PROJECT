@@ -26,9 +26,9 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item"><a class="nav-link active-link" href="home.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="home.html">Works</a></li>
-        <li class="nav-item"><a class="nav-link" href="home.html">Why</a></li>
-        <li class="nav-item"><a class="nav-link" href="home.html">Impact</a></li>
+        <li class="nav-item"><a class="nav-link" href="home.html#how-it-works">Works</a></li>
+        <li class="nav-item"><a class="nav-link" href="home.html#why-gate">Why</a></li>
+        <li class="nav-item"><a class="nav-link" href="home.html#transparansi">Impact</a></li>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="signin.html">Sign In</a></li>
@@ -55,16 +55,59 @@
             <label for="password" style="font-family: 'Josefin Sans', sans-serif;">Password</label>
             <input type="password" class="form-control rounded-pill" id="password" placeholder="Enter Password">
           </div>
-          <button type="submit" class="btn btn-primary btn-block rounded-pill w-100 mb-3" style="font-family: 'Josefin Sans', sans-serif;">Register and Verify OTP</button>
+            <button type="submit" id="signin" 
+                    class="btn btn-primary btn-block rounded-pill w-100 mb-3" 
+                    style="font-family: 'Josefin Sans', sans-serif;">
+              Register and Verify OTP
+            </button>
           <button type="button" class="btn btn-outline-primary btn-block rounded-pill w-100" style="font-family: 'Josefin Sans', sans-serif;">Register with Google</button>
         </form>
         <p class="text-center text-muted mt-3" style="font-family: 'Josefin Sans', sans-serif;">
           Don't Have an Account? <a href="signup.html" class="text-decoration-underline">Sign Up</a>
         </p>
-        <p class="text-center small" style="font-family: 'Josefin Sans', sans-serif;">By registering, you agree to <a href="#">Terms & Conditions</a></p>
+        <p class="text-center small" style="font-family: 'Josefin Sans', sans-serif;">By registering, you agree to 
+          <a href="#" data-toggle="modal" data-target="#termsModal">Terms & Conditions</a>
+        </p>
       </div>
     </div>
   </main>
+
+  <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content rounded-lg">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="termsModalLabel">Syarat & Ketentuan GATE</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="font-family: 'Josefin Sans', sans-serif;">
+        <h6>1. Penggunaan Akun</h6>
+        <p>Pengguna bertanggung jawab atas keamanan akun dan kerahasiaan kata sandi.</p>
+
+        <h6>2. Ketentuan Freelancer</hw6>
+        <p>Freelancer wajib memberikan informasi yang benar dan tidak menyesatkan.</p>
+
+        <h6>3. Ketentuan Employer</h6>
+        <p>Employer wajib mematuhi peraturan dalam memposting pekerjaan dan memberikan pembayaran sesuai kesepakatan.</p>
+
+        <h6>4. Larangan</h6>
+        <p>Dilarang menggunakan platform untuk aktivitas ilegal atau merugikan pihak lain.</p>
+
+        <h6>5. Perubahan</h6>
+        <p>Pihak GATE berhak mengubah ketentuan ini sewaktu-waktu dengan pemberitahuan sebelumnya.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="js/register.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>

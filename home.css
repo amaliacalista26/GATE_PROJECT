@@ -146,4 +146,9 @@ body {
 #how-it-works i {
   color: #6c757d !important; /* semua ikon jadi abu-abu */
 }
-
+.cta-section {
+  background: linear-gradient(135deg, #2F4156, #C8D9E6);
+}
+html {
+  scroll-padding-top: 80px; /* sesuaikan dengan tinggi navbar kamu */
+}
