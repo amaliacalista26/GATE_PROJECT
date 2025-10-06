@@ -3,110 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GATE Freelancer</title>
+  <title>GATE - Freelance</title>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="freelancer.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-+lI+r8Cw5nAZmPMkFzDz0gkrQy2Ldz7lKsp7aYgH5FtOAX5m3dxRZbwq3m9f8dIkuQJ2K/xD2z4l5x5vT0C2Jw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
 </head>
+
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
-    <div class="container">
-           <a class="navbar-brand fw-bold text-primary" href="#">GATE <span class="text-dark">- Freelance</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav align-items-center">
-          <li class="nav-item"><a class="nav-link active" href="#">🏠 Beranda</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">👤 Profil</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">🔔 Notifikasi</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">💬 Chat</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">💰 GatePay</a></li>
-          <li class="nav-item"><a class="nav-link text-danger" href="#">🚪 Logout</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
+  <div class="container d-flex align-items-center justify-content-between">
+    
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="../home.html">
+      <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
+      <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
+    </a>
 
-  <main class="container mt-5 pt-5">
-    <!-- Header -->
-    <header class="text-center mb-5">
-      <h1 class="fw-bold text-primary">Jelajahi Pekerjaan</h1>
-      <p class="text-muted">Temukan pekerjaan harian sesuai skill dan lokasi. Rekomendasi AI berdasarkan profil Anda.</p>
-    </header>
+    <!-- Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!-- Filter -->
-    <div class="text-center mb-4">
-      <button class="btn btn-outline-primary rounded-pill px-4">Filter (Role, Lokasi, Gaji)</button>
+    <!-- Menu -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active-link" href="freelancer-jobs.html">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
+                <li class="nav-item"><a class="nav-link" href="freelancer-chat.html">Chat</a></li>
+      </ul>
     </div>
 
-    <!-- Section 1 -->
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card h-100">
-          <div class="card-header bg-transparent fw-bold text-primary">Pekerjaan On Going / Belum Direview</div>
-          <div class="card-body">
-            <p><span class="badge bg-success">On Going</span> UI Designer App Edukasi</p>
-            <button class="btn btn-outline-primary btn-sm rounded-pill mb-2">Review</button><br>
-            <p><span class="badge bg-warning text-dark">Belum</span> Front-end Developer</p>
-            <button class="btn btn-outline-primary btn-sm rounded-pill">Review</button>
-          </div>
-        </div>
-      </div>
+    <!-- Right Icons -->
+<div class="d-flex align-items-center gap-3">
+      <!-- Notifikasi -->
+      <a href="#" class="nav-icon">
+        <i class="fa-solid fa-bell"></i>
+      </a>
+      <!-- Profil -->
+      <a href="freelancer-edit-profile.html" class="nav-profile">
+        <img src="../asset/profile.png" alt="Profile" class="profile-icon">
+      </a>
+    </div>
+  </div>
+</nav>
 
-      <div class="col-md-6">
-        <div class="card h-100">
-          <div class="card-header bg-transparent fw-bold text-primary">Lamaran Relevan (Berdasarkan Skill/Lokasi)</div>
-          <div class="card-body">
-            <p>Social Media Specialist (Marketing, Jakarta, Rp6-9jt)</p>
-            <button class="btn btn-primary btn-sm rounded-pill mb-2">Lamar Sekali Klik</button><br>
-            <p>Backend Golang Developer (Remote, Rp20–28jt)</p>
-            <button class="btn btn-primary btn-sm rounded-pill">Lamar Sekali Klik</button>
-          </div>
+<!-- MAIN CONTENT -->
+<main class="container mt-4 pt-5">
+  <header class="text-center mb-5">
+    <h1 class="fw-bold text-signin">Explore Jobs</h1>
+    <p class="text-muted">Find daily jobs that match your skills and location. AI-based recommendations tailored for you.</p>
+  </header>
+
+  <!-- Filter -->
+  <div class="ribbon-filter mb-4 shadow-sm">
+    <div class="form-group">
+      <label for="role">Role</label>
+      <select class="form-select" id="role">
+        <option value="">All Roles</option>
+        <option value="designer">UI/UX Designer</option>
+        <option value="developer">Developer</option>
+        <option value="marketing">Marketing</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location</label>
+      <select class="form-select" id="location">
+        <option value="">All Locations</option>
+        <option value="jakarta">Jakarta</option>
+        <option value="remote">Remote</option>
+        <option value="bandung">Bandung</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary Range</label>
+      <select class="form-select" id="salary">
+        <option value="">All Ranges</option>
+        <option value="1-5">Rp1–5 million</option>
+        <option value="6-10">Rp6–10 million</option>
+        <option value="10+">Above Rp10 million</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- JOBS SECTION -->
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-header bg-transparent fw-bold text-signin">
+          <i class="fas fa-briefcase text-secondary me-2"></i>Ongoing / Not Yet Reviewed
+        </div>
+        <div class="card-body">
+          <p><span class="badge bg-success">Ongoing</span> UI Designer for Educational App</p>
+          <button class="btn btn-outline-primary btn-sm rounded-pill mb-2">Review</button><br>
+          <p><span class="badge bg-warning text-dark">Pending</span> Front-End Developer</p>
+          <button class="btn btn-outline-primary btn-sm rounded-pill">Review</button>
         </div>
       </div>
     </div>
 
-    <!-- Section 2 -->
-    <div class="row g-4 mt-3">
-      <div class="col-md-6">
-        <div class="card h-100">
-          <div class="card-header bg-transparent fw-bold text-primary">Gate-Pay</div>
-          <div class="card-body">
-            <p>Saldo: <strong>Rp0</strong></p>
-            <button class="btn btn-outline-primary rounded-pill">Tarik Dana</button>
-          </div>
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-header bg-transparent fw-bold text-signin">
+          <i class="fas fa-thumbs-up text-secondary me-2"></i>Recommended Jobs
+        </div>
+        <div class="card-body">
+          <p>Social Media Specialist (Jakarta, Rp6–9 million)</p>
+          <button class="btn btn-primary btn-sm rounded-pill mb-2">Click Apply</button><br>
+          <p>Backend Golang Developer (Remote, Rp20–28 million)</p>
+          <button class="btn btn-primary btn-sm rounded-pill">Click Apply</button>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="col-md-6">
-        <div class="card h-100">
-          <div class="card-header bg-transparent fw-bold text-primary">Total Donasi Anda</div>
-          <div class="card-body">
-            <p>Rp150.000 (3% dari penghasilan)</p>
-            <button class="btn btn-outline-primary rounded-pill">Lihat Dampak Donasi</button>
-          </div>
+  <!-- GATEPAY & DONATION -->
+  <div class="row g-4 mt-3">
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-header bg-transparent fw-bold text-signin">
+          <i class="fas fa-wallet text-secondary me-2"></i>GatePay
+        </div>
+        <div class="card-body">
+          <p>Balance: <strong>Rp0</strong></p>
+          <button class="btn btn-outline-primary rounded-pill">Withdraw Funds</button>
         </div>
       </div>
     </div>
 
-    <!-- Section 3 -->
-    <div class="card mt-4 mb-5">
-      <div class="card-header bg-transparent fw-bold text-primary">Tantangan Harian</div>
-      <div class="card-body">
-        <p>Lamarkan 3 pekerjaan hari ini</p>
-        <div class="progress mb-3">
-          <div class="progress-bar bg-primary" style="width: 70%;"></div>
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-header bg-transparent fw-bold text-signin">
+          <i class="fas fa-hand-holding-heart text-secondary me-2"></i>Your Total Donations
         </div>
-        <p>Selesaikan 1 review</p>
-        <div class="progress">
-          <div class="progress-bar bg-success" style="width: 40%;"></div>
+        <div class="card-body">
+          <p>Rp150.000 (3% of your income)</p>
+          <button class="btn btn-outline-primary rounded-pill">See Donation Impact</button>
         </div>
       </div>
     </div>
-  </main>
+  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- DAILY CHALLENGE -->
+  <div class="card mt-4 mb-5">
+    <div class="card-header bg-transparent fw-bold text-signin">
+      <i class="fas fa-trophy text-secondary me-2"></i>Daily Challenge
+    </div>
+    <div class="card-body">
+      <p>Apply to 3 jobs today</p>
+      <div class="progress mb-3">
+        <div class="progress-bar bg-primary" style="width: 70%;"></div>
+      </div>
+      <p>Complete 1 review</p>
+      <div class="progress">
+        <div class="progress-bar bg-success" style="width: 40%;"></div>
+      </div>
+    </div>
+  </div>
+</main>
+  <!-- 🔹 Footer -->
+  <footer class="text-center py-3 text-muted small" style="background-color: #f8f9fa;">
+    &copy; 2025 GATE. All Rights Reserved.
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

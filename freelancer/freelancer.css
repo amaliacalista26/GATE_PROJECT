@@ -1,42 +1,103 @@
+:root {
+  --navbar-blue: #2F4156;
+  --light-gray: #b0bcc5;
+  --gate-blue: #567c8d;
+}
+
+/* ==== BODY ==== */
 body {
   font-family: 'Josefin Sans', sans-serif;
   background-color: #f9fafc;
+  color: #333;
+  padding-top: 80px;
+  overflow-x: hidden;
+  scrollbar-width: none; /* hilangin scroll di Firefox */
+}
+body::-webkit-scrollbar {
+  display: none; /* hilangin scroll di Chrome */
 }
 
-h1, .card-header {
+/* ==== NAVBAR ==== */
+.custom-navbar {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #eee;
+  height: 60px;
+}
+.logo-gate {
+  height: 38px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+.brand-text {
   font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--navbar-blue);
+}
+.text-role {
+  color: var(--gate-blue);
+  font-weight: 600;
+}
+.navbar-nav .nav-link {
+  color: var(--light-gray);
+  font-weight: 500;
+  padding: 6px 14px;
+  transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .active-link {
+  color: #000;
+  font-weight: 600;
+}
+.nav-icon i {
+  font-size: 1.3rem;
+  color: var(--navbar-blue);
+  transition: 0.3s;
+}
+.nav-icon i:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+.profile-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--navbar-blue);
+  object-fit: cover;
 }
 
-.navbar-brand {
-  font-weight: 700;
-}
-
-.card {
-  border-radius: 16px;
+/* ==== REVIEW CARD ==== */
+.review-card {
   border: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  margin-bottom: 20px;
+  background: #fff;
   transition: all 0.3s ease;
 }
-
-.card:hover {
-  transform: translateY(-4px);
+.review-card:hover {
+  transform: translateY(-3px);
+}
+.rating-stars i {
+  color: #ffb400;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-right: 4px;
+}
+textarea {
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-.btn-primary {
-  background: linear-gradient(90deg, #007bff, #00c6ff);
-  border: none;
-}
-
-.btn-primary:hover {
-  background: linear-gradient(90deg, #0066d1, #00a3e4);
-}
-
-.btn-outline-primary:hover {
-  background: #007bff;
+/* Tombol Biru */
+.btn-review {
+  background: linear-gradient(90deg, #2F4156, #567c8d);
   color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+.btn-review:hover {
+  background: linear-gradient(90deg, #567c8d, #2F4156);
+  transform: scale(1.03);
 }
 
-.progress {
-  height: 10px;
-  border-radius: 8px;
-}

@@ -23,6 +23,18 @@
   --section-transparency: #c8d9e6;
   --navbar-blue: #2f4156; /* Warna biru untuk navbar */
 }
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  scroll-behavior: smooth;
+  margin-top: 70px;
+}
+
+/* NAVBAR */
+.text-brand {
+  color: #2F4156 !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
 
 * {
   font-family: 'Josefin Sans', sans-serif !important; /* Force Josefin Sans di semua elemen */
@@ -472,4 +484,10 @@ footer {
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
+
+/* Warna khusus untuk judul halaman Sign In / Sign Up */
+.text-signin {
+  color: #2F4156 !important;
+}
+
 
