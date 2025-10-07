@@ -49,7 +49,7 @@
     <div class="d-flex align-items-center gap-3">
       <!-- Notifikasi -->
       <div class="position-relative">
-        <a href="freelance-notifikasi.html" class="nav-icon text-dark">
+        <a href="notifikasi.html" class="nav-icon text-dark" data-bs-toggle="modal" data-bs-target="#notifModal">
           <i class="bi bi-bell-fill fs-5"></i>
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             5
@@ -180,6 +180,172 @@
   </div>
 </main>
    <a href="freelancer-chat.html" class="chat-floating-btn">💬 Chat</a>
+
+<!-- NOTIFIKASI LIST -->
+<div class="modal fade" id="notifModal" tabindex="-1" aria-labelledby="notifModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold" id="notifModalLabel">Notifikasi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#notifDetail1" data-bs-dismiss="modal">
+            <i class="bi bi-briefcase-fill text-primary me-2"></i> Lowongan UI Designer
+          </li>
+          <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#notifDetail2" data-bs-dismiss="modal">
+            <i class="bi bi-wallet2 text-success me-2"></i> Pembaruan Saldo GatePay
+          </li>
+          <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#notifDetail3" data-bs-dismiss="modal">
+            <i class="bi bi-pencil-square text-danger me-2"></i> Review Diperlukan
+          </li>
+          <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#notifDetail4" data-bs-dismiss="modal">
+            <i class="bi bi-bell-fill text-warning me-2"></i> Jadwal Meeting Proyek Baru
+          </li>
+          <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#notifDetail5" data-bs-dismiss="modal">
+            <i class="bi bi-gift-fill text-info me-2"></i> Bonus Spesial Akhir Bulan
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-primary rounded-pill" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL 1 -->
+<div class="modal fade" id="notifDetail1" tabindex="-1" aria-labelledby="notifDetail1Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg"> 
+    <div class="modal-content shadow-lg border-0 rounded-4">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title fw-semibold" id="notifDetail1Label">Lowongan UI Designer</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body fs-5 text-dark px-4 py-3">
+        Kami membuka lowongan untuk posisi <b>UI Designer freelance</b> di aplikasi edukasi.
+        Waktu kerja fleksibel dan gaji kompetitif.
+      </div>
+      <div class="modal-footer border-0 d-flex justify-content-end">
+        <button 
+          class="btn btn-outline-primary rounded-pill px-4"
+          data-bs-target="#notifModal"
+          data-bs-toggle="modal"
+          data-bs-dismiss="modal">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- DETAIL 2 -->
+<div class="modal fade" id="notifDetail2" tabindex="-1" aria-labelledby="notifDetail2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content shadow-lg border-0 rounded-4">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title fw-semibold" id="notifDetail2Label">Saldo GatePay Diperbarui</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body fs-5 text-dark px-4 py-3">
+        Saldo GatePay kamu telah <b>bertambah Rp150.000</b> dari proyek terakhir yang diselesaikan.
+        Pastikan untuk memeriksa riwayat transaksi kamu di halaman GatePay.
+      </div>
+      <div class="modal-footer border-0 d-flex justify-content-end">
+        <button 
+          class="btn btn-outline-primary rounded-pill px-4"
+          data-bs-target="#notifModal"
+          data-bs-toggle="modal"
+          data-bs-dismiss="modal">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- DETAIL 3 -->
+<div class="modal fade" id="notifDetail3" tabindex="-1" aria-labelledby="notifDetail3Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content shadow-lg border-0 rounded-4">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title fw-semibold" id="notifDetail3Label">Review Diperlukan</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body fs-5 text-dark px-4 py-3">
+        Klien meminta kamu untuk memberikan <b>review hasil kerja</b> pada proyek
+        <i>Front-End Developer</i> yang baru diselesaikan.
+        Silakan isi review di dashboard proyekmu.
+      </div>
+      <div class="modal-footer border-0 d-flex justify-content-end">
+        <button 
+          class="btn btn-outline-primary rounded-pill px-4"
+          data-bs-target="#notifModal"
+          data-bs-toggle="modal"
+          data-bs-dismiss="modal">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL 4 -->
+<div class="modal fade" id="notifDetail4" tabindex="-1" aria-labelledby="notifDetail4Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content shadow-lg border-0 rounded-4">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title fw-semibold" id="notifDetail4Label">Proyek Baru Tersedia</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body fs-5 text-dark px-4 py-3">
+        Ada proyek baru yang sesuai dengan keahlian kamu! 
+        Cek detailnya di halaman proyek untuk segera melakukan penawaran.
+      </div>
+      <div class="modal-footer border-0 d-flex justify-content-end">
+        <button 
+          class="btn btn-outline-primary rounded-pill px-4"
+          data-bs-target="#notifModal"
+          data-bs-toggle="modal"
+          data-bs-dismiss="modal">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- DETAIL 5 -->
+<div class="modal fade" id="notifDetail5" tabindex="-1" aria-labelledby="notifDetail5Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content shadow-lg border-0 rounded-4">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title fw-semibold" id="notifDetail5Label">Pembayaran Diterima</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body fs-5 text-dark px-4 py-3">
+        Pembayaran untuk proyek <b>UI/UX Dashboard App</b> telah diterima.
+        Dana akan otomatis masuk ke saldo GatePay kamu dalam waktu 1x24 jam.
+      </div>
+      <div class="modal-footer border-0 d-flex justify-content-end">
+        <button 
+          class="btn btn-outline-primary rounded-pill px-4"
+          data-bs-target="#notifModal"
+          data-bs-toggle="modal"
+          data-bs-dismiss="modal">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
   <!-- 🔹 Footer -->
   <footer class="text-center py-3 text-muted small" style="background-color: #f8f9fa;">
