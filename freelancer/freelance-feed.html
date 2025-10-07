@@ -2,137 +2,223 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GATE - Freelance Feed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GATE - Aktivitas Yayasan</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- LOCAL Bootstrap 4.3.1 CSS -->
+  <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+
+  <!-- Global + Page CSS -->
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="freelancer.css">
-  <!-- Bootstrap Icons -->
+
+  <!-- Optional icons (Bootstrap Icons CDN) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">>
 </head>
-
 <body>
-  
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
-  <div class="container d-flex align-items-center justify-content-between">
-    
-    <!-- Brand -->
-    <a class="navbar-brand d-flex align-items-center" href="../home.html">
-      <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
-      <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
-    </a>
+  <!-- NAVBAR (sama seperti sebelumnya) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top custom-navbar shadow-sm" role="navigation">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="navbar-brand d-flex align-items-center" href="freelancer.html">
+        <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
+        <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
+      </a>
 
-    <!-- Toggle Button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Menu -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav align-items-center">
-        <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="freelancer-jobs.html">Jobs</a></li>
-        <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="freelance-feed.html">Feed</a></li>
-      </ul>
-    </div>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="freelancer-jobs.html">Jobs</a></li>
+          <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
+          <li class="nav-item"><a class="nav-link active-link" href="freelance-feed.html">Feed</a></li>
+        </ul>
+      </div>
 
-    <!-- Right Icons -->
-<div class="d-flex align-items-center gap-3">
-      <!-- Notifikasi -->
-      <div class="position-relative">
-        <a href="freelance-notifikasi.html" class="nav-icon text-dark">
+      <div class="d-flex align-items-center" style="gap:12px;">
+        <a href="freelance-notifikasi.html" class="nav-icon text-dark" aria-label="Notifikasi">
           <i class="bi bi-bell-fill fs-5"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            5
-          </span>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
+        </a>
+        <a href="freelancer-edit-profile.html" class="nav-profile" aria-label="Profil">
+          <img src="../asset/profile.png" alt="Profile" class="profile-icon">
         </a>
       </div>
-      <!-- Profil -->
-      <a href="freelancer-edit-profile.html" class="nav-profile">
-        <img src="../asset/profile.png" alt="Profile" class="profile-icon">
-      </a>
     </div>
-  </div>
-</nav>
+  </nav>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <section class="text-center mt-5 pt-4 mb-4">
-    <h1 class="font-weight-bold" style="font-family: 'Poppins', sans-serif; color: #1f2e3f;">
-      Aktivitas Yayasan
+    <h1 class="font-weight-bold display-5" style="font-family: 'Poppins', sans-serif; color: #1f2e3f;">
+      Aktivitas & Dampak Yayasan
     </h1>
-    <p class="text-muted" style="font-family: 'Josefin Sans', sans-serif;">
-      Lihat kegiatan penyaluran dana, aksi sosial, dan dampak yang telah dilakukan yayasan.
-    </p>
+    <p class="text-muted">Lihat kegiatan penyaluran dana, aksi sosial, serta progres target donasi.</p>
   </section>
 
-  <!-- Konten Aktivitas -->
+  <!-- TOP KPI + CHART -->
   <div class="container mb-5">
-    <div class="row">
-
-      <!-- Card Aktivitas 1 -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-sm rounded-lg h-100">
-          <img src="../images/donasi-beasiswa.jpg" class="card-img-top" alt="Beasiswa Coding">
-          <div class="card-body">
-            <h5 class="card-title font-weight-bold" style="font-family: 'Poppins', sans-serif;">Program Beasiswa Coding</h5>
-            <p class="card-text" style="font-family: 'Josefin Sans', sans-serif;">
-              Penyaluran dana untuk membantu 50 pelajar mendapatkan beasiswa coding selama 6 bulan.
-            </p>
-            <a href="#" class="btn btn-primary btn-block rounded-pill">Lihat Detail</a>
+    <div class="row align-items-stretch">
+      <div class="col-lg-4 mb-4">
+        <div class="card shadow-sm rounded-lg h-100 p-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="mb-1">Total Donasi Tahun Ini</h6>
+              <h3 class="mb-0">Rp 2.750.000.000</h3>
+              <p class="small text-muted mb-0">Dari target Rp 4.000.000.000</p>
+            </div>
+            <div class="kpi-badge text-center">
+              <div class="kpi-number">69%</div>
+              <div class="kpi-label small text-muted">Goal</div>
+            </div>
           </div>
-          <div class="card-footer text-muted small">
-            3 hari lalu
-          </div>
-        </div>
-      </div>
-
-      <!-- Card Aktivitas 2 -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-sm rounded-lg h-100">
-          <img src="../images/donasi-makanan.jpg" class="card-img-top" alt="Donasi Makanan">
-          <div class="card-body">
-            <h5 class="card-title font-weight-bold" style="font-family: 'Poppins', sans-serif;">Donasi Makanan</h5>
-            <p class="card-text" style="font-family: 'Josefin Sans', sans-serif;">
-              Distribusi paket makanan untuk 100 keluarga kurang mampu di wilayah Jakarta Selatan.
-            </p>
-            <a href="#" class="btn btn-primary btn-block rounded-pill">Lihat Detail</a>
-          </div>
-          <div class="card-footer text-muted small">
-            5 hari lalu
+          <div class="mt-3">
+            <div class="progress" style="height:12px;">
+              <div class="progress-bar" role="progressbar" style="width:69%" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Card Aktivitas 3 -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-sm rounded-lg h-100">
-          <img src="../images/donasi-sanitasi.jpg" class="card-img-top" alt="Program Sanitasi">
-          <div class="card-body">
-            <h5 class="card-title font-weight-bold" style="font-family: 'Poppins', sans-serif;">Program Sanitasi</h5>
-            <p class="card-text" style="font-family: 'Josefin Sans', sans-serif;">
-              Renovasi fasilitas sanitasi untuk 3 sekolah di daerah terpencil agar lebih layak digunakan.
-            </p>
-            <a href="#" class="btn btn-primary btn-block rounded-pill">Lihat Detail</a>
+      <!-- Chart area -->
+      <div class="col-lg-8 mb-4">
+        <div class="card shadow-sm rounded-lg h-100 p-3">
+          <h6 class="mb-3">Perkembangan Donasi per Bulan</h6>
+          <!-- simple SVG line chart -->
+          <div class="svg-chart-wrapper">
+            <svg id="donationChart" viewBox="0 0 700 220" preserveAspectRatio="xMidYMid meet" width="100%" height="220" aria-label="Grafik donasi per bulan">
+              <!-- grid lines -->
+              <g class="grid-lines" stroke="#eee" stroke-width="1">
+                <line x1="50" y1="20" x2="650" y2="20"></line>
+                <line x1="50" y1="60" x2="650" y2="60"></line>
+                <line x1="50" y1="100" x2="650" y2="100"></line>
+                <line x1="50" y1="140" x2="650" y2="140"></line>
+                <line x1="50" y1="180" x2="650" y2="180"></line>
+              </g>
+
+              <!-- area fill -->
+              <path id="areaPath" d="" fill="rgba(86,124,141,0.12)"></path>
+
+              <!-- line path -->
+              <path id="linePath" d="" fill="none" stroke="#567c8d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+
+              <!-- points group -->
+              <g id="points"></g>
+
+              <!-- X labels -->
+              <g id="xlabels" fill="#6b7280" font-size="12" text-anchor="middle"></g>
+            </svg>
           </div>
-          <div class="card-footer text-muted small">
-            1 minggu lalu
-          </div>
+          <p class="small text-muted mt-2 mb-0">Data: Jan — Des. (dibuat sebagai ilustrasi). Klik foto untuk melihat dokumentasi ukuran penuh.</p>
         </div>
       </div>
-
-      <!-- Tambah Card Aktivitas lain di sini -->
-      
     </div>
   </div>
-   <a href="freelancer-chat.html" class="chat-floating-btn">💬 Chat</a>
 
-  <!-- Footer -->
-  <footer class="text-center py-3 text-muted small" style="background-color: #f8f9fa;">
+  <!-- GRID ACTIVITIES -->
+  <div class="container mb-5">
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <article class="card activity-card h-100 shadow-sm">
+          <div class="media-thumb" data-src="../images/donasi-beasiswa.jpg" data-toggle="modal" data-target="#mediaModal" role="button" aria-label="Buka foto Program Beasiswa Coding">
+            <img src="../images/donasi-beasiswa.jpg" alt="Beasiswa Coding" class="card-img-top">
+            <div class="media-overlay">
+              <i class="bi bi-arrows-fullscreen"></i>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Program Beasiswa Coding</h5>
+            <p class="card-text text-muted small">Penyaluran dana untuk 50 pelajar selama 6 bulan. Mitra: Yayasan ABC.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="small text-muted">3 hari lalu</div>
+              <div>
+                <span class="badge badge-pill badge-info mr-2">Pendidikan</span>
+                <a href="#" class="btn btn-sm btn-outline-primary">Lihat Detail</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <article class="card activity-card h-100 shadow-sm">
+          <div class="media-thumb" data-src="../images/donasi-makanan.jpg" data-toggle="modal" data-target="#mediaModal" role="button" aria-label="Buka foto Donasi Makanan">
+            <img src="../images/donasi-makanan.jpg" alt="Donasi Makanan" class="card-img-top">
+            <div class="media-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Distribusi Paket Makanan</h5>
+            <p class="card-text text-muted small">100 keluarga menerima bantuan bahan pokok di Jakarta Selatan.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="small text-muted">5 hari lalu</div>
+              <div>
+                <span class="badge badge-pill badge-warning mr-2">Kemanusiaan</span>
+                <a href="#" class="btn btn-sm btn-outline-primary">Lihat Detail</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <article class="card activity-card h-100 shadow-sm">
+          <div class="media-thumb" data-src="../images/donasi-sanitasi.jpg" data-toggle="modal" data-target="#mediaModal" role="button" aria-label="Buka foto Program Sanitasi">
+            <img src="../images/donasi-sanitasi.jpg" alt="Program Sanitasi" class="card-img-top">
+            <div class="media-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Program Sanitasi Sekolah</h5>
+            <p class="card-text text-muted small">Renovasi fasilitas sanitasi di 3 sekolah terpencil.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="small text-muted">1 minggu lalu</div>
+              <div>
+                <span class="badge badge-pill badge-success mr-2">Kesehatan</span>
+                <a href="#" class="btn btn-sm btn-outline-primary">Lihat Detail</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Tambahan: (bisa ditambahkan lebih banyak card) -->
+    </div>
+  </div>
+
+  <!-- IMAGE / VIDEO MODAL -->
+  <div class="modal fade" id="mediaModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0">
+          <div id="mediaModalContent" class="w-100"></div>
+        </div>
+        <button type="button" class="close position-absolute text-white" style="right:12px;top:12px;font-size:2rem;" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAT FLOAT -->
+  <a href="freelancer-chat.html" class="chat-floating-btn" aria-label="Chat">💬 Chat</a>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-3 text-muted small" style="background-color:#f8f9fa;">
     &copy; 2025 GATE. All Rights Reserved.
   </footer>
+
+  <!-- LOCAL SCRIPTS -->
+  <script src="../jquery.min.js"></script>
+  <script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
+  <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+  <!-- page script (append to your scripts.js or paste here) -->
+  <script src="scripts.js"></script>
 </body>
 </html>

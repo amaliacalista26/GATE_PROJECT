@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GATE - Freelance</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- LOCAL Bootstrap CSS (adjust path if needed) -->
+  <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+
+  <!-- Global + page CSS -->
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="freelancer.css">
-  <!-- Bootstrap Icons -->
+
+  <!-- Icons (Bootstrap Icons CDN; optional) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-
-
+  <!-- Optional Font Awesome for some older icon classes (if you used 'fas' in markup) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-
 
 <body>
   
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm" role="navigation" aria-label="Main navigation">
   <div class="container d-flex align-items-center justify-content-between">
     
     <!-- Brand -->
-    <a class="navbar-brand d-flex align-items-center" href="../home.html">
+    <a class="navbar-brand d-flex align-items-center" href="freelancer.html">
       <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
       <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
     </a>
 
     <!-- Toggle Button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -38,10 +44,9 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav align-items-center">
         <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="freelancer-jobs.html">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link" href="freelancer-jobs.html">Jobs</a></li>
         <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="freelance-feed.html">Feed</a></li>
-          
+        <li class="nav-item"><a class="nav-link" href="freelance-feed.html">Feed</a></li>
       </ul>
     </div>
 
@@ -49,7 +54,7 @@
     <div class="d-flex align-items-center gap-3">
       <!-- Notifikasi -->
       <div class="position-relative">
-        <a href="notifikasi.html" class="nav-icon text-dark" data-bs-toggle="modal" data-bs-target="#notifModal">
+        <a href="#" class="nav-icon text-dark" data-toggle="modal" data-target="#notifModal" aria-label="Buka notifikasi">
           <i class="bi bi-bell-fill fs-5"></i>
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             5
@@ -75,7 +80,7 @@
   <div class="ribbon-filter mb-4 shadow-sm">
     <div class="form-group">
       <label for="role">Role</label>
-      <select class="form-select" id="role">
+      <select class="form-control" id="role">
         <option value="">All Roles</option>
         <option value="designer">UI/UX Designer</option>
         <option value="developer">Developer</option>
@@ -85,7 +90,7 @@
 
     <div class="form-group">
       <label for="location">Location</label>
-      <select class="form-select" id="location">
+      <select class="form-control" id="location">
         <option value="">All Locations</option>
         <option value="jakarta">Jakarta</option>
         <option value="remote">Remote</option>
@@ -95,7 +100,7 @@
 
     <div class="form-group">
       <label for="salary">Salary Range</label>
-      <select class="form-select" id="salary">
+      <select class="form-control" id="salary">
         <option value="">All Ranges</option>
         <option value="1-5">Rp1–5 million</option>
         <option value="6-10">Rp6–10 million</option>
@@ -109,13 +114,13 @@
     <div class="col-md-6">
       <div class="card h-100">
         <div class="card-header bg-transparent fw-bold text-signin">
-          <i class="fas fa-briefcase text-secondary me-2"></i>Ongoing / Not Yet Reviewed
+          <h5 class="fas fa-briefcase text-secondary me-2">Ongoing / Not Yet Reviewed</h5> 
         </div>
         <div class="card-body">
-          <p><span class="badge bg-success">Ongoing</span> UI Designer for Educational App</p>
-          <button class="btn btn-outline-primary btn-sm rounded-pill mb-2">Review</button><br>
-          <p><span class="badge bg-warning text-dark">Pending</span> Front-End Developer</p>
-          <button class="btn btn-outline-primary btn-sm rounded-pill">Review</button>
+          <p><span class="badge badge-success">Ongoing</span> UI Designer for Educational App</p>
+          <button class="btn btn-outline-primary btn-sm rounded-pill mb-2 review-btn">Review</button><br>
+          <p><span class="badge badge-warning text-dark">Pending</span> Front-End Developer</p>
+          <button class="btn btn-outline-primary btn-sm rounded-pill review-btn">Review</button>
         </div>
       </div>
     </div>
@@ -123,13 +128,13 @@
     <div class="col-md-6">
       <div class="card h-100">
         <div class="card-header bg-transparent fw-bold text-signin">
-          <i class="fas fa-thumbs-up text-secondary me-2"></i>Recommended Jobs
+          <h5 class="fas fa-thumbs-up text-secondary me-2">Recommended Jobs</h5>
         </div>
         <div class="card-body">
           <p>Social Media Specialist (Jakarta, Rp6–9 million)</p>
-          <button class="btn btn-primary btn-sm rounded-pill mb-2">Click Apply</button><br>
+          <button class="btn btn-primary btn-sm rounded-pill lamar-btn mb-2">Click Apply</button><br>
           <p>Backend Golang Developer (Remote, Rp20–28 million)</p>
-          <button class="btn btn-primary btn-sm rounded-pill">Click Apply</button>
+          <button class="btn btn-primary btn-sm rounded-pill lamar-btn">Click Apply</button>
         </div>
       </div>
     </div>
@@ -140,7 +145,7 @@
     <div class="col-md-6">
       <div class="card h-100">
         <div class="card-header bg-transparent fw-bold text-signin">
-          <i class="fas fa-wallet text-secondary me-2"></i>GatePay
+          <h5 class="fas fa-wallet text-secondary me-2">GatePay</h5>
         </div>
         <div class="card-body">
           <p>Balance: <strong>Rp0</strong></p>
@@ -152,11 +157,11 @@
     <div class="col-md-6">
       <div class="card h-100">
         <div class="card-header bg-transparent fw-bold text-signin">
-          <i class="fas fa-hand-holding-heart text-secondary me-2"></i>Your Total Donations
+          <h5 class="fas fa-hand-holding-heart text-secondary me-2">Your Total Donations</h5> 
         </div>
         <div class="card-body">
           <p>Rp150.000 (3% of your income)</p>
-          <button class="btn btn-outline-primary rounded-pill"><a href="freelance-feed.html">See Donation Impact</a></button>
+          <a class="btn btn-outline-primary rounded-pill" href="freelance-feed.html">See Donation Impact</a>
         </div>
       </div>
     </div>
@@ -165,115 +170,105 @@
   <!-- DAILY CHALLENGE -->
   <div class="card mt-4 mb-5">
     <div class="card-header bg-transparent fw-bold text-signin">
-      <i class="fas fa-trophy text-secondary me-2"></i>Daily Challenge
+      <i class="fas fa-trophy text-secondary me-2"></i> Daily Challenge
     </div>
     <div class="card-body">
       <p>Apply to 3 jobs today</p>
       <div class="progress mb-3">
-        <div class="progress-bar bg-primary" style="width: 70%;"></div>
+        <div class="progress-bar bg-primary" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
       <p>Complete 1 review</p>
       <div class="progress">
-        <div class="progress-bar bg-success" style="width: 40%;"></div>
+        <div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
     </div>
   </div>
 </main>
-   <a href="freelancer-chat.html" class="chat-floating-btn">💬 Chat</a>
+
+<a href="freelancer-chat.html" class="chat-floating-btn" aria-label="Chat">💬 Chat</a>
 
 <!-- NOTIFIKASI LIST -->
-<div class="modal fade" id="notifModal" tabindex="-1" aria-labelledby="notifModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+<div class="modal fade" id="notifModal" tabindex="-1" role="dialog" aria-labelledby="notifModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content rounded-4 shadow">
       <div class="modal-header border-0">
         <h5 class="modal-title fw-bold" id="notifModalLabel">Notifikasi</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Tutup">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#notifDetail1" data-bs-dismiss="modal">
+          <li class="list-group-item" data-toggle="modal" data-target="#notifDetail1" data-dismiss="modal">
             <i class="bi bi-briefcase-fill text-primary me-2"></i> Lowongan UI Designer
           </li>
-          <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#notifDetail2" data-bs-dismiss="modal">
+          <li class="list-group-item" data-toggle="modal" data-target="#notifDetail2" data-dismiss="modal">
             <i class="bi bi-wallet2 text-success me-2"></i> Pembaruan Saldo GatePay
           </li>
-          <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#notifDetail3" data-bs-dismiss="modal">
+          <li class="list-group-item" data-toggle="modal" data-target="#notifDetail3" data-dismiss="modal">
             <i class="bi bi-pencil-square text-danger me-2"></i> Review Diperlukan
           </li>
-          <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#notifDetail4" data-bs-dismiss="modal">
+          <li class="list-group-item" data-toggle="modal" data-target="#notifDetail4" data-dismiss="modal">
             <i class="bi bi-bell-fill text-warning me-2"></i> Jadwal Meeting Proyek Baru
           </li>
-          <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#notifDetail5" data-bs-dismiss="modal">
+          <li class="list-group-item" data-toggle="modal" data-target="#notifDetail5" data-dismiss="modal">
             <i class="bi bi-gift-fill text-info me-2"></i> Bonus Spesial Akhir Bulan
           </li>
         </ul>
       </div>
       <div class="modal-footer border-0">
-        <button type="button" class="btn btn-outline-primary rounded-pill" data-bs-dismiss="modal">Tutup</button>
+        <button type="button" class="btn btn-outline-primary rounded-pill" data-dismiss="modal">Tutup</button>
       </div>
     </div>
   </div>
 </div>
 
+<!-- (notifDetail1..5 modals same as before) -->
 <!-- DETAIL 1 -->
-<div class="modal fade" id="notifDetail1" tabindex="-1" aria-labelledby="notifDetail1Label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg"> 
+<div class="modal fade" id="notifDetail1" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content shadow-lg border-0 rounded-4">
       <div class="modal-header bg-primary text-white rounded-top-4">
-        <h5 class="modal-title fw-semibold" id="notifDetail1Label">Lowongan UI Designer</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        <h5 class="modal-title fw-semibold">Lowongan UI Designer</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body fs-5 text-dark px-4 py-3">
         Kami membuka lowongan untuk posisi <b>UI Designer freelance</b> di aplikasi edukasi.
         Waktu kerja fleksibel dan gaji kompetitif.
       </div>
       <div class="modal-footer border-0 d-flex justify-content-end">
-        <button 
-          class="btn btn-outline-primary rounded-pill px-4"
-          data-bs-target="#notifModal"
-          data-bs-toggle="modal"
-          data-bs-dismiss="modal">
-          Tutup
-        </button>
+        <button class="btn btn-outline-primary rounded-pill px-4" data-toggle="modal" data-target="#notifModal" data-dismiss="modal">Tutup</button>
       </div>
     </div>
   </div>
 </div>
 
-
 <!-- DETAIL 2 -->
-<div class="modal fade" id="notifDetail2" tabindex="-1" aria-labelledby="notifDetail2Label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal fade" id="notifDetail2" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content shadow-lg border-0 rounded-4">
       <div class="modal-header bg-primary text-white rounded-top-4">
-        <h5 class="modal-title fw-semibold" id="notifDetail2Label">Saldo GatePay Diperbarui</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        <h5 class="modal-title fw-semibold">Saldo GatePay Diperbarui</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body fs-5 text-dark px-4 py-3">
         Saldo GatePay kamu telah <b>bertambah Rp150.000</b> dari proyek terakhir yang diselesaikan.
         Pastikan untuk memeriksa riwayat transaksi kamu di halaman GatePay.
       </div>
       <div class="modal-footer border-0 d-flex justify-content-end">
-        <button 
-          class="btn btn-outline-primary rounded-pill px-4"
-          data-bs-target="#notifModal"
-          data-bs-toggle="modal"
-          data-bs-dismiss="modal">
-          Tutup
-        </button>
+        <button class="btn btn-outline-primary rounded-pill px-4" data-toggle="modal" data-target="#notifModal" data-dismiss="modal">Tutup</button>
       </div>
     </div>
   </div>
 </div>
 
-
 <!-- DETAIL 3 -->
-<div class="modal fade" id="notifDetail3" tabindex="-1" aria-labelledby="notifDetail3Label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal fade" id="notifDetail3" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content shadow-lg border-0 rounded-4">
       <div class="modal-header bg-primary text-white rounded-top-4">
-        <h5 class="modal-title fw-semibold" id="notifDetail3Label">Review Diperlukan</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        <h5 class="modal-title fw-semibold">Review Diperlukan</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body fs-5 text-dark px-4 py-3">
         Klien meminta kamu untuk memberikan <b>review hasil kerja</b> pada proyek
@@ -281,76 +276,59 @@
         Silakan isi review di dashboard proyekmu.
       </div>
       <div class="modal-footer border-0 d-flex justify-content-end">
-        <button 
-          class="btn btn-outline-primary rounded-pill px-4"
-          data-bs-target="#notifModal"
-          data-bs-toggle="modal"
-          data-bs-dismiss="modal">
-          Tutup
-        </button>
+        <button class="btn btn-outline-primary rounded-pill px-4" data-toggle="modal" data-target="#notifModal" data-dismiss="modal">Tutup</button>
       </div>
     </div>
   </div>
 </div>
 
 <!-- DETAIL 4 -->
-<div class="modal fade" id="notifDetail4" tabindex="-1" aria-labelledby="notifDetail4Label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal fade" id="notifDetail4" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content shadow-lg border-0 rounded-4">
       <div class="modal-header bg-primary text-white rounded-top-4">
-        <h5 class="modal-title fw-semibold" id="notifDetail4Label">Proyek Baru Tersedia</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        <h5 class="modal-title fw-semibold">Proyek Baru Tersedia</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body fs-5 text-dark px-4 py-3">
         Ada proyek baru yang sesuai dengan keahlian kamu! 
         Cek detailnya di halaman proyek untuk segera melakukan penawaran.
       </div>
       <div class="modal-footer border-0 d-flex justify-content-end">
-        <button 
-          class="btn btn-outline-primary rounded-pill px-4"
-          data-bs-target="#notifModal"
-          data-bs-toggle="modal"
-          data-bs-dismiss="modal">
-          Tutup
-        </button>
+        <button class="btn btn-outline-primary rounded-pill px-4" data-toggle="modal" data-target="#notifModal" data-dismiss="modal">Tutup</button>
       </div>
     </div>
   </div>
 </div>
 
-
 <!-- DETAIL 5 -->
-<div class="modal fade" id="notifDetail5" tabindex="-1" aria-labelledby="notifDetail5Label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal fade" id="notifDetail5" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content shadow-lg border-0 rounded-4">
       <div class="modal-header bg-primary text-white rounded-top-4">
-        <h5 class="modal-title fw-semibold" id="notifDetail5Label">Pembayaran Diterima</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        <h5 class="modal-title fw-semibold">Pembayaran Diterima</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body fs-5 text-dark px-4 py-3">
         Pembayaran untuk proyek <b>UI/UX Dashboard App</b> telah diterima.
         Dana akan otomatis masuk ke saldo GatePay kamu dalam waktu 1x24 jam.
       </div>
       <div class="modal-footer border-0 d-flex justify-content-end">
-        <button 
-          class="btn btn-outline-primary rounded-pill px-4"
-          data-bs-target="#notifModal"
-          data-bs-toggle="modal"
-          data-bs-dismiss="modal">
-          Tutup
-        </button>
+        <button class="btn btn-outline-primary rounded-pill px-4" data-toggle="modal" data-target="#notifModal" data-dismiss="modal">Tutup</button>
       </div>
     </div>
   </div>
 </div>
 
+<!-- 🔹 Footer -->
+<footer class="text-center py-3 text-muted small" style="background-color: #f8f9fa;">
+  &copy; 2025 GATE. All Rights Reserved.
+</footer>
 
-
-
-  <!-- 🔹 Footer -->
-  <footer class="text-center py-3 text-muted small" style="background-color: #f8f9fa;">
-    &copy; 2025 GATE. All Rights Reserved.
-  </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- SCRIPTS: jQuery + Popper + Bootstrap (local) + page script -->
+<script src="../jquery.min.js"></script>
+<script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
+<script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>

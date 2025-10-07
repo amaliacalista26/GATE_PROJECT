@@ -4,60 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GATE - Freelance Chat</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- LOCAL Bootstrap 4.3.1 -->
+  <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+
+  <!-- Global & Page CSS -->
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="freelancer.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-+lI+r8Cw5nAZmPMkFzDz0gkrQy2Ldz7lKsp7aYgH5FtOAX5m3dxRZbwq3m9f8dIkuQJ2K/xD2z4l5x5vT0C2Jw=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap Icons (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 
 <body>
   
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
-  <div class="container d-flex align-items-center justify-content-between">
-    
-    <!-- Brand -->
-    <a class="navbar-brand d-flex align-items-center" href="../home.html">
-      <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
-      <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
-    </a>
-
-    <!-- Toggle Button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Menu -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav align-items-center">
-        <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="freelancer-jobs.html">Jobs</a></li>
-        <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="freelance-feed.html">Feed</a></li>
-      </ul>
-    </div>
-
-    <!-- Right Icons -->
-<div class="d-flex align-items-center gap-3">
-      <!-- Notifikasi -->
-      <a href="#" class="nav-icon">
-        <i class="fa-solid fa-bell"></i>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top custom-navbar shadow-sm" role="navigation" aria-label="Main navigation">
+    <div class="container d-flex align-items-center justify-content-between">
+      
+      <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="freelancer.html">
+        <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
+        <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
       </a>
-      <!-- Profil -->
-      <a href="freelancer-edit-profile.html" class="nav-profile">
-        <img src="../asset/profile.png" alt="Profile" class="profile-icon">
-      </a>
-    </div>
-  </div>
-</nav>
 
+      <!-- Toggle Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="freelancer-jobs.html">Jobs</a></li>
+          <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
+          <li class="nav-item"><a class="nav-link" href="freelance-feed.html">Feed</a></li>
+        </ul>
+      </div>
+
+      <!-- Right Icons -->
+      <div class="d-flex align-items-center" style="gap:12px;">
+        <a href="freelance-notifikasi.html" class="nav-icon text-dark" aria-label="Notifikasi">
+          <i class="bi bi-bell-fill fs-5"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
+        </a>
+        <a href="freelancer-edit-profile.html" class="nav-profile" aria-label="Profil">
+          <img src="../asset/profile.png" alt="Profile" class="profile-icon">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
   <main class="container mt-5 pt-4">
     <!-- Header -->
     <header class="text-center mb-4">
@@ -66,44 +69,62 @@
     </header>
 
     <!-- Ongoing Chat -->
-    <section class="mb-4">
-      <h4 class="fw-semibold mb-3">💬 Ongoing Chat</h4>
-      <div class="chat-window shadow-sm">
-        <div class="chat-message received">Halo, apakah kamu bisa kerjakan project ini minggu ini?</div>
-        <div class="chat-message sent">Ya, saya bisa mulai besok!</div>
-        <div class="chat-message received">Bagus, nanti aku kirim file projectnya.</div>
+    <section class="mb-5">
+      <h3 class="fw-semibold mb-3">Ongoing Chat</h3>
+      <div class="chat-window shadow-sm p-3 rounded" style="background:#fafafa; min-height:250px;">
+        <div class="chat-message received bg-light p-2 rounded mb-2" style="max-width:70%;">Halo, apakah kamu bisa kerjakan project ini minggu ini?</div>
+        <div class="chat-message sent bg-primary text-white p-2 rounded ml-auto mb-2" style="max-width:70%;">Ya, saya bisa mulai besok!</div>
+        <div class="chat-message received bg-light p-2 rounded" style="max-width:70%;">Bagus, nanti aku kirim file projectnya.</div>
       </div>
+
       <div class="input-group mt-3">
         <input type="text" id="message-input" class="form-control rounded-pill" placeholder="Ketik pesan...">
-        <button id="send-message" class="btn btn-primary rounded-pill"><i class="fas fa-paper-plane"></i> Kirim</button>
+        <div class="input-group-append">
+          <button id="send-message" class="btn btn-primary rounded-pill px-4">
+            <i class="bi bi-send"></i> Kirim
+          </button>
+        </div>
       </div>
     </section>
 
     <!-- Chat History -->
     <section>
-      <h4 class="fw-semibold mb-3">📜 History Chat</h4>
-      <div class="card mb-3">
+      <h3 class="fw-semibold mb-3">History Chat</h3>
+
+      <div class="card mb-3 shadow-sm border-0">
         <div class="card-body d-flex justify-content-between align-items-center">
           <strong>Chat dengan Employer A</strong>
-          <span class="badge bg-warning text-dark">Ongoing</span>
+          <span class="badge badge-warning text-dark">Ongoing</span>
         </div>
       </div>
-      <div class="card mb-3">
+
+      <div class="card mb-3 shadow-sm border-0">
         <div class="card-body d-flex justify-content-between align-items-center">
           <strong>Chat dengan Employer B</strong>
-          <span class="badge bg-success">Completed</span>
+          <span class="badge badge-success">Completed</span>
         </div>
       </div>
-      <div class="card mb-3">
+
+      <div class="card mb-3 shadow-sm border-0">
         <div class="card-body d-flex justify-content-between align-items-center">
           <strong>Chat dengan Employer C</strong>
-          <span class="badge bg-warning text-dark">Ongoing</span>
+          <span class="badge badge-warning text-dark">Ongoing</span>
         </div>
       </div>
+      <br>
     </section>
   </main>
+
+  <!-- FOOTER -->
   <footer class="text-center py-3 text-muted small" style="background-color: #f8f9fa;">
     &copy; 2025 GATE. All Rights Reserved.
   </footer>
+
+  <!-- LOCAL SCRIPTS -->
+  <script src="../jquery.min.js"></script>
+  <script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
+  <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="scripts.js"></script>
+
 </body>
 </html>

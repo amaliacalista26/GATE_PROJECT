@@ -4,76 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GATE - Freelance Edit Profile</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- LOCAL Bootstrap 4.3.1 CSS -->
+  <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+
+  <!-- Global + page CSS -->
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="freelancer.css">
-  <!-- Bootstrap Icons -->
+
+  <!-- Bootstrap Icons (CDN) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
 </head>
 
 <body>
-  
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
-  <div class="container d-flex align-items-center justify-content-between">
-    
-    <!-- Brand -->
-    <a class="navbar-brand d-flex align-items-center" href="../home.html">
-      <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
-      <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
-    </a>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top custom-navbar shadow-sm" role="navigation" aria-label="Main navigation">
+    <div class="container d-flex align-items-center justify-content-between">
+      <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="freelancer.html">
+        <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
+        <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
+      </a>
 
-    <!-- Toggle Button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- Toggle Button (Bootstrap 4) -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Menu -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav align-items-center">
-        <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="freelancer-jobs.html">Jobs</a></li>
-        <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="freelance-feed.html">Feed</a></li>
-      </ul>
-    </div>
+      <!-- Menu -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active-link" href="freelancer-jobs.html">Jobs</a></li>
+          <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
+          <li class="nav-item"><a class="nav-link active-link" href="freelance-feed.html">Feed</a></li>
+        </ul>
+      </div>
 
-    <!-- Right Icons -->
-<div class="d-flex align-items-center gap-3">
-      <!-- Notifikasi -->
-      <div class="position-relative">
-        <a href="freelance-notifikasi.html" class="nav-icon text-dark">
-          <i class="bi bi-bell-fill fs-5"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            5
-          </span>
+      <!-- Right Icons -->
+      <div class="d-flex align-items-center" style="gap:12px;">
+        <!-- Notifikasi -->
+        <div class="position-relative">
+          <a href="freelance-notifikasi.html" class="nav-icon text-dark" aria-label="Notifikasi">
+            <i class="bi bi-bell-fill" style="font-size:1.05rem;"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
+          </a>
+        </div>
+        <!-- Profil -->
+        <a href="freelancer-edit-profile.html" class="nav-profile" aria-label="Profil">
+          <img src="../asset/profile.png" alt="Profile" class="profile-icon">
         </a>
       </div>
-      <!-- Profil -->
-      <a href="freelancer-edit-profile.html" class="nav-profile">
-        <img src="../asset/profile.png" alt="Profile" class="profile-icon">
-      </a>
     </div>
-  </div>
-</nav>
+  </nav>
 
-  <!-- Konten -->
-  <main class="container mt-5 pt-5">
-    <header class="text-center mb-5">
-      <h1 class="fw-bold text-primary">Edit Profil Freelancer</h1>
-      <p class="text-muted">Tingkatkan visibilitas Anda dengan memperbarui profil dan portofolio terbaik Anda.</p>
-    </header>
+  <!-- HEADER -->
+  <section class="text-center mt-5 mb-4 fade-in" style="padding-top: 18px;">
+    <h1 class="font-weight-bold" style="font-family: 'Poppins', sans-serif; color: var(--role-background-dark, #2f4156);">
+      Edit Profil Freelancer
+    </h1>
+    <p class="text-muted" style="font-family: 'Josefin Sans', sans-serif;">
+      Tingkatkan visibilitas Anda dengan memperbarui profil dan portofolio terbaik Anda.
+    </p>
+  </section>
 
+  <!-- MAIN CONTENT -->
+  <main class="container mt-4 pt-2 mb-5">
     <div class="card shadow-sm rounded-4 p-4 mb-5">
       <form>
         <!-- Foto Profil -->
         <div class="text-center mb-4">
-          <img src="../placeholder-photo.jpg" alt="Foto Profil" class="rounded-circle border" style="width: 120px; height: 120px;">
+          <img src="../asset/placeholder-photo.jpg" alt="Foto Profil" class="rounded-circle border" style="width: 120px; height: 120px; object-fit:cover;">
           <div class="mt-2">
-            <input type="file" class="form-control w-50 mx-auto rounded-pill">
+            <input type="file" class="form-control w-50 mx-auto rounded-pill" aria-label="Unggah foto profil">
           </div>
         </div>
 
@@ -81,15 +88,15 @@
         <div class="row g-3 mb-3">
           <div class="col-md-6">
             <label class="form-label">Nama</label>
-            <input type="text" class="form-control rounded-pill" placeholder="Nama lengkap">
+            <input type="text" class="form-control rounded-pill" placeholder="Nama lengkap" aria-label="Nama lengkap">
           </div>
           <div class="col-md-3">
             <label class="form-label">Usia</label>
-            <input type="number" class="form-control rounded-pill" placeholder="Usia">
+            <input type="number" class="form-control rounded-pill" placeholder="Usia" aria-label="Usia">
           </div>
           <div class="col-md-3">
             <label class="form-label">Status</label>
-            <select class="form-select rounded-pill">
+            <select class="form-control rounded-pill" aria-label="Status">
               <option>Single</option>
               <option>Married</option>
             </select>
@@ -100,7 +107,7 @@
         <div class="row g-3 mb-3">
           <div class="col-md-6">
             <label class="form-label">Skill Utama</label>
-            <select class="form-select rounded-pill">
+            <select class="form-control rounded-pill" aria-label="Skill Utama">
               <option>UI/UX</option>
               <option>Frontend Developer</option>
               <option>Backend Developer</option>
@@ -109,7 +116,7 @@
           </div>
           <div class="col-md-6">
             <label class="form-label">Lokasi</label>
-            <input type="text" class="form-control rounded-pill" placeholder="Contoh: Bandung / Remote">
+            <input type="text" class="form-control rounded-pill" placeholder="Contoh: Bandung / Remote" aria-label="Lokasi">
           </div>
         </div>
 
@@ -117,7 +124,7 @@
         <div class="row g-3 mb-3">
           <div class="col-md-6">
             <label class="form-label">Pendidikan Terakhir</label>
-            <select class="form-select rounded-pill">
+            <select class="form-control rounded-pill" aria-label="Pendidikan Terakhir">
               <option>SMA/SMK</option>
               <option>Sarjana (S1)</option>
               <option>Magister (S2)</option>
@@ -125,20 +132,20 @@
           </div>
           <div class="col-md-6">
             <label class="form-label">Pengalaman Kerja</label>
-            <textarea class="form-control rounded-4" rows="2" placeholder="Deskripsikan pengalaman kerja..."></textarea>
+            <textarea class="form-control rounded-4" rows="2" placeholder="Deskripsikan pengalaman kerja..." aria-label="Pengalaman Kerja"></textarea>
           </div>
         </div>
 
         <!-- Portofolio -->
         <div class="mb-3">
           <label class="form-label">Portofolio (Opsional)</label>
-          <input type="file" class="form-control rounded-pill">
+          <input type="file" class="form-control rounded-pill" aria-label="Unggah portofolio">
         </div>
 
         <!-- Agama -->
         <div class="mb-3">
           <label class="form-label">Opsi Agama (untuk Notifikasi Keagamaan)</label>
-          <select class="form-select rounded-pill">
+          <select class="form-control rounded-pill" aria-label="Agama">
             <option>Islam</option>
             <option>Kristen</option>
             <option>Katolik</option>
@@ -154,24 +161,34 @@
 
     <!-- Rating & Review -->
     <section class="text-center mb-5">
-      <h3 class="fw-bold text-primary">Rating & Review</h3>
-      <div class="rating-stars mb-3">
-        <i class="fas fa-star text-warning"></i>
-        <i class="fas fa-star text-warning"></i>
-        <i class="fas fa-star text-warning"></i>
-        <i class="fas fa-star text-warning"></i>
-        <i class="far fa-star text-warning"></i>
+      <h3 class="fw-bold" style="color:var(--role-background-dark,#2f4156);">Rating & Review</h3>
+      <div class="rating-stars mb-3" aria-hidden="true">
+        <i class="bi bi-star-fill text-warning"></i>
+        <i class="bi bi-star-fill text-warning"></i>
+        <i class="bi bi-star-fill text-warning"></i>
+        <i class="bi bi-star-fill text-warning"></i>
+        <i class="bi bi-star text-warning"></i>
         <span class="text-muted ms-2">(4.0 / 5)</span>
       </div>
-      <p>"Kerja bagus, cepat dan komunikatif!" - Employer X</p>
-      <a href="freelance-review.html" class="btn btn-outline-primary rounded-pill px-4">Lihat Semua Review</a>
+      <p class="mb-2">"Kerja bagus, cepat dan komunikatif!" - Employer X</p>
+      <a href="#" class="btn btn-outline-primary rounded-pill px-4">Lihat Semua Review</a>
     </section>
   </main>
-     <a href="freelancer-chat.html" class="chat-floating-btn">💬 Chat</a>
 
+  <!-- CHAT FLOAT -->
+  <a href="freelancer-chat.html" class="chat-floating-btn" aria-label="Chat">💬 Chat</a>
+
+  <!-- FOOTER -->
   <footer class="text-center py-3 text-muted small" style="background-color: #f8f9fa;">
     &copy; 2025 GATE. All Rights Reserved.
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- SCRIPTS: local jQuery + Popper + Bootstrap 4.3.1 + page script -->
+  <script src="../jquery.min.js"></script>
+  <script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
+  <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+  <!-- your page interactions (fade-in, rating, form submit handlers, etc.) -->
+  <script src="scripts.js"></script>
 </body>
 </html>

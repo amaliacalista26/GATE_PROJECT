@@ -188,3 +188,75 @@ textarea {
   }
 }
 
+/* ===== Feed enhancements ===== */
+.svg-chart-wrapper { width: 100%; overflow: visible; }
+.kpi-badge { display:flex; flex-direction:column; align-items:center; justify-content:center; width:72px; height:72px; background:#f1f5f7; border-radius:12px; }
+.kpi-number { font-weight:700; font-size:1.25rem; color:#2f4156; }
+.kpi-label { font-size:0.75rem; }
+
+/* Activity cards */
+.activity-card { overflow: hidden; border-radius:12px; transition: transform .18s ease, box-shadow .18s ease; }
+.activity-card:hover { transform: translateY(-6px); box-shadow:0 20px 40px rgba(15,23,42,0.08); }
+
+/* media thumb overlay */
+.media-thumb { position: relative; cursor: pointer; overflow:hidden; border-radius:10px 10px 0 0; }
+.media-thumb img { width:100%; height:200px; object-fit:cover; display:block; transition: transform .25s ease; }
+.media-thumb:hover img { transform: scale(1.03); }
+.media-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .18s ease; color:#fff; font-size:1.5rem; background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.35)); }
+.media-thumb:hover .media-overlay { opacity:1; }
+
+/* badges */
+.badge-info { background:#e6f3ff; color:#0b5ed7; padding:.35rem .6rem; border-radius:999px; font-weight:600; }
+.badge-warning { background:#fff4e6; color:#b45309; padding:.35rem .6rem; border-radius:999px; font-weight:600; }
+.badge-success { background:#e6fff4; color:#0f5132; padding:.35rem .6rem; border-radius:999px; font-weight:600; }
+
+/* modal media */
+#mediaModal .modal-content { background: rgba(0,0,0,0.78); border-radius:10px; padding:12px; }
+#mediaModal img, #mediaModal video { width:100%; height:auto; display:block; border-radius:8px; }
+
+/* small screens adjust image heights */
+@media (max-width: 767px) {
+  .media-thumb img { height:180px; }
+}
+
+/* line chart styles (paths animated) */
+#linePath { stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 1.2s ease; }
+#areaPath { opacity:0; transition: opacity 0.8s ease 0.2s; }
+
+/* subtle card title */
+.activity-card .card-title { font-family: 'Poppins', sans-serif; font-weight:600; color:#1f2e3f; }
+
+/* ===== freelancer-review page styles (append) ===== */
+.page-hero { padding-top: 100px; padding-bottom: 18px; }
+.summary-card { background:#fff; border-radius:12px; padding:12px 16px; min-width:120px; }
+.summary-rating { font-size:1.9rem; font-weight:700; color:#2f4156; }
+.summary-sub { color:#6b7280; font-size:0.9rem; }
+
+.panel-card { border-radius:12px; overflow:hidden; }
+.employer-item { transition: transform .12s ease, box-shadow .12s ease; cursor:pointer; padding: .65rem; }
+.employer-item:hover { transform:translateY(-4px); box-shadow:0 14px 30px rgba(15,23,42,0.06); background: #fff; }
+.employer-item .logo { width:44px; height:44px; object-fit:cover; border-radius:8px; margin-right:12px; }
+
+.rating-stars i, .rating-stars .fa { font-size:1.25rem; color:#e5e7eb; cursor:pointer; margin-right:6px; transition:color .12s ease, transform .12s ease; }
+.rating-stars i.active, .rating-stars .fa.active { color:#f6c85f; transform:translateY(-2px); }
+
+.btn-review { background: linear-gradient(90deg,#2f4156,#567c8d); color:#fff; border:none; }
+.btn-outline-round { border-radius:50px; }
+
+.no-items { color:#6b7280; font-style:italic; padding: 1rem 0; }
+
+#myReviewsContainer .card { border-radius:12px; margin-bottom:0.9rem; }
+
+/* Received list */
+#receivedList .list-group-item { border: none; border-bottom: 1px solid #f1f1f1; padding: 1rem; }
+.meta-small { font-size:0.85rem; color:#6b7280; }
+
+/* small utilities */
+@media (max-width:767px){
+  .summary-flex { flex-direction:column; gap:.5rem; align-items:flex-start; }
+  .summary-right { text-align:left; }
+}
+
+/* subtle reveal */
+.fade-in { opacity:0; transform: translateY(10px); transition: all .45s ease; }
+.fade-in.visible { opacity:1; transform:none; }

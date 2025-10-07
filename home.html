@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>GATE — Freelance & Social Impact</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="globals.css">
@@ -12,14 +13,15 @@
 
 <body>
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" role="navigation" aria-label="Main navigation">
   <div class="container">
     <a class="navbar-brand font-weight-bold text-brand d-flex align-items-center" href="home.html">
       <img src="asset/gatelogo.png" alt="GATE Logo" style="height: 40px; margin-right: 10px; border-radius: 8px;">
       <span>GATE</span>
     </a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -120,42 +122,64 @@
   </section>
 </main>
 
-<!-- TRANSPARENCY SECTION (FIXED RESPONSIVE) -->
+<!-- TRANSPARENCY SECTION (DEVELOPED) -->
 <section id="transparansi" class="py-5 bg-white">
   <div class="container" style="max-width: 72rem;">
     <h2 class="text-center font-weight-bold mb-5">Donation Transparency = Real Impact</h2>
-    <div class="row text-center justify-content-center">
-      <!-- Dummy Grafik -->
-      <div class="col-md-4 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm feature-card">
-          <div class="card-body">
-            <img src="asset/gatelogo.png" class="img-fluid rounded mt-3" alt="Grafik Donasi">
+
+    <!-- TOP: dua gambar berjejer -->
+    <div class="media-top d-flex flex-wrap justify-content-center mb-4">
+      <div class="media-col">
+        <div class="media-panel w-100">
+          <a class="media-thumb" data-type="image" data-src="asset/grafik.png" aria-label="Buka grafik aliran donasi">
+            <img src="asset/grafik.png" alt="Grafik Donasi" class="img-fluid rounded">
+          </a>
+          <div class="media-caption mt-2">
+            <strong>Cash Flow Chart</strong>
+            <p class="small text-muted mb-0">Monthly donation performance (summary)</p>
           </div>
         </div>
       </div>
 
-      <!-- Dummy Video -->
-      <div class="col-md-4 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm feature-card">
-          <div class="card-body">
-            <video class="img-fluid rounded mt-3" controls>
-              <source src="asset/video-kegiatan-donasi.mp4" type="video/mp4">
-            </video>
+      <div class="media-col">
+        <div class="media-panel w-100">
+          <a class="media-thumb" data-type="image" data-src="asset/donasi.png" aria-label="Buka foto kegiatan donasi">
+            <img src="asset/donasi.png" alt="Foto Donasi" class="img-fluid rounded">
+          </a>
+          <div class="media-caption mt-2">
+            <strong>Documentation</strong>
+            <p class="small text-muted mb-0">Beneficiaries and proof of distribution</p>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Dummy Galeri -->
-      <div class="col-md-4 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm feature-card">
-          <div class="card-body">
-            <img src="asset/gatelogo.png" class="img-fluid rounded mt-3" alt="Foto Donasi">
+    <!-- BOTTOM: video, full-width (atau centered) -->
+    <div class="media-bottom d-flex justify-content-center">
+      <div class="media-col video-col w-100" style="max-width:960px;">
+        <div class="media-panel w-100">
+          <a class="media-thumb" data-type="video" data-src="asset/video-kegiatan-donasi.mp4" aria-label="Putar video kegiatan donasi">
+            <!-- thumbnail video (muted) -->
+            <iframe class="img-fluid rounded" width="1000" height="500" 
+        src="https://www.youtube.com/embed/ID_VIDEO" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+
+          </a>
+          <div class="media-caption mt-2 text-center">
+            <strong>Activity Video</strong>
+            <p class="small text-muted mb-0">Coverage of aid activities in the field</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 
 <!-- CTA SECTION -->
@@ -195,7 +219,23 @@
   </div>
 </footer>
 
+<!-- MEDIA MODAL -->
+<div class="modal fade" id="mediaModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body p-0">
+        <div id="mediaContainer" class="w-100"></div>
+      </div>
+      <button type="button" class="close position-absolute text-white" style="right:12px;top:12px;font-size:2rem;" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+</div>
+
 <script src="jquery.min.js"></script>
+<script src="bootstrap-4.3.1-dist/js/popper.min.js"></script>
 <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>

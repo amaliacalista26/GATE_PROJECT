@@ -1,13 +1,20 @@
+// scripts.js
+// Menggabungkan: original jQuery behaviors + UX enhancements (smooth scroll, media modal, reveal, navbar active)
+
 $(document).ready(function() {
-  // Animasi fade-in
+  /* --------------------------
+     ORIGINAL BEHAVIORS
+     -------------------------- */
+
+  // Animasi fade-in (elemen dengan class .fade-in)
   $('.fade-in').fadeIn(1000);
-  
+
   // Placeholder untuk OTP verifikasi (simulasi)
-  $('form').submit(function(e) {
+  $('form').on('submit', function(e) {
     e.preventDefault();
     alert('OTP dikirim ke email/HP Anda. Verifikasi untuk lanjut.');
   });
-  
+
   // Sorting dummy lowongan (contoh table sortable)
   $('.sortable th').click(function() {
     var table = $(this).parents('table').eq(0);
@@ -28,7 +35,9 @@ $(document).ready(function() {
   $('#send-message').click(function() {
     var msg = $('#message-input').val();
     if (msg) {
-      $('.chat-window').append('<div class="chat-message sent">' + msg + '</div>');
+      // escape HTML to avoid injection
+      var safe = $('<div>').text(msg).html();
+      $('.chat-window').append('<div class="chat-message sent">' + safe + '</div>');
       $('#message-input').val('');
       $('.chat-window').scrollTop($('.chat-window')[0].scrollHeight);
     }
@@ -78,5 +87,106 @@ $(document).ready(function() {
     $('.notif-item').hide();
     $('.notif-' + selected).show();
   });
+
+  /* --------------------------
+     UX ENHANCEMENTS
+     -------------------------- */
+
+  // SMOOTH SCROLL for in-page anchors (navbar & learn-more)
+  $('a.nav-link[href^="#"], a.learn-more[href^="#"], a[href^="#how-it-works"], a[href^="#why-gate"], a[href^="#transparansi"]').on('click', function(e){
+    var href = $(this).attr('href');
+    if (href && href.charAt(0) === '#') {
+      var target = $(href);
+      if (target.length) {
+        e.preventDefault();
+        var navOffset = 86; // tweak sesuai tinggi navbar fixed
+        $('html, body').animate({
+          scrollTop: target.offset().top - navOffset
+        }, 600, 'swing', function() {
+          // accessibility: focus target
+          target.attr('tabindex','-1').focus();
+        });
+      }
+    }
+  });
+
+  // Navbar active highlighting based on scroll position
+  var sectionIds = ['#how-it-works', '#why-gate', '#transparansi'];
+  var $navLinks = $('.navbar .nav-link');
+  function updateActiveOnScroll(){
+    var scrollPos = $(window).scrollTop() + 90;
+    var activeFound = false;
+    for (var i = sectionIds.length - 1; i >= 0; i--) {
+      var id = sectionIds[i];
+      var $sec = $(id);
+      if ($sec.length && scrollPos >= $sec.offset().top) {
+        $navLinks.removeClass('active');
+        $('.navbar .nav-link[href$="' + id + '"]').addClass('active');
+        activeFound = true;
+        break;
+      }
+    }
+    if (!activeFound) $navLinks.removeClass('active');
+  }
+  updateActiveOnScroll();
+  $(window).on('scroll resize', updateActiveOnScroll);
+
+  // Reveal on scroll for elements with .reveal
+  function revealOnScroll() {
+    $('.reveal').each(function(){
+      var $el = $(this);
+      var top = $el.offset().top;
+      var winTop = $(window).scrollTop() + $(window).height() * 0.86;
+      if (winTop > top) $el.addClass('visible');
+    });
+  }
+  // mark main sections to reveal (if exist)
+  $('#how-it-works, #why-gate, #transparansi, .cta-section').addClass('reveal');
+  revealOnScroll();
+  $(window).on('scroll resize', revealOnScroll);
+
+  // MEDIA MODAL: open thumbnails (image or video) in bootstrap modal
+  $('.media-thumb').on('click', function(e) {
+    e.preventDefault();
+    var $el = $(this);
+    var type = $el.attr('data-type') || ($el.find('video').length ? 'video' : 'image');
+    var src = $el.attr('data-src') || ($el.find('img').length ? $el.find('img').attr('src') : ($el.find('video source').length ? $el.find('video source').attr('src') : ''));
+
+    var $container = $('#mediaContainer').empty();
+    if (!src) return;
+
+    if (type === 'video') {
+      var $video = $('<video controls playsinline>').css({width:'100%'}).append(
+        $('<source>').attr('src', src).attr('type','video/mp4')
+      );
+      $container.append($video);
+    } else {
+      var $img = $('<img>').attr('src', src).css({width:'100%'}).attr('alt','');
+      $container.append($img);
+    }
+
+    // show modal if bootstrap available, else open in new tab
+    if (typeof $ === 'function' && typeof $.fn.modal === 'function') {
+      $('#mediaModal').modal('show');
+    } else {
+      window.open(src, '_blank');
+    }
+  });
+
+  // clear modal content when closed to stop video playback
+  if (typeof $ === 'function' && typeof $.fn.modal === 'function') {
+    $('#mediaModal').on('hidden.bs.modal', function () {
+      $('#mediaContainer').empty();
+    });
+  }
+
+  // Hover preview for muted video thumbnails (progressive enhancement)
+  $('.media-thumb video').each(function(){
+    var vid = this;
+    $(vid).on('mouseenter', function(){ vid.play().catch(function(){}); });
+    $(vid).on('mouseleave', function(){ vid.pause(); vid.currentTime = 0; });
+  });
+
+  /* End of document ready */
 });
 

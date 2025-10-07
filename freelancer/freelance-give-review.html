@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GIVE REVIEW — GATE Freelance</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap (LOCAL) -->
+  <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Global + page CSS -->
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="freelancer.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm" role="navigation" aria-label="Main navigation">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="navbar-brand d-flex align-items-center" href="freelancer.html">
+        <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
+        <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navMain">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="freelancer.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="freelancer-jobs.html">Jobs</a></li>
+          <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
+          <li class="nav-item"><a class="nav-link active-link" href="give_review.html">Give Review</a></li>
+        </ul>
+      </div>
+
+      <div class="d-flex align-items-center" style="gap:12px;">
+        <a href="freelance-notifikasi.html" class="nav-icon text-dark" aria-label="Notifikasi"><i class="fa-solid fa-bell"></i></a>
+        <a href="freelancer-edit-profile.html" class="nav-profile" aria-label="Profil"><img src="../asset/profile.png" alt="Profile" class="profile-icon"></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="container page-hero">
+    <div class="d-flex align-items-center justify-content-between summary-flex">
+      <div>
+        <h2 class="mb-1" style="font-family:'Poppins',sans-serif;">Beri Review ke Employer</h2>
+        <p class="text-muted mb-0" style="font-family:'Josefin Sans',sans-serif;">Pilih employer dari daftar, beri rating, dan tulis komentar yang membantu.</p>
+      </div>
+      <div class="summary-right">
+        <a href="received_reviews.html" class="btn btn-outline-primary rounded-pill">Lihat Reviews yang Diterima</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container mb-5">
+    <div class="row mt-3">
+      <!-- Employers list -->
+      <aside class="col-lg-4 mb-3">
+        <div class="card panel-card shadow-sm p-3">
+          <h6 class="mb-3">Employer Terhubung</h6>
+
+          <!-- Static list (dummy) -->
+          <div class="list-group" id="employerList">
+            <button class="list-group-item list-group-item-action employer-item" type="button" data-id="emp1">
+              <strong>PT Kreatif Digital</strong>
+              <div class="meta-small">Project: Desain Logo</div>
+            </button>
+
+            <button class="list-group-item list-group-item-action employer-item" type="button" data-id="emp2">
+              <strong>PT Solusi Teknologi</strong>
+              <div class="meta-small">Project: E-commerce</div>
+            </button>
+
+            <button class="list-group-item list-group-item-action employer-item" type="button" data-id="emp3">
+              <strong>PT Mitra Cipta</strong>
+              <div class="meta-small">Project: Landing Page</div>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Form -->
+      <section class="col-lg-8">
+        <div class="card panel-card shadow-sm mb-3">
+          <div class="card-body">
+            <h5 class="mb-3">Tulis Review</h5>
+
+            <!-- NOTE: form will NOT add items to the list; JS only for UX/effect -->
+            <form id="formGiveReview" action="#" method="post" novalidate>
+              <div class="form-row">
+                <div class="form-group col-md-6 mb-3">
+                  <label for="selEmployer">Pilih Employer</label>
+                  <select id="selEmployer" class="form-control rounded-pill" required>
+                    <option value="">-- Pilih employer --</option>
+                    <option value="emp1">PT Kreatif Digital — Desain Logo</option>
+                    <option value="emp2">PT Solusi Teknologi — E-commerce</option>
+                    <option value="emp3">PT Mitra Cipta — Landing Page</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-6 mb-3">
+                  <label>Rating</label>
+                  <div id="starsForm" class="rating-stars" role="radiogroup" aria-label="Rating">
+                    <i class="fa-regular fa-star" data-value="1" tabindex="0" aria-label="1 bintang"></i>
+                    <i class="fa-regular fa-star" data-value="2" tabindex="0" aria-label="2 bintang"></i>
+                    <i class="fa-regular fa-star" data-value="3" tabindex="0" aria-label="3 bintang"></i>
+                    <i class="fa-regular fa-star" data-value="4" tabindex="0" aria-label="4 bintang"></i>
+                    <i class="fa-regular fa-star" data-value="5" tabindex="0" aria-label="5 bintang"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="txtReview">Komentar</label>
+                <textarea id="txtReview" class="form-control rounded" rows="4" placeholder="Bagikan pengalamanmu..." required></textarea>
+              </div>
+
+              <div class="d-flex justify-content-end align-items-center" style="gap:12px;">
+                <button type="submit" class="btn btn-review rounded-pill px-4">Kirim Review (+10 Poin)</button>
+                <button type="reset" class="btn btn-outline-secondary rounded-pill px-3">Reset</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Static list of reviews the freelancer has already given (dummy entries) -->
+        <div class="card panel-card shadow-sm">
+          <div class="card-body">
+            <h5 class="mb-3">Review yang Kamu Berikan</h5>
+
+            <!-- Dummy review 1 -->
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <strong>PT Solusi Teknologi</strong>
+                    <div class="meta-small text-muted">03/06/2025</div>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-star" style="color:#f6c85f;"></i>
+                    <i class="fa-solid fa-star" style="color:#f6c85f;"></i>
+                    <i class="fa-solid fa-star" style="color:#f6c85f;"></i>
+                    <i class="fa-solid fa-star" style="color:#f6c85f;"></i>
+                    <i class="fa-regular fa-star" style="color:#e5e7eb;"></i>
+                  </div>
+                </div>
+                <div class="mt-2">Proyek menarik, revisi wajar. Komunikasi baik dan pembayaran tepat waktu.</div>
+              </div>
+            </div>
+
+            <!-- Dummy review 2 -->
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <strong>PT Kreatif Digital</strong>
+                    <div class="meta-small text-muted">21/05/2025</div>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-star" style="color:#f6c85f;"></i>
+                    <i class="fa-solid fa-star" style="color:#f6c85f;"></i>
+                    <i class="fa-solid fa-star" style="color:#f6c85f;"></i>
+                    <i class="fa-solid fa-star" style="color:#f6c85f;"></i>
+                    <i class="fa-solid fa-star" style="color:#f6c85f;"></i>
+                  </div>
+                </div>
+                <div class="mt-2">Employer yang sangat supportive, briefing jelas dan cepat membayar.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- floating chat -->
+  <a href="freelancer-chat.html" class="chat-floating-btn" aria-label="Chat">💬 Chat</a>
+
+  <footer class="text-center py-3 text-muted small" style="background-color:#f8f9fa;">
+    &copy; 2025 GATE. All Rights Reserved.
+  </footer>
+
+  <!-- SCRIPTS (LOCAL) -->
+  <script src="../jquery.min.js"></script>
+  <script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
+  <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <!-- page effects JS (place this file in register or your scripts folder) -->
+  <script src="scripts.js"></script>
+</body>
+</html>
