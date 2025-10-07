@@ -2,32 +2,60 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard Yayasan - GATE</title>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GATE - Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="foundation.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-+lI+r8Cw5nAZmPMkFzDz0gkrQy2Ldz7lKsp7aYgH5FtOAX5m3dxRZbwq3m9f8dIkuQJ2K/xD2z4l5x5vT0C2Jw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
 </head>
 <body>
+  
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
+  <div class="container d-flex align-items-center justify-content-between">
+    
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="../home.html">
+      <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
+      <span class="brand-text">GATE - <span class="text-role">Foundation</span></span>
+    </a>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold text-primary" href="#">GATE <span class="text-dark">- Foundation</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav align-items-center">
-          <li class="nav-item"><a class="nav-link active" href="#">🏠 Beranda</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">👤 Profil</a></li>
-          <li class="nav-item"><a class="nav-link" href="foundation-posting.html">📸 Posting</a></li>
-          <li class="nav-item"><a class="nav-link text-danger" href="#">🚪 Logout</a></li>
-        </ul>
-      </div>
+    <!-- Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link active-link" href="foundation.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active-link" href="foundation-posting.html">Post</a></li>
+        <li class="nav-item"><a class="nav-link active-link" href="foundation-feed.html">Feed</a></li>
+        <li class="nav-item"><a class="nav-link" href="foundation-gatepay.html">GatePay</a></li>
+      </ul>
     </div>
-  </nav>
 
+    <!-- Right Icons -->
+<div class="d-flex align-items-center gap-3">
+      <!-- Notifikasi -->
+      <a href="#" class="nav-icon">
+        <i class="fa-solid fa-bell"></i>
+      </a>
+      <!-- Profil -->
+      <a href="foundation-edit-profile.html" class="nav-profile">
+        <img src="../asset/profile.png" alt="Profile" class="profile-icon">
+      </a>
+    </div>
+  </div>
+</nav>
   <!-- Header -->
   <section class="header-section text-center text-white">
     <div class="container">
@@ -53,7 +81,7 @@
         <div class="col-md-6">
           <div class="card border-0 shadow-sm rounded-4 donation-card">
             <div class="card-body">
-              <h4 class="fw-bold">Beasiswa Coding</h4>
+              <h4 class="fw-bold">Saluran Dana Untuk Yayasan Kanker</h4>
               <p>Raised: <span class="text-success fw-bold">Rp25M</span> / Target: <strong>Rp100M</strong></p>
               <div class="progress mb-3" style="height: 8px;">
                 <div class="progress-bar bg-primary" role="progressbar" style="width: 25%;"></div>
@@ -67,7 +95,7 @@
 
     <!-- Aktivitas Terbaru -->
     <section class="mb-5">
-      <h1 class="fw-bold text-primary text-center mb-3">📰 Aktivitas Terbaru</h1>
+      <h1 class="fw-bold text-primary text-center mb-3">Aktivitas Terbaru</h1>
       <ul class="list-group shadow-sm">
         <li class="list-group-item d-flex justify-content-between align-items-center">
           <span>💰 Donasi Rp150K dari proyek</span>
@@ -90,7 +118,7 @@
 
   <!-- Footer -->
   <footer class="text-center py-4 text-muted small mt-5">
-    © 2025 GATE Foundation | Transparansi Sosial, Teknologi, dan Kepercayaan
+        &copy; 2025 GATE. All Rights Reserved.
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
