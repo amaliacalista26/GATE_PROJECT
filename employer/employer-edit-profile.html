@@ -3,34 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GATE - Edit Profil Usaha</title>
+  <title>GATE - Employer Edit Profile</title>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../globals.css">
+  <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="employer.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">>
+
+
+
 </head>
 
+
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold text-primary" href="#">GATE <span class="text-dark">- Employer</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav align-items-center">
-          <li class="nav-item"><a class="nav-link active" href="#">🏠 Beranda</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">👤 Profil</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">🔔 Notifikasi</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">💬 Chat</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">💰 GatePay</a></li>
-          <li class="nav-item"><a class="nav-link text-danger" href="#">🚪 Logout</a></li>
-        </ul>
-      </div>
+  
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
+  <div class="container d-flex align-items-center justify-content-between">
+    
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="../employer/employer.html">
+      <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
+      <span class="brand-text">GATE - <span class="text-role">Employer</span></span>
+    </a>
+
+    <!-- Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link active-link" href="employer.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active-link" href="freelancer-jobs.html">Post</a></li>
+        <li class="nav-item"><a class="nav-link" href="employer-gate-pay.html">GatePay</a></li>
+          
+      </ul>
     </div>
-  </nav>
+
+    <!-- Right Icons -->
+    <div class="d-flex align-items-center gap-3">
+      <!-- Notifikasi -->
+      <div class="position-relative">
+        <a href="employer-notifikasi.html" class="nav-icon text-dark">
+          <i class="bi bi-bell-fill fs-5"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            5
+          </span>
+        </a>
+      </div>
+      <!-- Profil -->
+      <a href="employer-edit-profile.html" class="nav-profile">
+        <img src="../asset/profile.png" alt="Profile" class="profile-icon">
+      </a>
+    </div>
+  </div>
+</nav>
 
   <main class="container mt-5 pt-5">
     <!-- Header -->
@@ -120,7 +151,9 @@
       <a href="#" class="btn btn-outline-primary rounded-pill px-4">Lihat Semua Review</a>
     </section>
   </main>
-
+  <footer class="text-center py-3 text-muted small" style="background-color: #f8f9fa;">
+    &copy; 2025 GATE. All Rights Reserved.
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
