@@ -257,6 +257,5 @@ textarea {
   .summary-right { text-align:left; }
 }
 
-/* subtle reveal */
-.fade-in { opacity:0; transform: translateY(10px); transition: all .45s ease; }
-.fade-in.visible { opacity:1; transform:none; }
+/* sementara untuk debugging: */
+.fade-in { opacity: 1 !important; transform: none !important; }

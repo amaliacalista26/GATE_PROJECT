@@ -16,59 +16,50 @@
 
   <!-- Global + page CSS -->
   <link rel="stylesheet" href="../global.css">
-  <link rel="stylesheet" href="freelancer.css">
+  <link rel="stylesheet" href="employer.css">
 </head>
 <body>
- <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
-  <div class="container d-flex align-items-center justify-content-between">
-    
-    <!-- Brand -->
-    <a class="navbar-brand d-flex align-items-center" href="freelancer.html">
-      <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
-      <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
-    </a>
+<!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="navbar-brand d-flex align-items-center" href="../employer/employer.html">
+        <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
+        <span class="brand-text">GATE - <span class="text-role">Employer</span></span>
+      </a>
 
-    <!-- Toggle Button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Menu -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav align-items-center">
-        <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="freelancer-jobs.html">Jobs</a></li>
-        <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="freelance-feed.html">Feed</a></li>
-      </ul>
-    </div>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active-link" href="employer.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active-link" href="freelancer-jobs.html">Post</a></li>
+          <li class="nav-item"><a class="nav-link" href="employer-gate-pay.html">GatePay</a></li>
+        </ul>
+      </div>
 
-    <!-- Right Icons -->
-<div class="d-flex align-items-center gap-3">
-      <!-- Notifikasi -->
-      <div class="position-relative">
-        <a href="freelance-notifikasi.html" class="nav-icon text-dark">
-          <i class="bi bi-bell-fill fs-5"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            5
-          </span>
+      <div class="d-flex align-items-center gap-3">
+        <div class="position-relative">
+          <a href="employer-notifikasi.html" class="nav-icon text-dark">
+            <i class="bi bi-bell-fill fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
+          </a>
+        </div>
+        <a href="employer-edit-profile.html" class="nav-profile">
+          <img src="../asset/profile.png" alt="Profile" class="profile-icon">
         </a>
       </div>
-      <!-- Profil -->
-      <a href="freelancer-edit-profile.html" class="nav-profile">
-        <img src="../asset/profile.png" alt="Profile" class="profile-icon">
-      </a>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- HEADER -->
   <header class="container page-hero">
     <div class="d-flex align-items-center justify-content-between summary-flex">
       <div>
-        <h2 class="mb-1" style="font-family:'Poppins',sans-serif;">Beri Review ke Employer</h2>
-        <p class="text-muted mb-0" style="font-family:'Josefin Sans',sans-serif;">Pilih employer dari daftar, beri rating, dan tulis komentar yang membantu.</p>
+        <h2 class="mb-1" style="font-family:'Poppins',sans-serif;">Beri Review ke Freelance</h2>
+        <p class="text-muted mb-0" style="font-family:'Josefin Sans',sans-serif;">Pilih freelance dari daftar, beri rating, dan tulis komentar yang membantu.</p>
       </div>
       <div class="summary-right">
         <a href="received_reviews.html" class="btn btn-outline-primary rounded-pill">Lihat Reviews yang Diterima</a>
@@ -82,22 +73,22 @@
       <!-- Employers list -->
       <aside class="col-lg-4 mb-3">
         <div class="card panel-card shadow-sm p-3">
-          <h6 class="mb-3">Employer Terhubung</h6>
+          <h6 class="mb-3">Freelance Terhubung</h6>
 
           <!-- Static list (dummy) -->
           <div class="list-group" id="employerList">
             <button class="list-group-item list-group-item-action employer-item" type="button" data-id="emp1">
-              <strong>PT Kreatif Digital</strong>
+              <strong>Amalia Calista</strong>
               <div class="meta-small">Project: Desain Logo</div>
             </button>
 
             <button class="list-group-item list-group-item-action employer-item" type="button" data-id="emp2">
-              <strong>PT Solusi Teknologi</strong>
+              <strong>Julius Marselinus</strong>
               <div class="meta-small">Project: E-commerce</div>
             </button>
 
             <button class="list-group-item list-group-item-action employer-item" type="button" data-id="emp3">
-              <strong>PT Mitra Cipta</strong>
+              <strong>Meriel Felicia</strong>
               <div class="meta-small">Project: Landing Page</div>
             </button>
           </div>
@@ -117,9 +108,9 @@
                   <label for="selEmployer">Pilih Employer</label>
                   <select id="selEmployer" class="form-control rounded-pill" required>
                     <option value="">-- Pilih employer --</option>
-                    <option value="emp1">PT Kreatif Digital — Desain Logo</option>
-                    <option value="emp2">PT Solusi Teknologi — E-commerce</option>
-                    <option value="emp3">PT Mitra Cipta — Landing Page</option>
+                    <option value="emp1">Amalia Calista — Desain Logo</option>
+                    <option value="emp2">Julius Marselinus — E-commerce</option>
+                    <option value="emp3">Meriel Felicia — Landing Page</option>
                   </select>
                 </div>
 
@@ -158,7 +149,7 @@
               <div class="card-body">
                 <div class="d-flex justify-content-between">
                   <div>
-                    <strong>PT Solusi Teknologi</strong>
+                    <strong>Amalia Calista</strong>
                     <div class="meta-small text-muted">03/06/2025</div>
                   </div>
                   <div>
@@ -178,7 +169,7 @@
               <div class="card-body">
                 <div class="d-flex justify-content-between">
                   <div>
-                    <strong>PT Kreatif Digital</strong>
+                    <strong>Julius Marselinus</strong>
                     <div class="meta-small text-muted">21/05/2025</div>
                   </div>
                   <div>
@@ -189,7 +180,7 @@
                     <i class="fa-solid fa-star" style="color:#f6c85f;"></i>
                   </div>
                 </div>
-                <div class="mt-2">Employer yang sangat supportive, briefing jelas dan cepat membayar.</div>
+                <div class="mt-2">Freelanc yang sangat supportive, briefing jelas dan cepat membayar.</div>
               </div>
             </div>
 

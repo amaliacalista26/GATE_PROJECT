@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GATE - Fondation</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- LOCAL Bootstrap 4.3.1 -->
+  <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+
+  <!-- Global + page CSS -->
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="fondation.css">
+
+  <!-- Optional icons (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top custom-navbar shadow-sm" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="../home.html">
+        <img src="../asset/gatelogo.png" alt="GATE logo" class="logo-gate">
+        <span class="brand-text ml-2">GATE — <span class="text-role">Fondation</span></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMain" aria-controls="navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="fondation.html">Home</a></li>
+          <li class="nav-item active"><a class="nav-link" href="fondation-posting.html">Post</a></li>
+          <li class="nav-item"><a class="nav-link" href="fondation-feed.html">Feed</a></li>
+          <li class="nav-item"><a class="nav-link" href="fondation-gatepay.html">GatePay</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center">
+          <a href="fondation-edit-profile.html" class="nav-profile">
+            <img src="../asset/profile.png" alt="Profile" class="profile-icon">
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="header-section text-white text-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Kelola Donasi dengan Transparansi & Dampak Nyata</h1>
+      <p class="lead mb-0">Pantau target, aktivitas, dan laporan donasi untuk setiap proyek sosial Anda.</p>
+    </div>
+  </header>
+
+  <!-- SUB-HEADER -->
+  <section class="sub-header py-4">
+    <div class="container text-center">
+      <h3 class="mb-1 text-primary">Jelajahi Proyek Sosial</h3>
+      <p class="text-muted mb-0">Rekomendasi & ringkasan performa tiap inisiatif. Update real-time dan bukti visual.</p>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="container my-5">
+    <div class="row">
+
+      <!-- LEFT: overview & targets -->
+      <div class="col-lg-5 mb-4">
+        <div class="card rounded-lg shadow-sm mb-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <h5 class="mb-1">Saluran Dana — Yayasan Kanker</h5>
+                <p class="small text-muted mb-0">Transparansi penuh dengan laporan berkala</p>
+              </div>
+              <div class="donation-circle" data-percent="25" aria-hidden="true">
+                <div class="donation-number"><span>25%</span></div>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <div class="d-flex justify-content-between">
+                <small class="text-muted">Raised</small>
+                <small class="font-weight-bold">Rp25.000.000</small>
+              </div>
+              <div class="d-flex justify-content-between">
+                <small class="text-muted">Target</small>
+                <small class="font-weight-bold">Rp100.000.000</small>
+              </div>
+
+              <div class="progress mt-2" style="height:10px;">
+                <div class="progress-bar bg-primary" role="progressbar" style="width:25%"></div>
+              </div>
+
+              <div class="mt-3 d-flex gap-2">
+                <button class="btn btn-primary rounded-pill flex-fill" data-toggle="modal" data-target="#postUpdateModal">
+                  <i class="fas fa-camera-retro mr-2"></i> Post Update
+                </button>
+                <button class="btn btn-outline-secondary rounded-pill" id="viewReportBtn">
+                  <i class="fas fa-file-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- quick stats -->
+        <div class="card rounded-lg shadow-sm mb-4">
+          <div class="card-body">
+            <h6 class="mb-3">Ringkasan</h6>
+            <div class="row text-center">
+              <div class="col-4">
+                <div class="stat-big">120</div>
+                <div class="text-muted small">Donatur</div>
+              </div>
+              <div class="col-4">
+                <div class="stat-big">45</div>
+                <div class="text-muted small">Proyek</div>
+              </div>
+              <div class="col-4">
+                <div class="stat-big">Rp1.2M</div>
+                <div class="text-muted small">Avg/month</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- recent activities -->
+        <div class="card rounded-lg shadow-sm">
+          <div class="card-body">
+            <h6 class="mb-3">Aktivitas Terbaru</h6>
+            <ul class="list-unstyled activity-list mb-0">
+              <li class="d-flex justify-content-between align-items-start py-2">
+                <div>
+                  <strong>Donasi Rp150.000</strong>
+                  <div class="small text-muted">Proyek: Paket Makanan — 10 menit lalu</div>
+                </div>
+                <span class="badge badge-light small">Baru</span>
+              </li>
+              <li class="d-flex justify-content-between align-items-start py-2">
+                <div>
+                  <strong>Target baru: Laptop Sekolah</strong>
+                  <div class="small text-muted">Ditambahkan 2 jam lalu</div>
+                </div>
+                <span class="badge badge-light small">Info</span>
+              </li>
+              <li class="d-flex justify-content-between align-items-start py-2">
+                <div>
+                  <strong>Laporan kegiatan: Desa Sukamaju</strong>
+                  <div class="small text-muted">1 hari lalu</div>
+                </div>
+                <span class="badge badge-light small">Upload</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: feed, media gallery, generate report -->
+      <div class="col-lg-7">
+        <!-- Media gallery -->
+        <div class="card rounded-lg shadow-sm mb-4">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h6 class="mb-0">Galeri Bukti Kegiatan</h6>
+              <small class="text-muted">Klik untuk buka</small>
+            </div>
+
+            <div class="row gallery">
+              <div class="col-sm-6 mb-3">
+                <a class="media-thumb" data-type="image" data-src="../asset/donasi.png" href="#" aria-label="Buka gambar 1">
+                  <img src="../asset/donasi.png" class="img-fluid rounded" alt="donasi">
+                </a>
+              </div>
+              <div class="col-sm-6 mb-3">
+                <a class="media-thumb" data-type="image" data-src="../asset/grafik.png" href="#" aria-label="Buka gambar 2">
+                  <img src="../asset/grafik.png" class="img-fluid rounded" alt="grafik">
+                </a>
+              </div>
+              <div class="col-12">
+                <a class="media-thumb video-thumb" data-type="video" data-src="../asset/video-kegiatan-donasi.mp4" href="#" aria-label="Putar video kegiatan">
+                  <div class="video-cover rounded d-flex align-items-center justify-content-center">
+                    <i class="fas fa-play fa-2x"></i>
+                    <span class="sr-only">Play video</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to action / generate report -->
+        <div class="card rounded-lg shadow-sm">
+          <div class="card-body text-center">
+            <h6 class="mb-2">Buat Laporan Lengkap</h6>
+            <p class="small text-muted mb-3">Export laporan ke PDF/Excel berisi ringkasan donasi & bukti visual.</p>
+            <div class="d-flex justify-content-center gap-2">
+              <button class="btn btn-outline-secondary rounded-pill" id="exportPdfBtn"><i class="fas fa-file-pdf mr-2"></i> Export PDF</button>
+              <button class="btn btn-primary rounded-pill" id="exportExcelBtn"><i class="fas fa-file-excel mr-2"></i> Export Excel</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- MEDIA MODAL (reused) -->
+  <div class="modal fade" id="mediaModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0">
+          <div id="mediaContainer" class="w-100"></div>
+        </div>
+        <button type="button" class="close position-absolute text-white" style="right:12px;top:12px;font-size:2rem;" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- POST UPDATE MODAL -->
+  <div class="modal fade" id="postUpdateModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content rounded-lg">
+        <div class="modal-header">
+          <h5 class="modal-title">Post Update Proyek</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <form id="postUpdateForm">
+            <div class="form-group">
+              <label>Judul</label>
+              <input class="form-control" name="title" placeholder="Contoh: Distribusi Paket Makanan">
+            </div>
+            <div class="form-group">
+              <label>Keterangan</label>
+              <textarea class="form-control" rows="3" name="desc" placeholder="Ringkasan kegiatan..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>Upload foto / video</label>
+              <input type="file" class="form-control-file" id="mediaInput" accept="image/*,video/*">
+              <small class="form-text text-muted">Preview akan muncul di bawah.</small>
+            </div>
+
+            <div id="mediaPreview" class="mt-3"></div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary rounded-pill" data-dismiss="modal">Batal</button>
+          <button class="btn btn-primary rounded-pill" id="submitPostBtn">Post</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-4 text-muted small mt-5">© 2025 GATE. All Rights Reserved.</footer>
+
+  <!-- SCRIPTS: local jQuery + Popper + Bootstrap 4.3.1 -->
+  <script src="../jquery.min.js"></script>
+  <script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
+  <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+  <!-- your global scripts -->
+  <script src="../scripts.js"></script>
+</body>
+</html>

@@ -18,8 +18,8 @@
   --ring: #6c757d;
   --role-freelancer: #567c8d; /* Cyan untuk pencari kerja */
   --role-employer: #2f4156; /* Dark Blue untuk pemberi kerja */
-  --role-foundation: #c8d9e6; /* Light Blue untuk yayasan */
-  --role-foundation-beige: #f5efeb; /* Beige untuk kombinasi yayasan */
+  --role-fondation: #c8d9e6; /* Light Blue untuk yayasan */
+  --role-fondation-beige: #f5efeb; /* Beige untuk kombinasi yayasan */
   --section-transparency: #c8d9e6;
   --navbar-blue: #2f4156; /* Warna biru untuk navbar */
 }
@@ -76,13 +76,13 @@ body {
   color: var(--foreground);
 }
 
-.btn-role-foundation {
-  background-color: var(--role-foundation);
+.btn-role-fondation {
+  background-color: var(--role-fondation);
   color: var(--foreground);
-  border: 1px solid var(--role-foundation-beige);
+  border: 1px solid var(--role-fondation-beige);
 }
 
-.btn-role-foundation:hover {
+.btn-role-fondation:hover {
   background-color: #b8c9d6;
   color: var(--foreground);
 }
@@ -149,7 +149,7 @@ body {
 
 /* Tambahan CSS untuk lebih cantik */
 .gradient-bg {
-  background: linear-gradient(135deg, var(--role-freelancer), var(--role-employer), var(--role-foundation)); /* Gradient multi-color */
+  background: linear-gradient(135deg, var(--role-freelancer), var(--role-employer), var(--role-fondation)); /* Gradient multi-color */
   color: var(--foreground); /* Hitam */
 }
 
