@@ -43,17 +43,14 @@
         </ul>
 
          <!-- Right Icons -->
-<div class="d-flex align-items-center gap-3">
-      <!-- Notifikasi -->
-      <div class="position-relative">
-        <!-- ubah href ke '#' dan tambahkan data-toggle/data-target -->
-        <a href="#" class="nav-icon text-dark" data-toggle="modal" data-target="#notifModal" aria-label="Notifikasi">
-          <i class="bi bi-bell-fill fs-5"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            5
-          </span>
-        </a>
-      </div>
+<!-- Right icons + Edit/Keluar -->
+      <div class="d-flex align-items-center gap-3">
+        <div class="position-relative">
+          <a href="#" class="nav-icon text-dark" data-toggle="modal" data-target="#notifModal" aria-label="Notifikasi">
+            <i class="bi bi-bell-fill fs-5"></i>
+            <span id="notifBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+          </a>
+        </div>
       
         <div class="d-flex align-items-center">
           <a href="fondation-edit-profile.html" class="nav-profile">
@@ -273,16 +270,53 @@
       </div>
     </div>
   </div>
+ <!-- MODAL MASTER: Daftar Notifikasi -->
+  <div class="modal fade" id="notifModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header bg-primary text-white rounded-top-4">
+          <h5 class="modal-title">Notifikasi</h5>
+          <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="list-group list-group-flush" id="notifList">
+            <a href="#" class="list-group-item list-group-item-action">Permintaan Donasi Baru</a>
+            <a href="#" class="list-group-item list-group-item-action">Pesan dari Relawan</a>
+            <a href="#" class="list-group-item list-group-item-action">Laporan keuangan tersedia</a>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <small class="text-muted">Terakhir diperbarui • beberapa menit lalu</small>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="text-center py-4 text-muted small mt-5">© 2025 GATE. All Rights Reserved.</footer>
 
-  <!-- SCRIPTS: local jQuery + Popper + Bootstrap 4.3.1 -->
-  <script src="../jquery.min.js"></script>
-  <script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
+  <!-- SCRIPTS: jQuery + Popper + Bootstrap (lokal) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
-  <!-- your global scripts -->
-  <script src="../scripts.js"></script>
+  <script>
+    (function($){
+      $(function(){
+        // notifikasi modal
+        $('.nav-icon[aria-label="Notifikasi"]').on('click', function(e){
+          e.preventDefault();
+          $('#notifModal').modal('show');
+        });
+
+        // perbarui badge berdasarkan jumlah item (simple)
+        var count = $('#notifList .list-group-item').length;
+        $('#notifBadge').text(count > 0 ? count : '');
+      });
+    })(jQuery);
+  </script>
+
 </body>
 </html>

@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GATE - Employer</title>
 
-  <!-- Bootstrap lokal 4.3.1 -->
+  <!-- Bootstrap lokal CSS (tetap dipakai) -->
   <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <!-- Global + page CSS -->
@@ -17,40 +17,13 @@
   <link rel="stylesheet" href="employer.css">
 
   <style>
-    /* ===== styling untuk ribbon dropdowns & form (rapi) ===== */
-    .ribbon-dropdown .ribbon-toggle {
-      border-radius: 10px;
-      padding: 10px 12px;
-      font-weight: 600;
-    }
-    .ribbon-dropdown .card {
-      border-radius: 8px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    }
-    .ribbon-dropdown .option-btn {
-      min-width: 92px;
-      border-radius: 8px;
-      margin: 4px 8px 4px 0;
-      white-space: nowrap;
-    }
-    .ribbon-label {
-      font-size: .95rem;
-      color: #6c757d;
-      display:block;
-      margin-bottom:6px;
-    }
-    .rotate { transform: rotate(180deg); transition: transform .25s ease; }
-    .img-preview {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid #e6e6e6;
-    }
-    .muted-sm { font-size: .9rem; color: #6c757d; }
-    @media (max-width: 575.98px) {
-      .ribbon-dropdown .option-btn { min-width: 72px; }
-    }
+    /* styling ringkas agar tampilan rapi saat testing */
+    body { font-family: "Josefin Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial; background:#f6f7f8; }
+    .custom-navbar { background:#fff; border-bottom:1px solid rgba(0,0,0,0.06); }
+    .logo-gate { width:38px; height:38px; margin-right:8px; }
+    .emp-notif-wrap { position: relative; margin-left:8px; }
+    .img-preview { width:80px; height:80px; object-fit:cover; border-radius:8px; border:1px solid #e6e6e6; }
+    .chat-floating-btn { position: fixed; right: 20px; bottom: 20px; background:#1673ff; color:#fff; padding:12px 14px; border-radius:999px; text-decoration:none; }
   </style>
 </head>
 <body>
@@ -71,19 +44,23 @@
         <ul class="navbar-nav align-items-center">
           <li class="nav-item"><a class="nav-link active-link" href="employer.html">Home</a></li>
           <li class="nav-item"><a class="nav-link active-link" href="employer-post.html">Post</a></li>
-          <li class="nav-item"><a class="nav-link" href="employer-gate-pay.html">GatePay</a></li>
+          <li class="nav-item"><a class="nav-link active-link" href="employer-gate-pay.html">GatePay</a></li>
         </ul>
       </div>
 
-      <div class="d-flex align-items-center gap-3">
-        <div class="position-relative">
-          <a href="employer-notifikasi.html" class="nav-icon text-dark">
+      <!-- right icons: bungkus di elemen yang berada di container (setelah collapse) -->
+      <div class="d-flex align-items-center">
+        <!-- gunakan data-toggle/data-target supaya Bootstrap membuka modal tanpa JS ekstra -->
+        <div class="emp-notif-wrap">
+          <a href="#" class="emp-nav-icon text-dark" aria-label="Notifikasi"
+             data-toggle="modal" data-target="#empNotifModal">
             <i class="bi bi-bell-fill fs-5"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
+            <span id="empNotifBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
           </a>
         </div>
-        <a href="employer-profile.html" class="nav-profile">
-          <img src="../asset/profile.png" alt="Profile" class="profile-icon">
+
+        <a href="employer-profile.html" class="nav-profile ml-3">
+          <img src="../asset/profile.png" alt="Profile" class="profile-icon" style="width:36px;height:36px;border-radius:50%;">
         </a>
       </div>
     </div>
@@ -96,12 +73,11 @@
       <p class="text-muted">Isi form di bawah untuk membuat lowongan: pilih bidang, lokasi, rentang gaji, judul, logo, dan deskripsi singkat.</p>
     </header>
 
-    <!-- Post Lowongan Card -->
+    <!-- Post Lowongan Card (sama seperti milikmu) -->
     <div class="card mb-4">
       <div class="card-header bg-transparent fw-bold text-primary">Post Lowongan Baru</div>
       <div class="card-body">
         <form id="jobForm" class="row g-3">
-          <!-- Judul & Foto -->
           <div class="col-12 col-md-8">
             <label class="form-label">Judul Lowongan</label>
             <input id="jobTitle" type="text" class="form-control" placeholder="Contoh: UI/UX Designer (Remote, Contract)">
@@ -114,222 +90,218 @@
               <input id="logoInput" type="file" accept="image/*" class="form-control-file">
             </div>
             <div class="muted-sm mt-2">Maks 2MB. PNG/JPG.</div>
-            <BR></BR>
           </div>
 
-          <!-- ROLE RIBBON (rapi, tanpa "Lainnya") -->
+          <!-- contoh ribbon singkat (dipangkas) -->
           <div class="col-12 col-md-4">
             <label class="ribbon-label">Bidang / Role</label>
-            <div class="ribbon-dropdown">
-              <button id="roleToggle" class="btn btn-outline-primary btn-block text-start ribbon-toggle d-flex align-items-center justify-content-between"
-                      type="button" data-toggle="collapse" data-target="#collapseRole" aria-expanded="false" aria-controls="collapseRole">
-                <span id="roleSelected">Pilih Bidang — Informatics / IT</span>
-                <i id="roleChevron" class="bi bi-chevron-down ml-2"></i>
-              </button>
-
-              <div class="collapse mt-2" id="collapseRole">
-                <div class="card card-body p-2">
-                  <div class="d-flex flex-wrap">
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="Art & Design">Art & Design</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="Informatics / IT">Informatics / IT</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="Product">Product</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="Marketing">Marketing</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="Data Science">Data Science</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="DevOps">DevOps</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <input type="hidden" id="roleValue" name="roleValue" value="Informatics / IT">
+            <select id="roleValue" class="form-control">
+              <option>Informatics / IT</option>
+              <option>Art & Design</option>
+              <option>Product</option>
+              <option>Marketing</option>
+            </select>
           </div>
 
-          <!-- LOKASI RIBBON (rapi, tanpa "Lainnya") -->
           <div class="col-12 col-md-4">
             <label class="ribbon-label">Lokasi</label>
-            <div class="ribbon-dropdown">
-              <button id="lokasiToggle" class="btn btn-outline-secondary btn-block text-start ribbon-toggle d-flex align-items-center justify-content-between"
-                      type="button" data-toggle="collapse" data-target="#collapseLokasi" aria-expanded="false" aria-controls="collapseLokasi">
-                <span id="lokasiSelected">Pilih Lokasi — Jakarta</span>
-                <i id="lokasiChevron" class="bi bi-chevron-down ml-2"></i>
-              </button>
-
-              <div class="collapse mt-2" id="collapseLokasi">
-                <div class="card card-body p-2">
-                  <div class="d-flex flex-wrap">
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="Jakarta">Jakarta</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="Bandung">Bandung</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="Surabaya">Surabaya</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="Yogyakarta">Yogyakarta</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="Remote">Remote</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <input type="hidden" id="lokasiValue" name="lokasiValue" value="Jakarta">
+            <select id="lokasiValue" class="form-control">
+              <option>Jakarta</option>
+              <option>Bandung</option>
+              <option>Remote</option>
+            </select>
           </div>
 
-          <!-- GAJI RIBBON (rapi, tanpa "Lainnya") -->
           <div class="col-12 col-md-4">
             <label class="ribbon-label">Rentang Gaji</label>
-            <div class="ribbon-dropdown">
-              <button id="gajiToggle" class="btn btn-outline-success btn-block text-start ribbon-toggle d-flex align-items-center justify-content-between"
-                      type="button" data-toggle="collapse" data-target="#collapseGaji" aria-expanded="false" aria-controls="collapseGaji">
-                <span id="gajiSelected">Pilih Gaji — Rp5–10jt</span>
-                <i id="gajiChevron" class="bi bi-chevron-down ml-2"></i>
-              </button>
-
-              <div class="collapse mt-2" id="collapseGaji">
-                <div class="card card-body p-2">
-                  <div class="d-flex flex-wrap">
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="<5jt">&lt; Rp5jt</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="5-10jt">Rp5–10jt</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="10-20jt">Rp10–20jt</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value=">20jt">&gt; Rp20jt</button>
-                    <button type="button" class="btn btn-sm btn-light option-btn" data-value="Negosiasi">Negosiasi</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <input type="hidden" id="gajiValue" name="gajiValue" value="5-10jt">
+            <select id="gajiValue" class="form-control">
+              <option>Rp5–10jt</option>
+              <option>&lt; Rp5jt</option>
+              <option>Rp10–20jt</option>
+            </select>
           </div>
 
-          <!-- Deskripsi singkat -->
           <div class="col-12">
-            <br>
             <label class="form-label">Deskripsi Singkat</label>
-            <textarea id="shortDesc" class="form-control" rows="3" placeholder="Ringkasan tugas utama, durasi (jika contract), dan benefit singkat."></textarea>
+            <textarea id="shortDesc" class="form-control" rows="3"></textarea>
           </div>
 
-          <!-- Persyaratan singkat -->
           <div class="col-12">
-            <br>
             <label class="form-label">Persyaratan (pisah koma)</label>
             <input id="requirements" type="text" class="form-control" placeholder="Contoh: 3+ tahun pengalaman, Figma, HTML/CSS">
-            <div class="muted-sm mt-1">Masukkan beberapa kata kunci/requirements yang muncul pada tampilan lowongan.</div>
           </div>
 
-          <!-- Submit -->
           <div class="col-12">
-            <br>
             <button id="postBtn" type="submit" class="btn btn-primary btn-block rounded-pill">Post Sekarang</button>
           </div>
         </form>
       </div>
     </div>
+
+    <a href="employer-chat.html" class="chat-floating-btn" aria-label="Chat">💬 Chat</a>
   </main>
 
-  <footer class="text-center py-3 text-muted small" style="background-color: #f8f9fa;">
-    &copy; 2025 GATE. All Rights Reserved.
-  </footer>
+  <!-- MASTER MODAL: Daftar Notifikasi (Employer) -->
+  <div class="modal fade" id="empNotifModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header bg-primary text-white rounded-top-4">
+          <h5 class="modal-title">Notifikasi (Employer)</h5>
+          <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="list-group list-group-flush" id="empNotifList">
+            <a href="#" class="list-group-item list-group-item-action" data-target="#empNotifDetail1">Pelamar baru untuk lowongan UI Designer</a>
+            <a href="#" class="list-group-item list-group-item-action" data-target="#empNotifDetail2">Proposal diterima dari Freelancer A</a>
+            <a href="#" class="list-group-item list-group-item-action" data-target="#empNotifDetail3">Pembayaran berhasil diproses</a>
+            <a href="#" class="list-group-item list-group-item-action" data-target="#empNotifDetail4">Perjanjian/kontrak ditandatangani</a>
+            <a href="#" class="list-group-item list-group-item-action" data-target="#empNotifDetail5">Freelancer meminta konfirmasi review</a>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <small class="text-muted">Terakhir diperbarui • beberapa menit lalu</small>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- SCRIPTS: local jQuery + Popper + Bootstrap 4.3.1 -->
-  <script src="../jquery.min.js"></script>
+  <!-- DETAIL MODALS (Employer) -->
+  <div class="modal fade" id="empNotifDetail1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 shadow">
+        <div class="modal-header bg-primary text-white rounded-top-4">
+          <h5 class="modal-title">Pelamar Baru — UI Designer</h5>
+          <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
+        </div>
+        <div class="modal-body px-4 py-3">
+          <p>Ada <b>3 pelamar</b> baru untuk lowongan <i>UI Designer</i>. Periksa profil dan portofolio mereka, lalu pilih yang ingin diundang interview.</p>
+          <ul>
+            <li>Pelamar A — Portofolio: 12 project</li>
+            <li>Pelamar B — Spesialis UI/UX mobile</li>
+            <li>Pelamar C — Pengalaman NGO & yayasan</li>
+          </ul>
+        </div>
+        <div class="modal-footer border-0">
+          <a href="employer-applicants.html" class="btn btn-primary rounded-pill px-4">Lihat Pelamar</a>
+          <button class="btn btn-outline-primary rounded-pill px-4 back-to-emp-list">Kembali</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="empNotifDetail2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 shadow">
+        <div class="modal-header bg-primary text-white rounded-top-4">
+          <h5 class="modal-title">Proposal Diterima</h5>
+          <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
+        </div>
+        <div class="modal-body px-4 py-3">
+          <p>Freelancer <b>A</b> mengirim proposal dan penawaran harga. Ringkasan:</p>
+          <p><b>Harga:</b> Rp 1.200.000 • <b>Estimasi:</b> 10 hari kerja • <b>Term:</b> 2 revisi</p>
+          <p>Silakan tinjau dan terima atau tanggapi proposal.</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button class="btn btn-primary rounded-pill px-4">Terima Proposal</button>
+          <button class="btn btn-outline-primary rounded-pill px-4 back-to-emp-list">Kembali</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="empNotifDetail3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 shadow">
+        <div class="modal-header bg-primary text-white rounded-top-4">
+          <h5 class="modal-title">Pembayaran Berhasil</h5>
+          <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
+        </div>
+        <div class="modal-body px-4 py-3">
+          <p>Pembayaran untuk proyek <b>UI/UX Dashboard</b> sejumlah <b>Rp 2.500.000</b> telah berhasil diproses. Bukti transaksi tersedia di GatePay.</p>
+        </div>
+        <div class="modal-footer border-0">
+          <a href="employer-gate-pay.html" class="btn btn-primary rounded-pill px-4">Lihat Bukti</a>
+          <button class="btn btn-outline-primary rounded-pill px-4 back-to-emp-list">Kembali</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="empNotifDetail4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 shadow">
+        <div class="modal-header bg-primary text-white rounded-top-4">
+          <h5 class="modal-title">Kontrak Ditandatangani</h5>
+          <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
+        </div>
+        <div class="modal-body px-4 py-3">
+          <p>Freelancer dan pihak perusahaan telah menandatangani kontrak digital. Periksa detail dan milestone di halaman proyek.</p>
+        </div>
+        <div class="modal-footer border-0">
+          <a href="employer-project-detail.html" class="btn btn-primary rounded-pill px-4">Buka Proyek</a>
+          <button class="btn btn-outline-primary rounded-pill px-4 back-to-emp-list">Kembali</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="empNotifDetail5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 shadow">
+        <div class="modal-header bg-primary text-white rounded-top-4">
+          <h5 class="modal-title">Permintaan Review</h5>
+          <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
+        </div>
+        <div class="modal-body px-4 py-3">
+          <p>Freelancer meminta Anda memberikan <b>review</b> untuk proyek <i>Landing Page Campaign</i>. Berikan rating dan komentar singkat untuk membantu reputasi freelancer.</p>
+        </div>
+        <div class="modal-footer border-0">
+          <a href="employer-reviews.html" class="btn btn-primary rounded-pill px-4">Tulis Review</a>
+          <button class="btn btn-outline-primary rounded-pill px-4 back-to-emp-list">Kembali</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center py-3 text-muted small" style="background-color:#f8f9fa;">&copy; 2025 GATE. All Rights Reserved.</footer>
+
+  <!-- SCRIPTS: pastikan urutan ini (jQuery non-slim, Popper, Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
   <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
-  <!-- your global scripts -->
+  <!-- optional global scripts (pastikan tidak me-reset handler) -->
   <script src="../scripts.js"></script>
 
-  <!-- Inline JS: handle ribbon interactions, preview, submit (uses jQuery & BS4) -->
   <script>
-    (function ($) {
-      $(document).ready(function () {
-        // ROLE
-        var $collapseRole = $('#collapseRole');
-        var $roleSelected = $('#roleSelected');
-        var $roleValue = $('#roleValue');
-        var $roleChevron = $('#roleChevron');
-
-        $collapseRole.on('show.bs.collapse', function () { $roleChevron.addClass('rotate'); });
-        $collapseRole.on('hide.bs.collapse', function () { $roleChevron.removeClass('rotate'); });
-
-        $('#collapseRole .option-btn').on('click', function () {
-          var v = $(this).data('value');
-          $roleSelected.text('Pilih Bidang — ' + v);
-          $roleValue.val(v);
-          $collapseRole.collapse('hide');
-        });
-
-        // LOKASI
-        var $collapseLokasi = $('#collapseLokasi');
-        var $lokasiSelected = $('#lokasiSelected');
-        var $lokasiValue = $('#lokasiValue');
-        var $lokasiChevron = $('#lokasiChevron');
-
-        $collapseLokasi.on('show.bs.collapse', function () { $lokasiChevron.addClass('rotate'); });
-        $collapseLokasi.on('hide.bs.collapse', function () { $lokasiChevron.removeClass('rotate'); });
-
-        $('#collapseLokasi .option-btn').on('click', function () {
-          var v = $(this).data('value');
-          $lokasiSelected.text('Pilih Lokasi — ' + v);
-          $lokasiValue.val(v);
-          $collapseLokasi.collapse('hide');
-        });
-
-        // GAJI
-        var $collapseGaji = $('#collapseGaji');
-        var $gajiSelected = $('#gajiSelected');
-        var $gajiValue = $('#gajiValue');
-        var $gajiChevron = $('#gajiChevron');
-
-        $collapseGaji.on('show.bs.collapse', function () { $gajiChevron.addClass('rotate'); });
-        $collapseGaji.on('hide.bs.collapse', function () { $gajiChevron.removeClass('rotate'); });
-
-        $('#collapseGaji .option-btn').on('click', function () {
-          var v = $(this).data('value');
-          var label = $(this).text().trim();
-          $gajiSelected.text('Pilih Gaji — ' + label);
-          $gajiValue.val(v);
-          $collapseGaji.collapse('hide');
-        });
-
-        // Image preview (logo)
-        $('#logoInput').on('change', function (e) {
-          var file = e.target.files[0];
-          if (!file) return;
-          if (!file.type.startsWith('image/')) { alert('Pilih file gambar.'); $('#logoInput').val(''); return; }
-          var reader = new FileReader();
-          reader.onload = function (ev) { $('#logoPreview').attr('src', ev.target.result); }
-          reader.readAsDataURL(file);
-        });
-
-        // Close any open collapse when clicking outside
-        $(document).on('click', function (e) {
-          var $roots = $('.ribbon-dropdown');
-          var inside = false;
-          $roots.each(function () { if ($(this).has(e.target).length || $(this)[0] === e.target) inside = true; });
-          if (!inside) {
-            $collapseRole.collapse('hide');
-            $collapseLokasi.collapse('hide');
-            $collapseGaji.collapse('hide');
-          }
-        });
-
-        // Submit (demo)
-        $('#jobForm').on('submit', function (e) {
+    // chaining modal detail: dijalankan setelah jQuery & Bootstrap dimuat
+    (function($){
+      $(function(){
+        // klik item di master modal -> buka detail setelah master tertutup
+        $('#empNotifModal').on('click', '.list-group-item', function(e){
           e.preventDefault();
-          var payload = {
-            title: $('#jobTitle').val().trim(),
-            role: $roleValue.val(),
-            lokasi: $lokasiValue.val(),
-            gaji: $gajiValue.val(),
-            description: $('#shortDesc').val().trim(),
-            requirements: $('#requirements').val().trim(),
-            logo: $('#logoInput')[0].files[0] ? $('#logoInput')[0].files[0].name : null,
-            createdAt: new Date().toISOString()
-          };
-
-          if (!payload.title) { alert('Mohon isi judul lowongan.'); $('#jobTitle').focus(); return; }
-          if (!payload.description) { alert('Mohon isi deskripsi singkat.'); $('#shortDesc').focus(); return; }
-
-          console.log('Payload lowongan:', payload);
-          alert('Lowongan berhasil dibuat (lihat console untuk payload demo).');
-          // TODO: kirim payload via AJAX / FormData ke backend
+          var target = $(this).data('target');
+          if(!target) return $('#empNotifModal').modal('hide');
+          $('#empNotifModal').modal('hide');
+          $('#empNotifModal').one('hidden.bs.modal', function(){
+            $(target).modal('show');
+          });
         });
 
+        // tombol kembali di detail -> tutup detail & buka master lagi
+        $('.back-to-emp-list').on('click', function(e){
+          e.preventDefault();
+          $('.modal').modal('hide');
+          $('.modal').one('hidden.bs.modal', function(){
+            $('#empNotifModal').modal('show');
+          });
+        });
+
+        // update badge count
+        var count = $('#empNotifList .list-group-item').length;
+        $('#empNotifBadge').text(count > 0 ? count : '');
       });
     })(jQuery);
   </script>
