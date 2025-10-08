@@ -15,8 +15,11 @@
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="fondation.css">
 
-  <!-- Optional icons (CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Icons (Bootstrap Icons CDN; optional) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Optional Font Awesome for some older icon classes (if you used 'fas' in markup) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <!-- NAVBAR -->
@@ -39,6 +42,19 @@
           <li class="nav-item"><a class="nav-link" href="fondation-gatepay.html">GatePay</a></li>
         </ul>
 
+         <!-- Right Icons -->
+<div class="d-flex align-items-center gap-3">
+      <!-- Notifikasi -->
+      <div class="position-relative">
+        <!-- ubah href ke '#' dan tambahkan data-toggle/data-target -->
+        <a href="#" class="nav-icon text-dark" data-toggle="modal" data-target="#notifModal" aria-label="Notifikasi">
+          <i class="bi bi-bell-fill fs-5"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            5
+          </span>
+        </a>
+      </div>
+      
         <div class="d-flex align-items-center">
           <a href="fondation-edit-profile.html" class="nav-profile">
             <img src="../asset/profile.png" alt="Profile" class="profile-icon">
