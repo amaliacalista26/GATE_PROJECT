@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GATE - Employer Posts</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- LOCAL Bootstrap 4.3.1 -->
+  <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+
+  <!-- Optional icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Page styles (inline agar mudah copy/paste) -->
+  <style>
+    :root {
+      --bg: #f6f7f8;
+      --card-bg: #fff;
+      --muted: #6c7a86;
+      --accent: #0b6a66;
+    }
+    body {
+      font-family: "Josefin Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: #222;
+    }
+    .custom-navbar {
+      background: #ffffff;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      height: 68px;
+    }
+    .logo-gate { width: 38px; height: 38px; margin-right: 8px; }
+    .brand-text { font-weight: 600; color: #173349; }
+    .text-role { color: #2f7a79; font-weight: 600; }
+
+    main.container { max-width: 1200px; }
+
+    h1.page-title {
+      font-size: 32px;
+      font-weight:700;
+      margin-bottom:4px;
+    }
+    p.page-sub { color:var(--muted); margin-bottom:18px; }
+
+    /* Tab filters */
+    .posts-filter .nav-link { font-weight:600; color:#173349; border-radius: 999px; }
+    .posts-filter .nav-link.active { background: #173349; color: #fff; }
+
+    /* Card */
+    .job-card {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 6px 18px rgba(27,31,35,0.04);
+      margin-bottom: 20px;
+    }
+    .job-left { flex: 1 1 auto; padding-right: 24px; }
+    .job-title { font-size:20px; font-weight:700; margin-bottom:6px; }
+    .job-desc { color: var(--muted); margin-bottom:10px; }
+    .job-meta { color: var(--muted); font-size:13px; }
+
+    .job-right {
+      width: 220px;
+      text-align:right;
+      flex: 0 0 220px;
+    }
+    .job-price { font-weight:700; font-size:20px; color:#0b2b3a; }
+    .job-subtext { color: var(--muted); font-size:13px; margin-bottom:10px; }
+    .status-badge {
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:13px;
+      background:#eaf8f4;
+      color:#0b6a66;
+    }
+    .status-ongoing { background:#fff4e6; color:#b45a00; }
+    .status-draft { background:#eef0f2; color:#57606a; }
+    .status-completed { background:#eaf8f4; color:#0b6a66; }
+
+    .search-row { margin-bottom:18px; }
+
+    /* responsive */
+    @media (max-width: 767px) {
+      .job-card { flex-direction:column; align-items:stretch; }
+      .job-right { width:100%; text-align:left; margin-top:12px; }
+    }
+
+    /* floating chat (visual) */
+    .chat-fab {
+      position: fixed;
+      right: 26px;
+      bottom: 26px;
+      background: #1673ff;
+      color: white;
+      border-radius: 999px;
+      padding: 12px 16px;
+      box-shadow: 0 8px 20px rgba(22,115,255,0.18);
+      font-weight:700;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
+    <div class="container d-flex align-items-center justify-content-between">
+      <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="../employer/employer.html">
+        <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
+        <span class="brand-text">GATE - <span class="text-role">Employer</span></span>
+      </a>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active-link" href="employer.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="employer-post.html">Post</a></li>
+          <li class="nav-item"><a class="nav-link" href="employer-gate-pay.html">GatePay</a></li>
+        </ul>
+      </div>
+
+      <!-- Right -->
+      <div class="d-flex align-items-center gap-3">
+        <div class="position-relative">
+          <a href="#" class="nav-icon text-dark" aria-label="Notifikasi">
+            <i class="bi bi-bell-fill fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
+          </a>
+        </div>  
+        <a href="employer-edit-profile.html" class="nav-profile d-none d-lg-block ml-2">
+          <img src="../asset/profile.png" alt="Profile" class="profile-icon" style="width:36px; height:36px; border-radius:50%;">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="container mt-5 pt-5 pb-5">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="page-title">History Pekerjaan</h1>
+        <p class="page-sub">Menampilkan pekerjaan yang telah diposting dan statusnya — ongoing, completed, draft, dll.</p>
+      </div>
+    </div>
+
+    <!-- filter + search -->
+    <div class="row mb-3 align-items-center">
+      <div class="col-md-7">
+        <ul class="nav posts-filter">
+          <li class="nav-item"><a class="nav-link active" data-filter="all" href="#">Semua</a></li>
+          <li class="nav-item"><a class="nav-link" data-filter="ongoing" href="#">Ongoing</a></li>
+          <li class="nav-item"><a class="nav-link" data-filter="completed" href="#">Completed</a></li>
+          <li class="nav-item"><a class="nav-link" data-filter="draft" href="#">Drafts</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-5">
+        <div class="input-group search-row">
+          <input id="searchInput" type="text" class="form-control rounded-pill" placeholder="Cari judul job, klien, atau tag...">
+          <div class="input-group-append">
+            <button id="searchBtn" class="btn btn-outline-primary rounded-pill ml-2">Cari</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- posts list -->
+    <div id="postsList">
+      <!-- item 1 -->
+      <div class="job-card" data-status="completed">
+        <div class="job-left">
+          <div class="job-title">Desain Logo - Yayasan Harapan Bangsa</div>
+          <div class="job-desc">Membuat 3 konsep logo profesional & panduan penggunaan warna. Revisi 2 kali termasuk penyusunan file master.</div>
+          <div class="job-meta">Tanggal dipublikasikan: 12/09/2025 • Freelancer: 1 • Tipe: Fixed Price</div>
+        </div>
+        <div class="job-right">
+          <div class="job-price">Rp 900.000</div>
+          <div class="job-subtext">Total Dibayarkan</div>
+          <div style="margin-top:10px;">
+            <span class="status-badge status-completed">Done</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- item 2 -->
+      <div class="job-card" data-status="completed">
+        <div class="job-left">
+          <div class="job-title">UI/UX Website Donasi Online</div>
+          <div class="job-desc">Desain interface & prototipe untuk website crowdfunding donasi. Termasuk handoff ke developer.</div>
+          <div class="job-meta">Tanggal dipublikasikan: 15/09/2025 • Freelancer: 2 • Tipe: Fixed Price</div>
+        </div>
+        <div class="job-right">
+          <div class="job-price">Rp 1.350.000</div>
+          <div class="job-subtext">Total Dibayarkan</div>
+          <div style="margin-top:10px;">
+            <span class="status-badge status-completed">Done</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- item 3 (ongoing) -->
+      <div class="job-card" data-status="ongoing">
+        <div class="job-left">
+          <div class="job-title">Social Media Campaign - Bulan Amal</div>
+          <div class="job-desc">Desain konten Instagram 15 post & 5 story animasi. Monitoring engagement selama 2 minggu.</div>
+          <div class="job-meta">Tanggal dipublikasikan: 19/09/2025 • Freelancer: 1 • Tipe: Contract</div>
+        </div>
+        <div class="job-right">
+          <div class="job-price">Rp 700.000</div>
+          <div class="job-subtext">Total Dibayarkan (sementara)</div>
+          <div style="margin-top:10px;">
+            <span class="status-badge status-ongoing">Ongoing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- item 4 (draft) -->
+      <div class="job-card" data-status="draft">
+        <div class="job-left">
+          <div class="job-title">Redesign Landing Page (Draft)</div>
+          <div class="job-desc">Draft: brief awal untuk redesign landing page produk donasi. Masih menunggu approval internal.</div>
+          <div class="job-meta">Terakhir diubah: 01/10/2025 • Tipe: Fixed Price</div>
+        </div>
+        <div class="job-right">
+          <div class="job-price">Rp 0</div>
+          <div class="job-subtext">Draft</div>
+          <div style="margin-top:10px;">
+            <span class="status-badge status-draft">Draft</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- more placeholder items (copy/paste jika perlu) -->
+    </div>
+
+    <!-- pagination (simple) -->
+    <div class="row mt-4">
+      <div class="col-12 d-flex justify-content-center">
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="text-center py-4 text-muted small mt-5">© 2025 GATE. All Rights Reserved.</footer>
+
+  <!-- SCRIPTS: jQuery + Popper + Bootstrap (lokal) -->
+  <script src="../jquery.min.js"></script>
+  <script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
+  <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+  <!-- Simple JS: filter & search (client-side) -->
+  <script>
+    (function(){
+      // filter tabs
+      document.querySelectorAll('.posts-filter .nav-link').forEach(function(tab){
+        tab.addEventListener('click', function(e){
+          e.preventDefault();
+          document.querySelectorAll('.posts-filter .nav-link').forEach(n=>n.classList.remove('active'));
+          tab.classList.add('active');
+
+          var f = tab.getAttribute('data-filter');
+          filterPosts(f);
+        });
+      });
+
+      // search
+      document.getElementById('searchBtn').addEventListener('click', function(){
+        var q = document.getElementById('searchInput').value.trim().toLowerCase();
+        searchPosts(q);
+      });
+      document.getElementById('searchInput').addEventListener('keyup', function(e){
+        if(e.key === 'Enter') document.getElementById('searchBtn').click();
+      });
+
+      function filterPosts(filter) {
+        var items = document.querySelectorAll('#postsList .job-card');
+        items.forEach(function(it){
+          var status = it.getAttribute('data-status');
+          if(filter === 'all' || !filter) {
+            it.style.display = '';
+          } else {
+            it.style.display = (status === filter) ? '' : 'none';
+          }
+        });
+      }
+
+      function searchPosts(query) {
+        var items = document.querySelectorAll('#postsList .job-card');
+        if(!query) { items.forEach(i=>i.style.display=''); return; }
+        items.forEach(function(it){
+          var title = it.querySelector('.job-title').innerText.toLowerCase();
+          var desc = it.querySelector('.job-desc').innerText.toLowerCase();
+          var meta = it.querySelector('.job-meta').innerText.toLowerCase();
+          var show = title.includes(query) || desc.includes(query) || meta.includes(query);
+          it.style.display = show ? '' : 'none';
+        });
+      }
+
+      // initial: show all
+      filterPosts('all');
+    })();
+  </script>
+</body>
+</html>
+
