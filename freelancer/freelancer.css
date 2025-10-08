@@ -259,3 +259,38 @@ textarea {
 
 /* sementara untuk debugging: */
 .fade-in { opacity: 1 !important; transform: none !important; }
+
+
+/* ======= FIX: spacing for fixed-top navbar =======
+   Sesuaikan angka 70px jika navbar-mu lebih tinggi/lebih rendah.
+   Menambahkan padding-top ke body supaya isi tidak tertutup/terlalu jauh. */
+body {
+  padding-top: 70px; /* <-- sesuaikan jika navbar tinggi/pendek (mis. 60px / 80px) */
+}
+
+/* Jika header/page-hero masih punya margin besar, kecilkan sedikit */
+.page-hero {
+  margin-top: 8px;    /* kurangi jarak atas jika masih terasa longgar */
+  padding-top: 8px;   /* opsional, agar tampilan tetap rapi */
+}
+
+/* ======= FIX: ukuran foto profil di card sebelah kiri =======
+   .profile-lg kemungkinan kelas yang sudah ada; kita override ukurannya. */
+.profile-lg {
+  width: 190px;       /* ukuran baru (sesuaikan: 140px / 160px / 180px) */
+  height: 190px;      /* jaga proporsi bulat/ kotak sesuai aslinya */
+  object-fit: cover;  /* potong gambar rapi bila aspect ratio beda */
+  border-radius: 8px; /* kalau mau tetap bulat, ubah ke 50% */
+}
+
+/* contoh untuk foto bulat: */
+.profile-lg.rounded-circle,
+.profile-lg.round {
+  border-radius: 50%;
+}
+
+/* ======= Responsif: kecilkan lebih lagi di layar kecil ======= */
+@media (max-width: 767px) {
+  body { padding-top: 64px; }
+  .profile-lg { width: 140px; height: 140px; }
+}

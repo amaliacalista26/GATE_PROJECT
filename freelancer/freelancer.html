@@ -53,7 +53,8 @@
 <div class="d-flex align-items-center gap-3">
       <!-- Notifikasi -->
       <div class="position-relative">
-        <a href="freelance-notifikasi.html" class="nav-icon text-dark">
+        <!-- ubah href ke '#' dan tambahkan data-toggle/data-target -->
+        <a href="#" class="nav-icon text-dark" data-toggle="modal" data-target="#notifModal" aria-label="Notifikasi">
           <i class="bi bi-bell-fill fs-5"></i>
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             5
@@ -61,7 +62,7 @@
         </a>
       </div>
       <!-- Profil -->
-      <a href="freelancer-edit-profile.html" class="nav-profile">
+      <a href="freelance-profile.html" class="nav-profile">
         <img src="../asset/profile.png" alt="Profile" class="profile-icon">
       </a>
     </div>
@@ -187,33 +188,34 @@
 
 <a href="freelancer-chat.html" class="chat-floating-btn" aria-label="Chat">💬 Chat</a>
 
-<!-- NOTIFIKASI LIST -->
+<!-- MAIN: dibersihkan — kerangka kosong supaya kamu bisa isi ulang -->
+<main class="empty-state" role="main">
+  <div class="empty-card">
+    <h2>Halaman Kosong</h2>
+    <p>Konten utama telah dibersihkan. Silakan isi kembali sesuai kebutuhan.</p>
+    <p>
+      Contoh tindakan: <a href="freelancer-jobs.html">Buka Jobs</a> •
+      <a href="freelancer-gatepay.html">Buka GatePay</a>
+    </p>
+  </div>
+</main>
+
+<!-- NOTIFIKASI MASTER (list) -->
 <div class="modal fade" id="notifModal" tabindex="-1" role="dialog" aria-labelledby="notifModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content rounded-4 shadow">
       <div class="modal-header border-0">
         <h5 class="modal-title fw-bold" id="notifModalLabel">Notifikasi</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Tutup">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item" data-toggle="modal" data-target="#notifDetail1" data-dismiss="modal">
-            <i class="bi bi-briefcase-fill text-primary me-2"></i> Lowongan UI Designer
-          </li>
-          <li class="list-group-item" data-toggle="modal" data-target="#notifDetail2" data-dismiss="modal">
-            <i class="bi bi-wallet2 text-success me-2"></i> Pembaruan Saldo GatePay
-          </li>
-          <li class="list-group-item" data-toggle="modal" data-target="#notifDetail3" data-dismiss="modal">
-            <i class="bi bi-pencil-square text-danger me-2"></i> Review Diperlukan
-          </li>
-          <li class="list-group-item" data-toggle="modal" data-target="#notifDetail4" data-dismiss="modal">
-            <i class="bi bi-bell-fill text-warning me-2"></i> Jadwal Meeting Proyek Baru
-          </li>
-          <li class="list-group-item" data-toggle="modal" data-target="#notifDetail5" data-dismiss="modal">
-            <i class="bi bi-gift-fill text-info me-2"></i> Bonus Spesial Akhir Bulan
-          </li>
+        <ul class="list-group list-group-flush" id="notifList">
+          <!-- isi notifikasi tetap; kamu bisa ubah teks di sini -->
+          <li class="list-group-item" data-target="#notifDetail1"><i class="bi bi-briefcase-fill text-primary me-2"></i> Lowongan UI Designer</li>
+          <li class="list-group-item" data-target="#notifDetail2"><i class="bi bi-wallet2 text-success me-2"></i> Pembaruan Saldo GatePay</li>
+          <li class="list-group-item" data-target="#notifDetail3"><i class="bi bi-pencil-square text-danger me-2"></i> Review Diperlukan</li>
+          <li class="list-group-item" data-target="#notifDetail4"><i class="bi bi-bell-fill text-warning me-2"></i> Jadwal Meeting Proyek Baru</li>
+          <li class="list-group-item" data-target="#notifDetail5"><i class="bi bi-gift-fill text-info me-2"></i> Bonus Spesial Akhir Bulan</li>
         </ul>
       </div>
       <div class="modal-footer border-0">
@@ -223,112 +225,125 @@
   </div>
 </div>
 
-<!-- (notifDetail1..5 modals same as before) -->
-<!-- DETAIL 1 -->
-<div class="modal fade" id="notifDetail1" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content shadow-lg border-0 rounded-4">
+<!-- DETAIL MODALS (tetap ada dan berfungsi) -->
+<div class="modal fade" id="notifDetail1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow">
       <div class="modal-header bg-primary text-white rounded-top-4">
-        <h5 class="modal-title fw-semibold">Lowongan UI Designer</h5>
-        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
+        <h5 class="modal-title">Lowongan UI Designer</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
       </div>
-      <div class="modal-body fs-5 text-dark px-4 py-3">
-        Kami membuka lowongan untuk posisi <b>UI Designer freelance</b> di aplikasi edukasi.
-        Waktu kerja fleksibel dan gaji kompetitif.
-      </div>
-      <div class="modal-footer border-0 d-flex justify-content-end">
-        <button class="btn btn-outline-primary rounded-pill px-4" data-toggle="modal" data-target="#notifModal" data-dismiss="modal">Tutup</button>
+      <div class="modal-body px-4 py-3">Kami membuka lowongan <b>UI Designer freelance</b> di aplikasi edukasi.</div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-outline-primary rounded-pill px-4 back-to-list">Kembali</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- DETAIL 2 -->
-<div class="modal fade" id="notifDetail2" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content shadow-lg border-0 rounded-4">
+<div class="modal fade" id="notifDetail2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow">
       <div class="modal-header bg-primary text-white rounded-top-4">
-        <h5 class="modal-title fw-semibold">Saldo GatePay Diperbarui</h5>
-        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
+        <h5 class="modal-title">Saldo GatePay Diperbarui</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
       </div>
-      <div class="modal-body fs-5 text-dark px-4 py-3">
-        Saldo GatePay kamu telah <b>bertambah Rp150.000</b> dari proyek terakhir yang diselesaikan.
-        Pastikan untuk memeriksa riwayat transaksi kamu di halaman GatePay.
-      </div>
-      <div class="modal-footer border-0 d-flex justify-content-end">
-        <button class="btn btn-outline-primary rounded-pill px-4" data-toggle="modal" data-target="#notifModal" data-dismiss="modal">Tutup</button>
+      <div class="modal-body px-4 py-3">Saldo kamu bertambah <b>Rp150.000</b>. Periksa riwayat di GatePay.</div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-outline-primary rounded-pill px-4 back-to-list">Kembali</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- DETAIL 3 -->
-<div class="modal fade" id="notifDetail3" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content shadow-lg border-0 rounded-4">
+<div class="modal fade" id="notifDetail3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow">
       <div class="modal-header bg-primary text-white rounded-top-4">
-        <h5 class="modal-title fw-semibold">Review Diperlukan</h5>
-        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
+        <h5 class="modal-title">Review Diperlukan</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
       </div>
-      <div class="modal-body fs-5 text-dark px-4 py-3">
-        Klien meminta kamu untuk memberikan <b>review hasil kerja</b> pada proyek
-        <i>Front-End Developer</i> yang baru diselesaikan.
-        Silakan isi review di dashboard proyekmu.
-      </div>
-      <div class="modal-footer border-0 d-flex justify-content-end">
-        <button class="btn btn-outline-primary rounded-pill px-4" data-toggle="modal" data-target="#notifModal" data-dismiss="modal">Tutup</button>
+      <div class="modal-body px-4 py-3">Klien meminta kamu memberikan <b>review</b> untuk proyek terbaru.</div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-outline-primary rounded-pill px-4 back-to-list">Kembali</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- DETAIL 4 -->
-<div class="modal fade" id="notifDetail4" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content shadow-lg border-0 rounded-4">
+<div class="modal fade" id="notifDetail4" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow">
       <div class="modal-header bg-primary text-white rounded-top-4">
-        <h5 class="modal-title fw-semibold">Proyek Baru Tersedia</h5>
-        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
+        <h5 class="modal-title">Proyek Baru Tersedia</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
       </div>
-      <div class="modal-body fs-5 text-dark px-4 py-3">
-        Ada proyek baru yang sesuai dengan keahlian kamu! 
-        Cek detailnya di halaman proyek untuk segera melakukan penawaran.
-      </div>
-      <div class="modal-footer border-0 d-flex justify-content-end">
-        <button class="btn btn-outline-primary rounded-pill px-4" data-toggle="modal" data-target="#notifModal" data-dismiss="modal">Tutup</button>
+      <div class="modal-body px-4 py-3">Ada proyek baru yang sesuai keahlianmu — cek halaman proyek untuk detail.</div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-outline-primary rounded-pill px-4 back-to-list">Kembali</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- DETAIL 5 -->
-<div class="modal fade" id="notifDetail5" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content shadow-lg border-0 rounded-4">
+<div class="modal fade" id="notifDetail5" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow">
       <div class="modal-header bg-primary text-white rounded-top-4">
-        <h5 class="modal-title fw-semibold">Pembayaran Diterima</h5>
-        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
+        <h5 class="modal-title">Pembayaran Diterima</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
       </div>
-      <div class="modal-body fs-5 text-dark px-4 py-3">
-        Pembayaran untuk proyek <b>UI/UX Dashboard App</b> telah diterima.
-        Dana akan otomatis masuk ke saldo GatePay kamu dalam waktu 1x24 jam.
-      </div>
-      <div class="modal-footer border-0 d-flex justify-content-end">
-        <button class="btn btn-outline-primary rounded-pill px-4" data-toggle="modal" data-target="#notifModal" data-dismiss="modal">Tutup</button>
+      <div class="modal-body px-4 py-3">Pembayaran untuk proyek UI/UX Dashboard telah diterima dan akan masuk dalam 1x24 jam.</div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-outline-primary rounded-pill px-4 back-to-list">Kembali</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 🔹 Footer -->
-<footer class="text-center py-3 text-muted small" style="background-color: #f8f9fa;">
-  &copy; 2025 GATE. All Rights Reserved.
-</footer>
+<!-- Footer -->
+<footer class="text-center py-3 text-muted small bg-light">&copy; 2025 GATE. All Rights Reserved.</footer>
 
-<!-- SCRIPTS: jQuery + Popper + Bootstrap (local) + page script -->
-<script src="../jquery.min.js"></script>
-<script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
+<!-- SCRIPTS: jQuery (CDN) + Popper + Bootstrap (lokal) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-<script src="scripts.js"></script>
+
+<script>
+  // handler notifikasi & chaining detail
+  (function($){
+    $(function(){
+      // Klik lonceng => buka daftar notifikasi
+      $('.nav-icon[aria-label="Notifikasi"]').on('click', function(e){
+        e.preventDefault();
+        $('#notifModal').modal('show');
+      });
+
+      // Klik item list => tutup master lalu buka detail
+      $('#notifModal').on('click', '.list-group-item', function(e){
+        e.preventDefault();
+        var target = $(this).data('target');
+        if (!target) return $('#notifModal').modal('hide');
+        $('#notifModal').modal('hide');
+        $('#notifModal').one('hidden.bs.modal', function(){
+          $(target).modal('show');
+        });
+      });
+
+      // Tombol "Kembali" di detail -> tutup detail dan buka list
+      $('.back-to-list').on('click', function(e){
+        e.preventDefault();
+        $('.modal').modal('hide');
+        $('.modal').one('hidden.bs.modal', function(){
+          $('#notifModal').modal('show');
+        });
+      });
+
+      // optional: perbarui badge jumlah notifikasi berdasarkan jumlah item
+      var count = $('#notifList .list-group-item').length;
+      $('#notifBadge').text(count > 0 ? count : '');
+    });
+  })(jQuery);
+</script>
 </body>
 </html>
