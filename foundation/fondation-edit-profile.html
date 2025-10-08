@@ -14,8 +14,11 @@
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="fondation.css">
 
-  <!-- Optional icons (CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Icons (Bootstrap Icons CDN; optional) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Optional Font Awesome for some older icon classes (if you used 'fas' in markup) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   
@@ -47,15 +50,27 @@
     <!-- Right Icons -->
 <div class="d-flex align-items-center gap-3">
       <!-- Notifikasi -->
-      <a href="#" class="nav-icon">
-        <i class="fa-solid fa-bell"></i>
-      </a>
+      <div class="position-relative">
+        <!-- ubah href ke '#' dan tambahkan data-toggle/data-target -->
+        <a href="#" class="nav-icon text-dark" data-toggle="modal" data-target="#notifModal" aria-label="Notifikasi">
+          <i class="bi bi-bell-fill fs-5"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            5
+          </span>
+        </a>
+      </div>
       <!-- Profil -->
       <a href="fondation-edit-profile.html" class="nav-profile">
         <img src="../asset/profile.png" alt="Profile" class="profile-icon">
       </a>
     </div>
   </div>
+  <!-- TAMBAHAN: Edit Profile -->
+      <!-- TAMBAHAN: Logout -->
+      <a href="../home.html" class="btn btn-sm btn-outline-danger rounded-pill px-3" id="logoutBtn" title="Keluar">
+        Keluar
+      </a>
+  
 </nav>
 
   <!-- Konten -->
@@ -143,17 +158,122 @@
         <button type="submit" class="btn btn-primary w-100 rounded-pill mt-3">Simpan Perubahan</button>
       </form>
     </div>
+
+    <!-- MODAL MASTER: Daftar Notifikasi -->
+<div class="modal fade" id="notifModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title">Notifikasi</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="list-group list-group-flush" id="notifList">
+          <!-- contoh item; data-target menunjuk ke modal detail -->
+          <a href="#" class="list-group-item list-group-item-action" data-target="#notifDetail1">Lowongan UI Designer</a>
+          <a href="#" class="list-group-item list-group-item-action" data-target="#notifDetail2">Saldo GatePay Diperbarui</a>
+          <a href="#" class="list-group-item list-group-item-action" data-target="#notifDetail3">Review Diperlukan</a>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <small class="text-muted">Terakhir diperbarui • beberapa menit lalu</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- DETAIL MODALS (tetap ada dan berfungsi) -->
+<div class="modal fade" id="notifDetail1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title">Lowongan UI Designer</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
+      </div>
+      <div class="modal-body px-4 py-3">Kami membuka lowongan <b>UI Designer freelance</b> di aplikasi edukasi.</div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-outline-primary rounded-pill px-4 back-to-list">Kembali</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="notifDetail2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title">Saldo GatePay Diperbarui</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
+      </div>
+      <div class="modal-body px-4 py-3">Saldo kamu bertambah <b>Rp150.000</b>. Periksa riwayat di GatePay.</div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-outline-primary rounded-pill px-4 back-to-list">Kembali</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="notifDetail3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title">Review Diperlukan</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
+      </div>
+      <div class="modal-body px-4 py-3">Klien meminta kamu memberikan <b>review</b> untuk proyek terbaru.</div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-outline-primary rounded-pill px-4 back-to-list">Kembali</button>
+      </div>
+    </div>
+  </div>
+</div>
   </main>
 
   <!-- FOOTER -->
   <footer class="text-center py-4 text-muted small mt-5">© 2025 GATE. All Rights Reserved.</footer>
 
-  <!-- SCRIPTS: local jQuery + Popper + Bootstrap 4.3.1 -->
-  <script src="../jquery.min.js"></script>
-  <script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
-  <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <!-- SCRIPTS: jQuery (CDN) + Popper + Bootstrap (lokal) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
-  <!-- your global scripts -->
-  <script src="../scripts.js"></script>
+  <script>
+  // handler notifikasi & chaining detail
+  (function($){
+    $(function(){
+      // Klik lonceng => buka daftar notifikasi
+      $('.nav-icon[aria-label="Notifikasi"]').on('click', function(e){
+        e.preventDefault();
+        $('#notifModal').modal('show');
+      });
+
+      // Klik item list => tutup master lalu buka detail
+      $('#notifModal').on('click', '.list-group-item', function(e){
+        e.preventDefault();
+        var target = $(this).data('target');
+        if (!target) return $('#notifModal').modal('hide');
+        $('#notifModal').modal('hide');
+        $('#notifModal').one('hidden.bs.modal', function(){
+          $(target).modal('show');
+        });
+      });
+
+      // Tombol "Kembali" di detail -> tutup detail dan buka list
+      $('.back-to-list').on('click', function(e){
+        e.preventDefault();
+        $('.modal').modal('hide');
+        $('.modal').one('hidden.bs.modal', function(){
+          $('#notifModal').modal('show');
+        });
+      });
+
+      // optional: perbarui badge jumlah notifikasi berdasarkan jumlah item
+      var count = $('#notifList .list-group-item').length;
+      $('#notifBadge').text(count > 0 ? count : '');
+    });
+  })(jQuery);
+</script>
 </body>
 </html>
