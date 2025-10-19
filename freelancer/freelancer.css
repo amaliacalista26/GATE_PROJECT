@@ -387,4 +387,212 @@ body {
     }
 
     body { padding-bottom: 80px; }
-  </style>
+/* === NAVBAR ACTIVE COLOR FIX (GatePay dll) === */
+.navbar-nav .nav-link {
+  color: var(--light-gray);
+  font-weight: 500;
+  padding: 6px 14px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active-link {
+  color: var(--navbar-blue);
+  transform: translateY(-1px);
+  font-weight: 600;
+}
+.navbar-nav .nav-link.active-link[href*="gatepay"],
+.navbar-nav .nav-link[href*="gatepay"]:hover {
+  color: var(--navbar-blue);
+}
+
+/* === HISTORY SECTION STYLE === */
+.history-container {
+  max-width: 1100px;
+  margin: 100px auto 120px;
+  padding: 0 24px;
+}
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.history-card {
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 14px rgba(47,65,86,0.06);
+  padding: 22px 28px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+.history-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(47,65,86,0.1);
+}
+
+/* === TEXTS === */
+.history-item-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #1f2d3d;
+  font-family: 'Poppins', sans-serif;
+}
+.history-item-sub {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+.history-item-meta small {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* === AMOUNT === */
+.history-amount {
+  text-align: right;
+  min-width: 180px;
+}
+.history-amount .amount-top {
+  display: block;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #2f4156;
+  margin-bottom: 4px;
+}
+.history-amount .amount-currency {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* === BADGE === */
+.badge-done {
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #e6f8ef;
+  color: #0f8a4b;
+  border: 1px solid #c6f0d7;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .history-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px;
+  }
+  .history-amount {
+    text-align: left;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .history-container {
+    padding: 0 16px;
+    margin: 90px auto 100px;
+  }
+}
+
+/* === ANIMASI === */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ body {
+      background: #f9fafc;
+      padding-top: 70px;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    /* Chat Window */
+    .chat-window {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px;
+      min-height: 220px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .chat-message {
+      margin-bottom: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      max-width: 78%;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .chat-message.received {
+      background: #f1f3f5;
+      align-self: flex-start;
+    }
+
+    .chat-message.sent {
+      background: #d1e7dd;
+      align-self: flex-end;
+      margin-left: auto;
+    }
+
+    .input-group .form-control {
+      border-radius: 50px;
+      box-shadow: none;
+    }
+
+    .input-group .btn {
+      border-radius: 50px;
+      padding: 0.5rem 1.3rem;
+    }
+
+    /* History list */
+    .list-group-item {
+      transition: background 0.25s ease, transform 0.15s ease;
+    }
+
+    .list-group-item:hover {
+      background: #f8f9fa;
+      transform: translateX(3px);
+    }
+
+    /* Navbar fix */
+    .navbar-nav .nav-link {
+      color: var(--light-gray);
+      font-weight: 500;
+      padding: 6px 14px;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active-link {
+      color: var(--navbar-blue);
+      transform: translateY(-1px);
+      font-weight: 600;
+    }
+
+    /* Heading fix */
+    .chat-heading {
+      color: #1f2d3d;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .profile-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--navbar-blue);
+    }
+
+    footer {
+      background-color: #f8f9fa;
+      color: #6c757d;
+    }

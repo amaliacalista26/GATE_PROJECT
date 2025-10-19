@@ -4,71 +4,82 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>GATE — Lihat Profil Freelancer</title>
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- LOCAL Bootstrap 4.3.1 -->
   <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
-
-  <!-- Global + page CSS -->
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="freelancer.css">
+  <style>
+    .navbar-actions .btn {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+    .navbar-actions .btn-outline-secondary {
+      color: #2f4156;
+      border-color: #c8d0da;
+    }
+    .navbar-actions .btn-outline-secondary:hover {
+      background-color: #2f4156;
+      color: #fff;
+    }
+    .navbar-actions .btn-outline-danger {
+      border-color: #e74c3c;
+      color: #e74c3c;
+    }
+    .navbar-actions .btn-outline-danger:hover {
+      background-color: #e74c3c;
+      color: #fff;
+    }
+    .profile-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #2f4156;
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
   <div class="container d-flex align-items-center justify-content-between">
-    
-    <!-- Brand -->
     <a class="navbar-brand d-flex align-items-center" href="freelancer.html">
       <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
       <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
     </a>
 
-    <!-- Toggle Button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menu -->
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav align-items-center">
-        <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="freelancer-jobs.html">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link" href="freelancer.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="freelancer-jobs.html">Jobs</a></li>
         <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="freelance-feed.html">Feed</a></li>
+        <li class="nav-item"><a class="nav-link" href="freelance-feed.html">Feed</a></li>
       </ul>
     </div>
 
-    <!-- Right Icons -->
-<div class="d-flex align-items-center gap-3">
-      <!-- Notifikasi -->
-      <div class="position-relative">
-        <a href="freelance-notifikasi.html" class="nav-icon text-dark">
-          <i class="bi bi-bell-fill fs-5"></i>
-          
-        </a>
-      </div>
-      <!-- TAMBAHAN: Edit Profile -->
-      <a href="freelancer-edit-profile.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3" id="editProfileBtn" title="Edit Profile">
-        Edit Profile
+    <div class="navbar-actions d-flex align-items-center" style="gap:10px;">
+      <a href="freelance-notifikasi.html" class="nav-icon text-dark position-relative">
+        <i class="bi bi-bell-fill fs-5"></i>
       </a>
-      <!-- TAMBAHAN: Logout -->
-      <a href="../home.html" class="btn btn-sm btn-outline-danger rounded-pill px-3" id="logoutBtn" title="Keluar">
-        Keluar
+      <a href="freelancer-edit-profile.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+        <i class="bi bi-pencil-square mr-1"></i> Edit Profil
       </a>
-      <!-- Profil -->
+      <a href="../home.html" class="btn btn-sm btn-outline-danger rounded-pill px-3">
+        <i class="bi bi-box-arrow-right mr-1"></i> Keluar
+      </a>
       <a href="freelancer-edit-profile.html" class="nav-profile">
         <img src="../asset/freelancer.jpeg" alt="Profile" class="profile-icon">
       </a>
     </div>
   </div>
 </nav>
-    <a href="freelancer-chat.html" class="chat-floating-btn">💬 Chat</a>
 
-<!-- PAGE HERO -->
+<a href="freelancer-chat.html" class="chat-floating-btn">💬 Chat</a>
+
 <header class="container page-hero">
   <div class="row align-items-center">
     <div class="col-md-8">
@@ -78,19 +89,14 @@
   </div>
 </header>
 
-<!-- MAIN CONTENT -->
 <main class="container mb-5">
   <div class="row mt-3">
-
-    <!-- LEFT: profile card -->
     <aside class="col-lg-4 mb-4">
       <div class="card profile-card shadow-sm">
         <div class="card-body text-center">
           <img src="../asset/freelancer.jpeg" alt="Profil" class="profile-lg mb-3">
-
-          <!-- rating summary -->
           <div class="d-flex align-items-center justify-content-center mb-2">
-            <div class="rating-summary mr-2" aria-hidden="true">
+            <div class="rating-summary mr-2">
               <i class="fa fa-star filled"></i>
               <i class="fa fa-star filled"></i>
               <i class="fa fa-star filled"></i>
@@ -99,8 +105,6 @@
             </div>
             <small class="text-muted">4.0 • <a href="#all-reviews">120 reviews</a></small>
           </div>
-
-          <!-- stats -->
           <div class="row text-center mt-3">
             <div class="col-4 border-right">
               <div class="stat-num">320</div>
@@ -115,36 +119,28 @@
               <div class="stat-label small text-muted">Rating</div>
             </div>
           </div>
-
-          <!-- quick actions -->
-          <div class="mt-3 d-flex justify-content-between">
+          <div class="mt-3 d-flex justify-content-center">
             <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill">Download CV</a>
-            <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill" data-toggle="modal" data-target="#reportModal">Report</a>
           </div>
         </div>
       </div>
 
-      <!-- Portfolio preview -->
       <div class="card mt-3 shadow-sm">
         <div class="card-header bg-transparent">
           <strong>Portofolio</strong>
         </div>
-        <div class="card-body">
-          <div class="portfolio-grid">
-            <img src="../asset/portofolio.jpg" width="300px" alt="p1" class="img-thumb" />
-          </div>
+        <div class="card-body text-center">
+          <img src="../asset/portofolio.jpg" alt="p1" class="img-fluid rounded mb-2" style="max-width:100%; height:auto;">
           <a href="freelancer-portfolio.html" class="d-block text-center mt-3 small">Lihat seluruh portofolio</a>
         </div>
       </div>
     </aside>
 
-    <!-- RIGHT: details, recent projects, reviews -->
     <section class="col-lg-8">
       <div class="card mb-3 shadow-sm">
         <div class="card-body">
           <h5>About</h5>
           <p class="text-muted">Saya seorang UI/UX designer dengan 5+ tahun pengalaman mengerjakan aplikasi mobile & web. Spesialis wireframing, prototyping, dan desain sistem desain.</p>
-
           <div class="mb-3">
             <h6 class="mb-1">Skills</h6>
             <div class="badges">
@@ -154,7 +150,6 @@
               <span class="badge badge-pill badge-light">React</span>
             </div>
           </div>
-
           <div>
             <h6 class="mb-1">Availability</h6>
             <p class="text-muted small mb-0">Available · 20 hrs/week</p>
@@ -162,80 +157,53 @@
         </div>
       </div>
 
-      <!-- Recent Projects -->
       <div class="card mb-3 shadow-sm">
         <div class="card-body">
           <h5>Recent Projects</h5>
           <ul class="list-unstyled recent-list mb-0">
-            <li>
-              <strong>Mobile App Redesign</strong>
-              <div class="text-muted small">PT Teknologi Cepat • Completed • 2025</div>
-            </li>
-            <li class="mt-3">
-              <strong>Landing Page Campaign</strong>
-              <div class="text-muted small">Startup X • Completed • 2024</div>
-            </li>
-            <li class="mt-3">
-              <strong>Dashboard Internal</strong>
-              <div class="text-muted small">Perusahaan Y • Ongoing</div>
-            </li>
+            <li><strong>Mobile App Redesign</strong><div class="text-muted small">PT Teknologi Cepat • Completed • 2025</div></li>
+            <li class="mt-3"><strong>Landing Page Campaign</strong><div class="text-muted small">Startup X • Completed • 2024</div></li>
+            <li class="mt-3"><strong>Dashboard Internal</strong><div class="text-muted small">Perusahaan Y • Ongoing</div></li>
           </ul>
         </div>
       </div>
 
-      <!-- Reviews preview -->
       <div id="all-reviews" class="card shadow-sm">
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Reviews (120)</h5>
-            <div>
-              <a href="freelance-review.html" class="btn btn-sm btn-outline-primary rounded-pill">Lihat Semua</a>
-            </div>
+            <a href="freelance-review.html" class="btn btn-sm btn-outline-primary rounded-pill">Lihat Semua</a>
           </div>
-
-          <!-- sample review items -->
           <div class="review-item mt-3">
             <div class="d-flex justify-content-between">
-              <div>
-                <strong>PT Solusi Teknologi</strong>
-                <div class="small text-muted">2025-06-03</div>
-              </div>
+              <div><strong>PT Solusi Teknologi</strong><div class="small text-muted">2025-06-03</div></div>
               <div class="small text-warning">★★★★☆</div>
             </div>
             <p class="mt-2 mb-0 text-muted">"Komunikasi lancar, revisi cepat. Recommended."</p>
           </div>
-
           <hr>
-
           <div class="review-item">
             <div class="d-flex justify-content-between">
-              <div>
-                <strong>PT Kreatif Digital</strong>
-                <div class="small text-muted">2025-04-12</div>
-              </div>
+              <div><strong>PT Kreatif Digital</strong><div class="small text-muted">2025-04-12</div></div>
               <div class="small text-warning">★★★★★</div>
             </div>
             <p class="mt-2 mb-0 text-muted">"Pekerjaan rapi dan tepat waktu. Sangat puas."</p>
           </div>
         </div>
       </div>
-
     </section>
   </div>
-
-  
 </main>
 
-<!-- REPORT Modal -->
 <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-sm modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Laporkan Profil</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
       <div class="modal-body">
-        <p class="small text-muted">Jika profil ini melanggar aturan kami, laporkan alasan singkat. (Demo — tidak terkirim)</p>
+        <p class="small text-muted">Jika profil ini melanggar aturan kami, laporkan alasan singkat.</p>
         <textarea class="form-control mb-2" rows="3" placeholder="Alasan laporan..."></textarea>
         <div class="text-right">
           <button class="btn btn-sm btn-secondary rounded-pill" data-dismiss="modal">Batal</button>
@@ -246,12 +214,10 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="text-center py-3 text-muted small" style="background-color:#f8f9fa;">
   &copy; 2025 GATE. All Rights Reserved.
 </footer>
 
-<!-- SCRIPTS: local jQuery + Popper + Bootstrap -->
 <script src="../jquery.min.js"></script>
 <script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
 <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>

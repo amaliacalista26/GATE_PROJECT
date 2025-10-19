@@ -11,31 +11,17 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap Icons (CDN) - jika mau lokal nanti saya ganti -->
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <!-- Global + page CSS -->
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="freelancer.css">
-
-  <style>
-    /* kecil: styling chat sederhana jika belum ada di employer.css */
-    body { background: #f9fafc; padding-top: 70px; font-family: 'Josefin Sans', sans-serif; }
-    .chat-window { background: #fff; border-radius: 10px; padding: 18px; min-height: 180px; }
-    .chat-message { margin-bottom: 10px; padding: 10px 14px; border-radius: 12px; max-width: 78%; }
-    .chat-message.received { background: #f1f3f5; align-self: flex-start; }
-    .chat-message.sent { background: #d1e7dd; align-self: flex-end; margin-left: auto; }
-    .favorite-list .list-group-item { display:flex; justify-content:space-between; align-items:center; }
-    .favorite-btn i { margin-right:6px; }
-    .input-group .form-control { border-radius: 50px; }
-    .input-group .btn { border-radius: 50px; }
-    .navbar .logo-gate { height:36px; margin-right:10px; }
-    .profile-icon { width:38px; height:38px; border-radius:50%; object-fit:cover; border:2px solid #2F4156; }
-  </style>
 </head>
+
 <body>
 
-   <!-- NAVBAR -->
+  <!-- ===== NAVBAR ===== -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top custom-navbar shadow-sm" role="navigation" aria-label="Main navigation">
     <div class="container d-flex align-items-center justify-content-between">
       <!-- Brand -->
@@ -44,7 +30,7 @@
         <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
       </a>
 
-      <!-- Toggle Button (Bootstrap 4) -->
+      <!-- Toggle Button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -53,23 +39,21 @@
       <!-- Menu -->
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav align-items-center">
-          <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active-link" href="freelancer-jobs.html">Jobs</a></li>
+          <li class="nav-item"><a class="nav-link" href="freelancer.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="freelancer-jobs.html">Jobs</a></li>
           <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
-          <li class="nav-item"><a class="nav-link active-link" href="freelance-feed.html">Feed</a></li>
+          <li class="nav-item"><a class="nav-link" href="freelance-feed.html">Feed</a></li>
         </ul>
       </div>
 
       <!-- Right Icons -->
       <div class="d-flex align-items-center" style="gap:12px;">
-        <!-- Notifikasi -->
         <div class="position-relative">
           <a href="freelance-notifikasi.html" class="nav-icon text-dark" aria-label="Notifikasi">
             <i class="bi bi-bell-fill" style="font-size:1.05rem;"></i>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
           </a>
         </div>
-        <!-- Profil -->
         <a href="freelance-profile.html" class="nav-profile" aria-label="Profil">
           <img src="../asset/freelancer.jpeg" alt="Profile" class="profile-icon">
         </a>
@@ -77,16 +61,17 @@
     </div>
   </nav>
 
-  <main class="container mt-4 pt-3">
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container mt-5 pt-3">
     <!-- Header -->
     <header class="text-center mb-4">
-      <h1 class="fw-bold text-primary">Chat dengan Employer</h1>
+      <h1 class="chat-heading mb-2">Chat dengan Employer</h1>
       <p class="text-muted">Diskusikan proyek, kirim update, dan pantau freelancer favorit Anda.</p>
     </header>
 
     <!-- Ongoing Chat -->
-    <section class="chat mb-4">
-      <h4 class="fw-semibold">Ongoing Chat</h4>
+    <section class="chat mb-5">
+      <h4 class="fw-semibold mb-3">Ongoing Chat</h4>
       <div class="chat-window shadow-sm mt-3 d-flex flex-column">
         <div class="chat-message received">Halo, apakah bisa mulai project minggu ini?</div>
         <div class="chat-message sent">Ya, saya bisa mulai besok!</div>
@@ -96,15 +81,17 @@
       <div class="input-group mt-3">
         <input id="chatInput" type="text" class="form-control" placeholder="Ketik pesan...">
         <div class="input-group-append ml-2">
-          <button id="sendBtn" class="btn btn-primary"><i class="bi bi-send-fill mr-1"></i> Kirim</button>
+          <button id="sendBtn" class="btn btn-primary">
+            <i class="bi bi-send-fill mr-1"></i> Kirim
+          </button>
         </div>
       </div>
     </section>
 
     <!-- History Chat -->
-    <section>
+    <section class="mb-5">
       <h4 class="fw-semibold mb-3">History Chat</h4>
-      <ul class="list-group mt-3 shadow-sm rounded-3">
+      <ul class="list-group shadow-sm rounded-3">
         <li class="list-group-item d-flex justify-content-between align-items-center">
           Chat dengan PT Kawan Lama
           <span class="badge badge-warning">Ongoing</span>
@@ -119,51 +106,38 @@
         </li>
       </ul>
     </section>
-
-    <br>
   </main>
 
-  <footer class="text-center py-3 text-muted small" style="background-color: #f8f9fa;">
+  <footer class="text-center py-3 small">
     &copy; 2025 GATE. All Rights Reserved.
   </footer>
 
-  <!-- SCRIPTS: lokal jQuery + Popper + Bootstrap 4.3.1 -->
+  <!-- Scripts -->
   <script src="../jquery.min.js"></script>
   <script src="../bootstrap-4.3.1-dist/js/popper.min.js"></script>
   <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-
-  <!-- Optional global script -->
   <script src="../scripts.js"></script>
 
   <script>
-    // Interaksi sederhana: kirim pesan (demo, append ke chat)
+    // Fungsi kirim pesan sederhana (demo)
     (function () {
-      var $input = document.getElementById('chatInput');
-      var $send = document.getElementById('sendBtn');
-      var $chatWindow = document.querySelector('.chat-window');
+      const input = document.getElementById('chatInput');
+      const send = document.getElementById('sendBtn');
+      const chatWindow = document.querySelector('.chat-window');
 
-      $send.addEventListener('click', function () {
-        var text = $input.value.trim();
+      send.addEventListener('click', function () {
+        const text = input.value.trim();
         if (!text) return;
-        var msg = document.createElement('div');
+        const msg = document.createElement('div');
         msg.className = 'chat-message sent';
         msg.textContent = text;
-        $chatWindow.appendChild(msg);
-        $input.value = '';
-        $chatWindow.scrollTop = $chatWindow.scrollHeight;
+        chatWindow.appendChild(msg);
+        input.value = '';
+        chatWindow.scrollTop = chatWindow.scrollHeight;
       });
 
-      // enter to send
-      $input.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') { $send.click(); }
-      });
-
-      // favorite toggle (demo)
-      document.querySelectorAll('.favorite-btn').forEach(function(btn){
-        btn.addEventListener('click', function(){
-          btn.classList.toggle('btn-outline-primary');
-          btn.classList.toggle('btn-primary');
-        });
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') send.click();
       });
     })();
   </script>

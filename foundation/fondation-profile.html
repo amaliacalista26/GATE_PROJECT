@@ -13,171 +13,50 @@
 
   <!-- Global + page CSS (jika ada global.css, akan tetap dipakai) -->
   <link rel="stylesheet" href="../global.css">
-  <style>
-    /* Gaya halaman profil khusus */
-    body {
-      font-family: "Josefin Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: #f6f7f8;
-      color: #222;
-    }
-
-    .custom-navbar {
-      background: #ffffff;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      height: 68px;
-    }
-
-    .logo-gate { width: 38px; height: 38px; margin-right: 8px; }
-    .brand-text { font-weight: 600; color: #173349; }
-    .text-role { color: #2f7a79; font-weight: 600; }
-
-    main.container { max-width: 1200px; }
-
-    .profile-left-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 28px;
-      box-shadow: 0 4px 10px rgba(27,31,35,0.04);
-    }
-
-    .profile-avatar {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #e9ecef;
-      display: block;
-      margin: 0 auto 14px auto;
-      border: 6px solid #f7f8f9;
-    }
-
-    .yayasan-name {
-      font-size: 22px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 4px;
-    }
-
-    .yayasan-sub {
-      text-align: center;
-      color: #6c7a86;
-      margin-bottom: 16px;
-      font-size: 14px;
-    }
-
-    .stat-row {
-      display:flex;
-      justify-content: space-between;
-      margin-top: 12px;
-      color: #6c7a86;
-    }
-
-    .stat {
-      text-align:center;
-      flex:1;
-    }
-    .stat:not(:last-child) { border-right: 1px solid #eef2f3; }
-    .stat .num { font-weight:700; font-size:18px; color:#173349; }
-    .btn-outline-custom {
-      border-radius: 999px;
-      border: 1px solid #e0e6e8;
-      padding: 8px 18px;
-      background: transparent;
-    }
-
-    .card-right {
-      background: #fff;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 4px 10px rgba(27,31,35,0.04);
-    }
-
-    .section-title {
-      font-weight:700;
-      font-size:18px;
-      margin-bottom:8px;
-    }
-
-    .meta-row { color:#6c7a86; font-size:14px; margin-bottom:8px; }
-
-    .contact-list .item { display:flex; align-items:center; gap:12px; padding:8px 0; border-bottom:1px solid #f1f4f5; }
-    .contact-list .item:last-child { border-bottom: 0; }
-
-    .badge-focus {
-      display:inline-block;
-      background:#f1f6f6;
-      color:#0b6a66;
-      padding:6px 10px;
-      border-radius:999px;
-      font-weight:600;
-      font-size:13px;
-      margin-right:8px;
-    }
-
-    .top-right-actions {
-      position: absolute;
-      right: 24px;
-      top: 12px;
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 991px) {
-      .top-right-actions { position: static; margin-left: auto; }
-      .profile-avatar { width:120px; height:120px; }
-    }
-
-    /* small visual helpers */
-    .rounded-4 { border-radius: 12px !important; }
-    .btn-primary-rounded { border-radius: 999px; padding: 10px 22px; }
-  </style>
-
-  <!-- Icons -->
+    <link rel="stylesheet" href="fondation.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
-    <div class="container d-flex align-items-center justify-content-between position-relative">
-      <!-- Brand -->
-      <a class="navbar-brand d-flex align-items-center" href="../home.html">
-        <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
-        <span class="brand-text">GATE - <span class="text-role">Fondation</span></span>
-      </a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
+  <div class="container d-flex align-items-center justify-content-between position-relative">
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="../home.html">
+      <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
+      <span class="brand-text">GATE - <span class="text-role">Fondation</span></span>
+    </a>
 
-      <!-- Center nav -->
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav align-items-center">
-          <li class="nav-item"><a class="nav-link active-link" href="fondation.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="fondation-posting.html">Post</a></li>
-          <li class="nav-item"><a class="nav-link" href="fondation-feed.html">Feed</a></li>
-          <li class="nav-item"><a class="nav-link" href="fondation-gatepay.html">GatePay</a></li>
-        </ul>
-      </div>
-
-      <!-- Right icons + Edit/Keluar -->
-      <div class="d-flex align-items-center gap-3">
-        <div class="position-relative">
-          <a href="#" class="nav-icon text-dark" data-toggle="modal" data-target="#notifModal" aria-label="Notifikasi">
-            <i class="bi bi-bell-fill fs-5"></i>
-            <span id="notifBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
-          </a>
-        </div>
-        <a href="fondation-edit-profile.html" class="nav-profile d-none d-lg-block ml-2">
-          <img src="../asset/fondation.jpg" alt="Profile" class="profile-icon" style="width:36px; height:36px; border-radius:50%;">
-        </a>
-        <div>
-          <a href="fondation-edit-profile.html" class="btn btn-outline-secondary btn-sm rounded-pill">Edit Profile</a>
-        </div>
-
-        <div>
-          <a href="../home.html" class="btn btn-sm btn-outline-danger rounded-pill">Keluar</a>
-        </div>
-      </div>
+    <!-- Center nav -->
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="fondation.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="fondation-posting.html">Post</a></li>
+        <li class="nav-item"><a class="nav-link" href="fondation-feed.html">Feed</a></li>
+        <li class="nav-item"><a class="nav-link" href="fondation-gatepay.html">GatePay</a></li>
+      </ul>
     </div>
-  </nav>
+
+    <!-- Right icons -->
+    <div class="nav-actions">
+      <div class="action-buttons">
+        <a href="fondation-edit-profile.html" class="btn btn-outline-secondary btn-sm rounded-pill">Edit Profile</a>
+        <a href="../home.html" class="btn btn-sm btn-outline-danger rounded-pill">Keluar</a>
+      </div>
+
+      <div class="position-relative">
+        <a href="#" class="nav-icon text-dark" data-toggle="modal" data-target="#notifModal" aria-label="Notifikasi">
+          <i class="bi bi-bell-fill fs-5"></i>
+          <span id="notifBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+        </a>
+      </div>
+
+      <a href="fondation-edit-profile.html" class="nav-profile d-none d-lg-block ml-2">
+        <img src="../asset/fondation.jpg" alt="Profile" class="profile-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
 
   <!-- Konten utama -->
   <main class="container mt-5 pt-5 pb-5">

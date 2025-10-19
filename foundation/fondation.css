@@ -307,3 +307,371 @@ h1.display-5 { font-family: 'Poppins', sans-serif; font-weight:700; color:#1f2e3
 @media (max-width: 991px) {
   #postsGrid .col-md-4 { width:100%; display:block; }
 }
+
+/* === Tambahan CSS khusus perbaikan Fondation Home === */
+
+/* Hover efek pada gambar galeri */
+.gallery .media-thumb {
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.gallery .media-thumb img,
+.gallery .media-thumb .video-cover {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery .media-thumb:hover img,
+.gallery .media-thumb:hover .video-cover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Efek khusus untuk video cover */
+.video-cover {
+  background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.35));
+  position: relative;
+  transition: all 0.3s ease;
+}
+.video-cover i {
+  color: #fff;
+  opacity: 0.9;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.media-thumb:hover .video-cover i {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+/* YouTube iframe styling (seperti halaman Impact) */
+.youtube-frame {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.youtube-frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Hover tombol export */
+.btn-export:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+/* Responsif untuk galeri dan video */
+@media (max-width: 768px) {
+  .gallery .media-thumb img,
+  .gallery .media-thumb .video-cover {
+    height: 150px;
+  }
+}
+
+.header-section {
+  background: linear-gradient(135deg, #2f4156 0%, #567c8d 60%, #c8d9e6 100%);
+  padding: 7rem 1rem 5rem;
+  border-radius: 0 0 60px 60px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  color: #fff !important;
+  text-align: center;
+}
+
+.header-section h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700 !important;
+  font-size: 2.2rem;
+  color: #ffffff !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.5px;
+}
+
+.header-section p {
+  color: rgba(255,255,255,0.92);
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* === NAVBAR FIX untuk halaman Home === */
+.custom-navbar {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb;
+  height: 70px;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--navbar-blue);
+  display: flex;
+  align-items: center;
+}
+
+.custom-navbar .navbar-brand:hover {
+  text-decoration: none;
+  color: var(--gate-blue);
+}
+
+.navbar-nav .nav-link {
+  color: var(--light-gray);
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.active-link {
+  color: #000 !important;
+  font-weight: 600;
+}
+
+.nav-icon i {
+  color: var(--navbar-blue);
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.nav-icon:hover i {
+  color: #000;
+  transform: scale(1.1);
+}
+
+.nav-profile img {
+  border: 2px solid var(--navbar-blue);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-profile img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 3px rgba(86,124,141,0.15);
+}
+
+/* Responsive fix */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .navbar-nav .nav-item {
+    margin: 6px 0;
+  }
+  .custom-navbar {
+    height: auto;
+  }
+}
+
+/* === PROFIL FONDATION CSS === */
+
+/* Warna dasar */
+:root {
+  --navbar-blue: #2F4156;
+  --gate-blue: #567c8d;
+  --light-gray: #8c9aa3;
+}
+
+/* === NAVBAR === */
+.custom-navbar {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  height: 68px;
+}
+
+.logo-gate {
+  width: 38px;
+  height: 38px;
+  margin-right: 8px;
+}
+
+.brand-text {
+  font-weight: 600;
+  color: var(--navbar-blue);
+  font-family: 'Poppins', sans-serif;
+}
+
+.text-role {
+  color: var(--gate-blue);
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link {
+  color: var(--light-gray);
+  font-weight: 500;
+  padding: 8px 14px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #000;
+}
+
+.nav-icon i {
+  font-size: 1.3rem;
+  color: var(--navbar-blue);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-icon i:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--navbar-blue);
+}
+
+/* Tombol kanan */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Urutan: [Edit Profile] [Keluar] [Notifikasi] [PP] */
+.nav-actions .action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-actions .action-buttons a.btn {
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+/* === PROFILE CONTENT === */
+.profile-left-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 4px 10px rgba(27, 31, 35, 0.04);
+}
+
+.profile-avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 14px auto;
+  border: 6px solid #f7f8f9;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.badge-focus {
+  display: inline-block;
+  background: #f1f6f6;
+  color: #0b6a66;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+  margin-right: 8px;
+}
+
+.contact-list .item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f4f5;
+}
+
+.contact-list .item:last-child {
+  border-bottom: 0;
+}
+
+/* Responsif */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .nav-actions {
+    flex-direction: column;
+  }
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* === FIX: Card styling & Shadow hilang === */
+
+/* Card utama */
+.card,
+.profile-left-card,
+.card-right {
+  background: #fff;
+  border: none !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover efek elegan */
+.card:hover,
+.profile-left-card:hover,
+.card-right:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Perbaiki jarak antar elemen */
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Untuk list di dalam card */
+.card ul li {
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.card ul li:last-child {
+  border-bottom: none;
+}
+
+/* Kartu di bagian kiri profil */
+.profile-left-card {
+  margin-bottom: 1.5rem;
+}
+
+.card-right {
+  margin-bottom: 1.5rem;
+}
+
+/* Pastikan shadow tampil di background abu muda */
+body {
+  background-color: #f6f7f8 !important;
+}

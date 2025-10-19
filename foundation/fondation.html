@@ -36,11 +36,12 @@
 
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a class="nav-link" href="fondation.html">Home</a></li>
-          <li class="nav-item active"><a class="nav-link" href="fondation-posting.html">Post</a></li>
+          <li class="nav-item"><a class="nav-link active-link" href="fondation.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="fondation-posting.html">Post</a></li>
           <li class="nav-item"><a class="nav-link" href="fondation-feed.html">Feed</a></li>
           <li class="nav-item"><a class="nav-link" href="fondation-gatepay.html">GatePay</a></li>
         </ul>
+        </div>
 
          <!-- Right Icons -->
 <!-- Right icons + Edit/Keluar -->
@@ -53,8 +54,8 @@
         </div>
       
         <div class="d-flex align-items-center">
-          <a href="fondation-edit-profile.html" class="nav-profile">
-            <img src="../asset/profile.png" alt="Profile" class="profile-icon">
+          <a href="fondation-profile.html" class="nav-profile">
+            <img src="../asset/fondation.jpg" alt="Profile" class="profile-icon">
           </a>
         </div>
       </div>
@@ -194,26 +195,16 @@
                   <img src="../asset/grafik.png" class="img-fluid rounded" alt="grafik">
                 </a>
               </div>
-              <div class="col-12">
-                <a class="media-thumb video-thumb" data-type="video" data-src="../asset/video-kegiatan-donasi.mp4" href="#" aria-label="Putar video kegiatan">
-                  <div class="video-cover rounded d-flex align-items-center justify-content-center">
-                    <i class="fas fa-play fa-2x"></i>
-                    <span class="sr-only">Play video</span>
-                  </div>
+              <div class="youtube-frame mt-3">
+                  <iframe src="https://www.youtube.com/embed/u5b5c4LiAIY"
+                          title="Video kegiatan donasi"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                  </iframe>
+                </div>
+
                 </a>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Call to action / generate report -->
-        <div class="card rounded-lg shadow-sm">
-          <div class="card-body text-center">
-            <h6 class="mb-2">Buat Laporan Lengkap</h6>
-            <p class="small text-muted mb-3">Export laporan ke PDF/Excel berisi ringkasan donasi & bukti visual.</p>
-            <div class="d-flex justify-content-center gap-2">
-              <button class="btn btn-outline-secondary rounded-pill" id="exportPdfBtn"><i class="fas fa-file-pdf mr-2"></i> Export PDF</button>
-              <button class="btn btn-primary rounded-pill" id="exportExcelBtn"><i class="fas fa-file-excel mr-2"></i> Export Excel</button>
             </div>
           </div>
         </div>
