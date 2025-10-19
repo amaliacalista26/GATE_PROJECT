@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>GATE — Why Choose Us</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="globals.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="why.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand font-weight-bold text-brand d-flex align-items-center" href="home.html">
+      <img src="asset/gatelogo.png" alt="GATE Logo" style="height: 40px; margin-right: 10px; border-radius: 8px;">
+      <span>GATE</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="works.html">Works</a></li>
+        <li class="nav-item"><a class="nav-link active-link" href="why.html">Why</a></li>
+        <li class="nav-item"><a class="nav-link" href="impact.html">Impact</a></li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="signin.html">Sign In</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-primary text-white px-3 ml-2" href="signup.html">Join</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- WHY GATE -->
+<main class="container py-5 fade-in-up" style="margin-top: 6rem;">
+  <section id="why-gate" class="py-5">
+    <h2 class="text-center font-weight-bold mb-5">Why Choose GATE?</h2>
+    <div class="row text-center">
+      <div class="col-md-3 mb-4">
+        <div class="card why-card h-100">
+          <div class="card-body">
+            <i class="fas fa-bolt fa-3x text-warning mb-3"></i>
+            <h5 class="font-weight-bold">Fast & Flexible</h5>
+            <p>Find jobs that fit your skills and schedule.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card why-card h-100">
+          <div class="card-body">
+            <i class="fas fa-handshake fa-3x text-info mb-3"></i>
+            <h5 class="font-weight-bold">Positive Community</h5>
+            <p>Connect with people who share your purpose.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card why-card h-100">
+          <div class="card-body">
+            <i class="fas fa-donate fa-3x text-success mb-3"></i>
+            <h5 class="font-weight-bold">Social Impact</h5>
+            <p>Every transaction supports verified charities.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card why-card h-100">
+          <div class="card-body">
+            <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+            <h5 class="font-weight-bold">Transparent Tracking</h5>
+            <p>See every donation and project result clearly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- CTA SECTION -->
+<section class="cta-section text-center text-white py-5 fade-in-up">
+  <div class="container">
+    <h2 class="font-weight-bold mb-3">Start Your Journey with GATE</h2>
+    <p class="mb-4">Find work, discover talent, or create social change — it all starts here.</p>
+    <a href="signup.html" class="btn btn-light btn-lg font-weight-bold">Join Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-dark py-5 mt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5>GATE</h5>
+        <p>Platform freelance with social impact.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>Our Contacts</h5>
+        <p>Email: hello@gateapp.com</p>
+        <p>Location: Jakarta, Indonesia</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>Follow Us</h5>
+        <i class="fab fa-instagram mx-2"></i>
+        <i class="fab fa-linkedin mx-2"></i>
+        <i class="fab fa-youtube mx-2"></i>
+      </div>
+    </div>
+    <hr class="bg-light">
+    <div class="text-center small">
+      <p>&copy; 2025 GATE. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="jquery.min.js"></script>
+<script src="bootstrap-4.3.1-dist/js/popper.min.js"></script>
+<script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+<script>
+  // Animasi langsung muncul setelah load (seperti Works)
+  document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.fade-in-up');
+    elements.forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), i * 150);
+    });
+  });
+</script>
+</body>
+</html>

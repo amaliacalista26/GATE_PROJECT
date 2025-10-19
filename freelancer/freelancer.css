@@ -257,6 +257,134 @@ textarea {
   .summary-right { text-align:left; }
 }
 
-/* subtle reveal */
-.fade-in { opacity:0; transform: translateY(10px); transition: all .45s ease; }
-.fade-in.visible { opacity:1; transform:none; }
+/* sementara untuk debugging: */
+.fade-in { opacity: 1 !important; transform: none !important; }
+
+
+/* ======= FIX: spacing for fixed-top navbar =======
+   Sesuaikan angka 70px jika navbar-mu lebih tinggi/lebih rendah.
+   Menambahkan padding-top ke body supaya isi tidak tertutup/terlalu jauh. */
+body {
+  padding-top: 70px; /* <-- sesuaikan jika navbar tinggi/pendek (mis. 60px / 80px) */
+}
+
+/* Jika header/page-hero masih punya margin besar, kecilkan sedikit */
+.page-hero {
+  margin-top: 8px;    /* kurangi jarak atas jika masih terasa longgar */
+  padding-top: 8px;   /* opsional, agar tampilan tetap rapi */
+}
+
+/* ======= FIX: ukuran foto profil di card sebelah kiri =======
+   .profile-lg kemungkinan kelas yang sudah ada; kita override ukurannya. */
+.profile-lg {
+  width: 190px;       /* ukuran baru (sesuaikan: 140px / 160px / 180px) */
+  height: 190px;      /* jaga proporsi bulat/ kotak sesuai aslinya */
+  object-fit: cover;  /* potong gambar rapi bila aspect ratio beda */
+  border-radius: 8px; /* kalau mau tetap bulat, ubah ke 50% */
+}
+
+/* contoh untuk foto bulat: */
+.profile-lg.rounded-circle,
+.profile-lg.round {
+  border-radius: 50%;
+}
+
+/* ======= Responsif: kecilkan lebih lagi di layar kecil ======= */
+@media (max-width: 767px) {
+  body { padding-top: 64px; }
+  .profile-lg { width: 140px; height: 140px; }
+}
+
+  <style>
+    /* ===== CSS untuk History Section ===== */
+    .history-container {
+      max-width: 1100px;
+      margin: 90px auto 120px;
+      padding: 24px;
+    }
+    .history-header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom: 16px;
+    }
+    .history-card {
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(25,25,25,0.05);
+      padding: 18px 18px;
+      margin-bottom: 14px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .history-left {
+      flex: 1;
+      min-width: 0;
+    }
+    .history-item-title {
+      font-weight: 700;
+      font-size: 18px;
+      margin: 0 0 6px 0;
+      color: #1f2937;
+    }
+    .history-item-sub {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+    .history-item-meta {
+      font-size: 13px;
+      color: #6b6b6b;
+    }
+
+    .history-amount {
+      text-align: right;
+      min-width: 170px;
+    }
+    .history-amount .amount-top {
+      display:block;
+      font-weight:700;
+      font-size:20px;
+      color:#0f172a;
+      margin-bottom:6px;
+    }
+    .history-amount .amount-currency {
+      font-size:13px;
+      color:#6b7280;
+    }
+
+    .badge-done {
+      display:inline-block;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#e6f8ef;
+      color:#0f8a4b;
+      border:1px solid #c6f0d7;
+      margin-left:10px;
+    }
+
+    .history-empty {
+      text-align:center;
+      padding:40px 20px;
+      color:#8a8a8a;
+      border-radius:12px;
+      border: 1px dashed rgba(0,0,0,0.05);
+      background:#fafafa;
+    }
+
+    @media (max-width: 768px) {
+      .history-card { flex-direction: column; align-items: flex-start; }
+      .history-amount { width:100%; text-align:left; margin-top:8px; }
+      .history-amount .amount-top { font-size:18px; }
+    }
+
+    @media (max-width: 576px) {
+      .history-container { margin: 120px 16px 140px; padding: 16px; }
+      .history-card { padding: 14px; }
+    }
+
+    body { padding-bottom: 80px; }
+  </style>

@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById("signin").addEventListener("click", function(event) {
   event.preventDefault(); // cegah form benar-benar dikirim
-  window.location.href = "foundation/foundation.html"; // pindah ke halaman foundation.html
+  window.location.href = "foundation/fondation.html"; // pindah ke halaman foundation.html
 });
 
 

@@ -121,4 +121,90 @@ textarea {
       background-color: #0b5ed7;
       transform: scale(1.1);
     }
+       /* Styles mirip foundation profile, disesuaikan untuk Employer */
+    body {
+      font-family: "Josefin Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #f6f7f8;
+      color: #222;
+    }
+    .custom-navbar {
+      background: #ffffff;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      height: 68px;
+    }
+    .logo-gate { width: 38px; height: 38px; margin-right: 8px; }
+    .brand-text { font-weight: 600; color: #173349; }
+    .text-role { color: #2f7a79; font-weight: 600; }
 
+    main.container { max-width: 1200px; }
+
+    .profile-left-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 4px 10px rgba(27,31,35,0.04);
+    }
+
+    .profile-avatar {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: #e9ecef;
+      display: block;
+      margin: 0 auto 14px auto;
+      border: 6px solid #f7f8f9;
+    }
+
+    .company-name {
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .company-sub {
+      text-align: center;
+      color: #6c7a86;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .contact-list .item { display:flex; align-items:center; gap:12px; padding:8px 0; border-bottom:1px solid #f1f4f5; }
+    .contact-list .item:last-child { border-bottom: 0; }
+
+    .badge-focus {
+      display:inline-block;
+      background:#f1f6f6;
+      color:#0b6a66;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:13px;
+      margin-right:8px;
+    }
+
+    .card-right {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 10px rgba(27,31,35,0.04);
+    }
+
+    .section-title {
+      font-weight:700;
+      font-size:18px;
+      margin-bottom:8px;
+    }
+
+    .meta-row { color:#6c7a86; font-size:14px; margin-bottom:8px; }
+
+    .btn-primary-rounded { border-radius: 999px; padding: 10px 22px; }
+
+    footer { color: #818b93; }
+
+    @media (max-width: 991px) {
+      .profile-avatar { width:120px; height:120px; }
+    }
+
+    .rounded-4 { border-radius: 12px !important; }

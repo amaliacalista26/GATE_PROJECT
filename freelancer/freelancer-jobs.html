@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GATE - Freelance Jobs</title>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -10,27 +10,22 @@
   <link rel="stylesheet" href="freelancer.css">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
   
-<!-- NAVBAR -->
+<!-- NAVBAR (TIDAK DIUBAH) -->
 <nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
   <div class="container d-flex align-items-center justify-content-between">
-    
-    <!-- Brand -->
     <a class="navbar-brand d-flex align-items-center" href="freelancer.html">
       <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
       <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
     </a>
 
-    <!-- Toggle Button -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menu -->
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav align-items-center">
         <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
@@ -40,24 +35,94 @@
       </ul>
     </div>
 
-    <!-- Right Icons -->
-<div class="d-flex align-items-center gap-3">
-      <!-- Notifikasi -->
+    <div class="d-flex align-items-center gap-3">
       <div class="position-relative">
         <a href="freelance-notifikasi.html" class="nav-icon text-dark">
           <i class="bi bi-bell-fill fs-5"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            5
-          </span>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
         </a>
       </div>
-      <!-- Profil -->
-      <a href="freelancer-edit-profile.html" class="nav-profile">
-        <img src="../asset/profile.png" alt="Profile" class="profile-icon">
+      <a href="freelance-profile.html" class="nav-profile">
+        <img src="../asset/freelancer.jpeg" alt="Profile" class="profile-icon">
       </a>
     </div>
   </div>
 </nav>
-    <a href="freelancer-chat.html" class="chat-floating-btn">💬 Chat</a>
+
+<section class="history-container">
+  <div class="history-header">
+    <div>
+      <h3 class="mb-0">History Pekerjaan</h3>
+      <p class="mb-0 text-muted" style="font-size:13px;">Menampilkan pekerjaan yang sudah dikerjakan.</p>
+    </div>
+  </div>
+
+  <div id="history-list"></div>
+</section>
+
+<a href="freelancer-chat.html" class="chat-floating-btn">💬 Chat</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(function(){
+  const sampleEntries = [
+    {
+      title: 'Desain Logo - Yayasan Harapan Bangsa',
+      subtitle: 'Membuat 3 konsep logo profesional & panduan penggunaan warna.',
+      date: '12/09/2025',
+      amount: 900000
+    },
+    {
+      title: 'UI/UX Website Donasi Online',
+      subtitle: 'Desain interface & prototipe untuk website crowdfunding donasi.',
+      date: '15/09/2025',
+      amount: 1350000
+    },
+    {
+      title: 'Social Media Campaign - Bulan Amal',
+      subtitle: 'Desain konten Instagram 15 post & 5 story animasi.',
+      date: '19/09/2025',
+      amount: 700000
+    },
+    {
+      title: 'Copywriting Artikel Donasi',
+      subtitle: 'Menulis 4 artikel SEO-friendly untuk website donasi sosial.',
+      date: '25/09/2025',
+      amount: 550000
+    },
+    {
+      title: 'Video Profil Yayasan',
+      subtitle: 'Editing & color grading video berdurasi 2 menit untuk promosi yayasan.',
+      date: '02/10/2025',
+      amount: 1200000
+    }
+  ];
+
+  const container = document.getElementById('history-list');
+
+  sampleEntries.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'history-card';
+    card.innerHTML = `
+      <div class="history-left">
+        <p class="history-item-title">${item.title}</p>
+        <div class="history-item-sub">${item.subtitle}</div>
+        <div class="history-item-meta">
+          <small>Tanggal: ${item.date}</small>
+        </div>
+      </div>
+      <div class="history-amount">
+        <span class="amount-top">Rp ${item.amount.toLocaleString('id-ID')}</span>
+        <span class="amount-currency">Total Dibayarkan</span>
+        <div style="margin-top:8px;">
+          <span class="badge-done">Done</span>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+})();
+</script>
 </body>
 </html>

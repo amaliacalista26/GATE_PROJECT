@@ -18,8 +18,8 @@
   --ring: #6c757d;
   --role-freelancer: #567c8d; /* Cyan untuk pencari kerja */
   --role-employer: #2f4156; /* Dark Blue untuk pemberi kerja */
-  --role-foundation: #c8d9e6; /* Light Blue untuk yayasan */
-  --role-foundation-beige: #f5efeb; /* Beige untuk kombinasi yayasan */
+  --role-fondation: #c8d9e6; /* Light Blue untuk yayasan */
+  --role-fondation-beige: #f5efeb; /* Beige untuk kombinasi yayasan */
   --section-transparency: #c8d9e6;
   --navbar-blue: #2f4156; /* Warna biru untuk navbar */
 }
@@ -76,13 +76,13 @@ body {
   color: var(--foreground);
 }
 
-.btn-role-foundation {
-  background-color: var(--role-foundation);
+.btn-role-fondation {
+  background-color: var(--role-fondation);
   color: var(--foreground);
-  border: 1px solid var(--role-foundation-beige);
+  border: 1px solid var(--role-fondation-beige);
 }
 
-.btn-role-foundation:hover {
+.btn-role-fondation:hover {
   background-color: #b8c9d6;
   color: var(--foreground);
 }
@@ -144,13 +144,12 @@ body {
 
 .form-control {
   border-color: var(--input);
-  border-radius: 0.75rem; /* Rounded input */
+  border-radius: 0.75rem; 
 }
 
-/* Tambahan CSS untuk lebih cantik */
 .gradient-bg {
-  background: linear-gradient(135deg, var(--role-freelancer), var(--role-employer), var(--role-foundation)); /* Gradient multi-color */
-  color: var(--foreground); /* Hitam */
+  background: linear-gradient(135deg, var(--role-freelancer), var(--role-employer), var(--role-fondation)); /* Gradient multi-color */
+  color: var(--foreground);
 }
 
 .rounded-lg {
@@ -242,11 +241,10 @@ body {
   margin-bottom: 1rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   display: flex;
-  justify-content: space-between; /* Kesamping untuk filter */
-}
+  justify-content: space-between;
 
 .ribbon-filter .form-group {
-  margin-bottom: 0; /* No margin bottom for side by side */
+  margin-bottom: 0;
   flex: 1;
   margin-right: 1rem;
 }
@@ -270,7 +268,7 @@ body {
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
-/* Task harian lebih menarik */
+/* Task harian*/
 .task-card {
   background-color: #fff3cd;
   border: 1px solid #ffc107;
@@ -296,7 +294,7 @@ body {
   color: #ffc107;
 }
 
-/* Dampak donasi seperti feeds IG */
+/* Dampak donasi feeds*/
 .donasi-feed {
   background-color: #f8f9fa;
   border-radius: 1rem;
@@ -315,7 +313,7 @@ body {
   font-style: italic;
 }
 
-/* Review list seperti Gojek */
+/* Review list */
 .review-list {
   overflow-y: scroll;
   max-height: 300px;
@@ -358,8 +356,6 @@ body {
 }
 
 /* Navbar */
-
-
 .navbar-brand {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -406,7 +402,6 @@ body {
   padding: 0.5rem 1.2rem;
 }
 
-/* List group */
 .list-group-item {
   border: none;
   border-bottom: 1px solid #eee;
@@ -416,13 +411,11 @@ body {
   border-radius: 20px;
 }
 
-/* Animasi */
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(5px);}
   to {opacity: 1; transform: translateY(0);}
 }
 
-/* === NAVBAR UMUM GATE === */
 .navbar {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -446,14 +439,12 @@ body {
   transform: translateY(-1px);
 }
 
-/* === BODY === */
 body {
   padding-top: 100px;
   background-color: #fdfdfd;
   font-family: 'Josefin Sans', sans-serif;
 }
 
-/* === CARD STYLE === */
 .card {
   border: none;
   border-radius: 15px;
@@ -463,7 +454,6 @@ body {
   background: #fff;
 }
 
-/* === FOOTER === */
 footer {
   background-color: #f8f9fa;
   color: #777;
@@ -471,7 +461,6 @@ footer {
 }
 
 
-/* === Modal Styling === */
 .modal-content {
   border-radius: 20px;
   border: none;
@@ -510,7 +499,6 @@ footer {
   padding: 0.5rem 1.5rem;
 }
 
-/* Animasi muncul dari bawah */
 @keyframes slideUp {
   from {
     transform: translateY(50px);

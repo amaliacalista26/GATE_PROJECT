@@ -17,64 +17,63 @@
 </head>
 <body>
 
-<!-- NAVBAR (sama style seperti yang kamu pakai) -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top custom-navbar shadow-sm" role="navigation" aria-label="Main navigation">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
   <div class="container d-flex align-items-center justify-content-between">
+    
+    <!-- Brand -->
     <a class="navbar-brand d-flex align-items-center" href="freelancer.html">
       <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
       <span class="brand-text">GATE - <span class="text-role">Freelance</span></span>
     </a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- Menu -->
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav align-items-center">
-        <li class="nav-item"><a class="nav-link" href="freelancer.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="freelancer-jobs.html">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link active-link" href="freelancer.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active-link" href="freelancer-jobs.html">Jobs</a></li>
         <li class="nav-item"><a class="nav-link" href="freelancer-gatepay.html">GatePay</a></li>
         <li class="nav-item"><a class="nav-link active-link" href="freelance-feed.html">Feed</a></li>
       </ul>
     </div>
 
-    <div class="d-flex align-items-center" style="gap:12px;">
-      <a href="freelance-notifikasi.html" class="nav-icon text-dark" aria-label="Notifikasi">
-        <i class="bi bi-bell-fill" style="font-size:1.05rem;"></i>
-        <span class="position-absolute mr-4 badge rounded-pill bg-danger">3</span>
-      </a>
-
-      <!-- ACTION DROPDOWN -->
-      <div class="dropdown">
-        <button class="btn btn-sm btn-outline-secondary dropdown-toggle rounded-pill" id="profileActions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Aksi
-        </button>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileActions">
-          <a class="dropdown-item" href="freelancer-edit-profile.html">Edit Profil</a>
-          <a class="dropdown-item" href="freelancer-gatepay.html">GatePay</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item text-danger" href="#" id="logoutBtn">Logout</a>
-        </div>
+    <!-- Right Icons -->
+<div class="d-flex align-items-center gap-3">
+      <!-- Notifikasi -->
+      <div class="position-relative">
+        <a href="freelance-notifikasi.html" class="nav-icon text-dark">
+          <i class="bi bi-bell-fill fs-5"></i>
+          
+        </a>
       </div>
-
-      <a href="freelancer-edit-profile.html" class="nav-profile" aria-label="Profil">
-        <img src="../asset/profile.png" alt="Profile" class="profile-icon">
+      <!-- TAMBAHAN: Edit Profile -->
+      <a href="freelancer-edit-profile.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3" id="editProfileBtn" title="Edit Profile">
+        Edit Profile
+      </a>
+      <!-- TAMBAHAN: Logout -->
+      <a href="../home.html" class="btn btn-sm btn-outline-danger rounded-pill px-3" id="logoutBtn" title="Keluar">
+        Keluar
+      </a>
+      <!-- Profil -->
+      <a href="freelancer-edit-profile.html" class="nav-profile">
+        <img src="../asset/freelancer.jpeg" alt="Profile" class="profile-icon">
       </a>
     </div>
   </div>
 </nav>
+    <a href="freelancer-chat.html" class="chat-floating-btn">💬 Chat</a>
 
 <!-- PAGE HERO -->
 <header class="container page-hero">
   <div class="row align-items-center">
     <div class="col-md-8">
-      <h1 class="mb-1" style="font-family:'Poppins',sans-serif;">Nama Freelancer</h1>
+      <h1 class="mb-1" style="font-family:'Poppins',sans-serif;">John Doe</h1>
       <p class="text-muted mb-0" style="font-family:'Josefin Sans',sans-serif;">UI/UX Designer · Bandung · Remote</p>
-    </div>
-    <div class="col-md-4 text-md-right mt-3 mt-md-0">
-      <button id="followBtn" class="btn btn-outline-primary rounded-pill px-4">Follow</button>
-      <a href="freelancer-chat.html" class="btn btn-primary rounded-pill px-4 ml-2">Message</a>
     </div>
   </div>
 </header>
@@ -87,9 +86,7 @@
     <aside class="col-lg-4 mb-4">
       <div class="card profile-card shadow-sm">
         <div class="card-body text-center">
-          <img src="../asset/profile.png" alt="Profil" class="profile-lg mb-3">
-          <h5 class="mb-0">Nama Freelancer</h5>
-          <p class="small text-muted mb-2">Freelancer · UI/UX Designer</p>
+          <img src="../asset/freelancer.jpeg" alt="Profil" class="profile-lg mb-3">
 
           <!-- rating summary -->
           <div class="d-flex align-items-center justify-content-center mb-2">
@@ -134,9 +131,7 @@
         </div>
         <div class="card-body">
           <div class="portfolio-grid">
-            <img src="../asset/portfolio1.jpg" alt="p1" class="img-thumb" />
-            <img src="../asset/portfolio2.jpg" alt="p2" class="img-thumb" />
-            <img src="../asset/portfolio3.jpg" alt="p3" class="img-thumb" />
+            <img src="../asset/portofolio.jpg" width="300px" alt="p1" class="img-thumb" />
           </div>
           <a href="freelancer-portfolio.html" class="d-block text-center mt-3 small">Lihat seluruh portofolio</a>
         </div>
@@ -194,7 +189,7 @@
           <div class="d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Reviews (120)</h5>
             <div>
-              <a href="received_reviews.html" class="btn btn-sm btn-outline-primary rounded-pill">Lihat Semua</a>
+              <a href="freelance-review.html" class="btn btn-sm btn-outline-primary rounded-pill">Lihat Semua</a>
             </div>
           </div>
 
@@ -222,16 +217,13 @@
             </div>
             <p class="mt-2 mb-0 text-muted">"Pekerjaan rapi dan tepat waktu. Sangat puas."</p>
           </div>
-
-          <!-- load more placeholder -->
-          <div class="text-center mt-3">
-            <button class="btn btn-sm btn-outline-secondary rounded-pill" id="loadMore">Muat lebih banyak</button>
-          </div>
         </div>
       </div>
 
     </section>
   </div>
+
+  
 </main>
 
 <!-- REPORT Modal -->

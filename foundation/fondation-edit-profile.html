@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GATE - Fondation Edit Profile</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- LOCAL Bootstrap 4.3.1 -->
+  <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+
+  <!-- Global + page CSS -->
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="fondation.css">
+
+  <!-- Icons (Bootstrap Icons CDN; optional) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Optional Font Awesome for some older icon classes (if you used 'fas' in markup) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
+  <div class="container d-flex align-items-center justify-content-between">
+    
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="../home.html">
+      <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
+      <span class="brand-text">GATE - <span class="text-role">Fondation</span></span>
+    </a>
+
+    <!-- Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link active-link" href="fondation.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active-link" href="fondation-posting.html">Post</a></li>
+        <li class="nav-item"><a class="nav-link active-link" href="fondation-feed.html">Feed</a></li>
+        <li class="nav-item"><a class="nav-link" href="fondation-gatepay.html">GatePay</a></li>
+      </ul>
+    </div>
+
+    <!-- Right Icons -->
+<div class="d-flex align-items-center gap-3">
+      <!-- Notifikasi -->
+      <div class="position-relative">
+        <!-- ubah href ke '#' dan tambahkan data-toggle/data-target -->
+        <a href="#" class="nav-icon text-dark" data-toggle="modal" data-target="#notifModal" aria-label="Notifikasi">
+          <i class="bi bi-bell-fill fs-5"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            5
+          </span>
+        </a>
+      </div>
+      <!-- Profil -->
+      <a href="fondation-edit-profile.html" class="nav-profile">
+        <img src="../asset/fondation.jpg" alt="Profile" class="profile-icon">
+      </a>
+    </div>
+  </div>
+  <!-- TAMBAHAN: Edit Profile -->
+      <!-- TAMBAHAN: Logout -->
+      <a href="../home.html" class="btn btn-sm btn-outline-danger rounded-pill px-3" id="logoutBtn" title="Keluar">
+        Keluar
+      </a>
+  
+</nav>
+
+  <!-- Konten -->
+  <main class="container mt-5 pt-5">
+    <header class="text-center mb-5">
+      <h1 class="fw-bold text-primary">Edit Profil Yayasan</h1>
+      <p class="text-muted">Perbarui data dan dokumentasi yayasan Anda untuk meningkatkan kepercayaan donatur dan mitra sosial.</p>
+    </header>
+
+    <div class="card shadow-sm rounded-4 p-4 mb-5">
+      <form>
+        <!-- Logo/Fondation Picture -->
+        <div class="text-center mb-4">
+          <img src="../asset/fondation.jpg" alt="Logo Yayasan" class="rounded-circle border" style="width: 120px; height: 120px;">
+          <div class="mt-2">
+            <input type="file" class="form-control w-50 mx-auto rounded-pill">
+          </div>
+        </div>
+
+        <!-- Data Yayasan -->
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Nama Yayasan</label>
+            <input type="text" class="form-control rounded-pill" placeholder="Contoh: Pintu Elok Fondation">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Tahun Berdiri</label>
+            <input type="number" class="form-control rounded-pill" placeholder="Contoh: 2015">
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Lokasi Kantor</label>
+            <input type="text" class="form-control rounded-pill" placeholder="Contoh: Tangerang, Banten">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Bidang Fokus</label>
+            <select class="form-select rounded-pill">
+              <option>Pendidikan</option>
+              <option>Kesehatan</option>
+              <option>Lingkungan</option>
+              <option>Sosial & Kemanusiaan</option>
+              <option>Pemberdayaan Ekonomi</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Deskripsi -->
+        <div class="mb-3">
+          <label class="form-label">Deskripsi Singkat</label>
+          <textarea class="form-control rounded-4" rows="3" placeholder="Ceritakan visi, misi, dan kegiatan utama yayasan Anda..."></textarea>
+        </div>
+
+        <!-- Dokumen Verifikasi -->
+        <div class="mb-3">
+          <label class="form-label">Unggah Dokumen Verifikasi (SK / Akta Notaris)</label>
+          <input type="file" class="form-control rounded-pill">
+        </div>
+
+        <!-- Kontak -->
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Email Yayasan</label>
+            <input type="email" class="form-control rounded-pill" placeholder="contoh@email.com">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Nomor Telepon</label>
+            <input type="text" class="form-control rounded-pill" placeholder="+62 812 3456 7890">
+          </div>
+        </div>
+
+        <!-- Media Sosial -->
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Instagram</label>
+            <input type="text" class="form-control rounded-pill" placeholder="@pintuelokfondation">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Website (Opsional)</label>
+            <input type="url" class="form-control rounded-pill" placeholder="https://pintuelok.org">
+          </div>
+        </div>
+
+        <a href="fondation-profile.html" class="btn btn-primary w-100 rounded-pill mt-3">Simpan Perubahan</a>
+      </form>
+    </div>
+
+    <!-- MODAL MASTER: Daftar Notifikasi -->
+<div class="modal fade" id="notifModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title">Notifikasi</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="list-group list-group-flush" id="notifList">
+          <!-- contoh item; data-target menunjuk ke modal detail -->
+          <a href="#" class="list-group-item list-group-item-action" data-target="#notifDetail1">Lowongan UI Designer</a>
+          <a href="#" class="list-group-item list-group-item-action" data-target="#notifDetail2">Saldo GatePay Diperbarui</a>
+          <a href="#" class="list-group-item list-group-item-action" data-target="#notifDetail3">Review Diperlukan</a>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <small class="text-muted">Terakhir diperbarui • beberapa menit lalu</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- DETAIL MODALS (tetap ada dan berfungsi) -->
+<div class="modal fade" id="notifDetail1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title">Lowongan UI Designer</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
+      </div>
+      <div class="modal-body px-4 py-3">Kami membuka lowongan <b>UI Designer freelance</b> di aplikasi edukasi.</div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-outline-primary rounded-pill px-4 back-to-list">Kembali</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="notifDetail2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title">Saldo GatePay Diperbarui</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
+      </div>
+      <div class="modal-body px-4 py-3">Saldo kamu bertambah <b>Rp150.000</b>. Periksa riwayat di GatePay.</div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-outline-primary rounded-pill px-4 back-to-list">Kembali</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="notifDetail3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title">Review Diperlukan</h5>
+        <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Tutup"><span>&times;</span></button>
+      </div>
+      <div class="modal-body px-4 py-3">Klien meminta kamu memberikan <b>review</b> untuk proyek terbaru.</div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-outline-primary rounded-pill px-4 back-to-list">Kembali</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-4 text-muted small mt-5">© 2025 GATE. All Rights Reserved.</footer>
+
+  <!-- SCRIPTS: jQuery (CDN) + Popper + Bootstrap (lokal) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+  <script>
+  // handler notifikasi & chaining detail
+  (function($){
+    $(function(){
+      // Klik lonceng => buka daftar notifikasi
+      $('.nav-icon[aria-label="Notifikasi"]').on('click', function(e){
+        e.preventDefault();
+        $('#notifModal').modal('show');
+      });
+
+      // Klik item list => tutup master lalu buka detail
+      $('#notifModal').on('click', '.list-group-item', function(e){
+        e.preventDefault();
+        var target = $(this).data('target');
+        if (!target) return $('#notifModal').modal('hide');
+        $('#notifModal').modal('hide');
+        $('#notifModal').one('hidden.bs.modal', function(){
+          $(target).modal('show');
+        });
+      });
+
+      // Tombol "Kembali" di detail -> tutup detail dan buka list
+      $('.back-to-list').on('click', function(e){
+        e.preventDefault();
+        $('.modal').modal('hide');
+        $('.modal').one('hidden.bs.modal', function(){
+          $('#notifModal').modal('show');
+        });
+      });
+
+      // optional: perbarui badge jumlah notifikasi berdasarkan jumlah item
+      var count = $('#notifList .list-group-item').length;
+      $('#notifBadge').text(count > 0 ? count : '');
+    });
+  })(jQuery);
+</script>
+</body>
+</html>
