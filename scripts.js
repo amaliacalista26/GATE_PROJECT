@@ -1,21 +1,11 @@
-// scripts.js
-// Menggabungkan: original jQuery behaviors + UX enhancements (smooth scroll, media modal, reveal, navbar active)
-
 $(document).ready(function() {
-  /* --------------------------
-     ORIGINAL BEHAVIORS
-     -------------------------- */
-
-  // Animasi fade-in (elemen dengan class .fade-in)
   $('.fade-in').fadeIn(1000);
-
-  // Placeholder untuk OTP verifikasi (simulasi)
   $('form').on('submit', function(e) {
     e.preventDefault();
     alert('OTP dikirim ke email/HP Anda. Verifikasi untuk lanjut.');
   });
 
-  // Sorting dummy lowongan (contoh table sortable)
+  // Sorting lowongan
   $('.sortable th').click(function() {
     var table = $(this).parents('table').eq(0);
     var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
@@ -35,7 +25,6 @@ $(document).ready(function() {
   $('#send-message').click(function() {
     var msg = $('#message-input').val();
     if (msg) {
-      // escape HTML to avoid injection
       var safe = $('<div>').text(msg).html();
       $('.chat-window').append('<div class="chat-message sent">' + safe + '</div>');
       $('#message-input').val('');
@@ -70,7 +59,7 @@ $(document).ready(function() {
     alert('Permintaan tarik dana Rp' + $('#nominal').val() + ' ke ' + $('#tujuan').val() + ' diproses!');
   });
 
-  // Interaktif review/melamar (simulasi)
+  // Interaktif review/melamar
   $('.review-btn').click(function() {
     $(this).text('Sudah Direview').addClass('disabled');
     alert('Review diselesaikan!');
@@ -88,22 +77,16 @@ $(document).ready(function() {
     $('.notif-' + selected).show();
   });
 
-  /* --------------------------
-     UX ENHANCEMENTS
-     -------------------------- */
-
-  // SMOOTH SCROLL for in-page anchors (navbar & learn-more)
   $('a.nav-link[href^="#"], a.learn-more[href^="#"], a[href^="#how-it-works"], a[href^="#why-gate"], a[href^="#transparansi"]').on('click', function(e){
     var href = $(this).attr('href');
     if (href && href.charAt(0) === '#') {
       var target = $(href);
       if (target.length) {
         e.preventDefault();
-        var navOffset = 86; // tweak sesuai tinggi navbar fixed
+        var navOffset = 86; 
         $('html, body').animate({
           scrollTop: target.offset().top - navOffset
         }, 600, 'swing', function() {
-          // accessibility: focus target
           target.attr('tabindex','-1').focus();
         });
       }
@@ -144,8 +127,6 @@ $(document).ready(function() {
   $('#how-it-works, #why-gate, #transparansi, .cta-section').addClass('reveal');
   revealOnScroll();
   $(window).on('scroll resize', revealOnScroll);
-
-  // MEDIA MODAL: open thumbnails (image or video) in bootstrap modal
   $('.media-thumb').on('click', function(e) {
     e.preventDefault();
     var $el = $(this);
