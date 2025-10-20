@@ -1,11 +1,15 @@
 $(document).ready(function() {
+
+  // Efek fade-in pada elemen dengan class .fade-in
   $('.fade-in').fadeIn(1000);
+
+  // Simulasi form OTP
   $('form').on('submit', function(e) {
     e.preventDefault();
     alert('OTP dikirim ke email/HP Anda. Verifikasi untuk lanjut.');
   });
 
-  // Sorting lowongan
+  // Sorting tabel lowongan
   $('.sortable th').click(function() {
     var table = $(this).parents('table').eq(0);
     var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
@@ -13,15 +17,18 @@ $(document).ready(function() {
     if (!this.asc) { rows = rows.reverse(); }
     for (var i = 0; i < rows.length; i++) { table.append(rows[i]); }
   });
+
   function comparer(index) {
     return function(a, b) {
       var valA = getCellValue(a, index), valB = getCellValue(b, index);
-      return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB);
+      return $.isNumeric(valA) && $.isNumeric(valB)
+        ? valA - valB
+        : valA.toString().localeCompare(valB);
     }
   }
   function getCellValue(row, index) { return $(row).children('td').eq(index).text(); }
 
-  // Chat send message
+  // Chat kirim pesan
   $('#send-message').click(function() {
     var msg = $('#message-input').val();
     if (msg) {
@@ -32,34 +39,34 @@ $(document).ready(function() {
     }
   });
 
-  // Rating stars interaktif
+  // Rating bintang interaktif
   $('.rating-stars i').click(function() {
     $(this).addClass('fas').removeClass('far').prevAll().addClass('fas').removeClass('far');
     $(this).nextAll().addClass('far').removeClass('fas');
   });
 
-  // Filter ribbon toggle (improve UI)
+  // Tampilkan/sembunyikan filter ribbon
   $('.filter-toggle').click(function() {
     $(this).next('.ribbon-filter').slideToggle();
   });
 
-  // Favorite toggle
+  // Tandai favorit
   $('.favorite-btn').click(function() {
     $(this).toggleClass('text-danger');
   });
 
-  // GatePay top-up simulation
+  // Simulasi top-up GatePay
   $('#top-up-btn').click(function() {
     alert('Saldo ditambah Rp50.000!');
   });
 
-  // Tarik dana simulation
+  // Simulasi tarik dana
   $('#tarik-dana-form').submit(function(e) {
     e.preventDefault();
     alert('Permintaan tarik dana Rp' + $('#nominal').val() + ' ke ' + $('#tujuan').val() + ' diproses!');
   });
 
-  // Interaktif review/melamar
+  // Tombol review dan lamar 
   $('.review-btn').click(function() {
     $(this).text('Sudah Direview').addClass('disabled');
     alert('Review diselesaikan!');
@@ -70,13 +77,14 @@ $(document).ready(function() {
     alert('Lamaran terkirim!');
   });
 
-  // Filter notifikasi waktu
+  // Filter notifikasi berdasarkan waktu
   $('#filter-waktu').change(function() {
     var selected = $(this).val();
     $('.notif-item').hide();
     $('.notif-' + selected).show();
   });
 
+  // Scroll halus ke bagian halaman
   $('a.nav-link[href^="#"], a.learn-more[href^="#"], a[href^="#how-it-works"], a[href^="#why-gate"], a[href^="#transparansi"]').on('click', function(e){
     var href = $(this).attr('href');
     if (href && href.charAt(0) === '#') {
@@ -93,7 +101,7 @@ $(document).ready(function() {
     }
   });
 
-  // Navbar active highlighting based on scroll position
+  // Ganti link navbar aktif berdasarkan posisi scroll
   var sectionIds = ['#how-it-works', '#why-gate', '#transparansi'];
   var $navLinks = $('.navbar .nav-link');
   function updateActiveOnScroll(){
@@ -114,7 +122,7 @@ $(document).ready(function() {
   updateActiveOnScroll();
   $(window).on('scroll resize', updateActiveOnScroll);
 
-  // Reveal on scroll for elements with .reveal
+  // Efek muncul (reveal) saat discroll
   function revealOnScroll() {
     $('.reveal').each(function(){
       var $el = $(this);
@@ -123,10 +131,13 @@ $(document).ready(function() {
       if (winTop > top) $el.addClass('visible');
     });
   }
-  // mark main sections to reveal (if exist)
+
+  // Terapkan efek reveal pada section utama
   $('#how-it-works, #why-gate, #transparansi, .cta-section').addClass('reveal');
   revealOnScroll();
   $(window).on('scroll resize', revealOnScroll);
+
+  // Preview media (gambar/video) dalam modal
   $('.media-thumb').on('click', function(e) {
     e.preventDefault();
     var $el = $(this);
@@ -146,7 +157,7 @@ $(document).ready(function() {
       $container.append($img);
     }
 
-    // show modal if bootstrap available, else open in new tab
+    // Tampilkan dalam modal (atau tab baru jika modal tidak tersedia)
     if (typeof $ === 'function' && typeof $.fn.modal === 'function') {
       $('#mediaModal').modal('show');
     } else {
@@ -154,20 +165,18 @@ $(document).ready(function() {
     }
   });
 
-  // clear modal content when closed to stop video playback
+  // Hapus konten modal ketika ditutup agar video berhenti
   if (typeof $ === 'function' && typeof $.fn.modal === 'function') {
     $('#mediaModal').on('hidden.bs.modal', function () {
       $('#mediaContainer').empty();
     });
   }
 
-  // Hover preview for muted video thumbnails (progressive enhancement)
+  // Efek hover untuk video thumbnail (auto play/pause) 
   $('.media-thumb video').each(function(){
     var vid = this;
     $(vid).on('mouseenter', function(){ vid.play().catch(function(){}); });
     $(vid).on('mouseleave', function(){ vid.pause(); vid.currentTime = 0; });
   });
 
-  /* End of document ready */
 });
-

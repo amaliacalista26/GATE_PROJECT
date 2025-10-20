@@ -5,7 +5,6 @@
   --muted: #6b7280;
 }
 
-/* ===== BASE ===== */
 body {
   font-family: 'Josefin Sans', sans-serif;
   background-color: #f9fafc;
@@ -15,7 +14,6 @@ body {
 }
 body::-webkit-scrollbar { display: none; }
 
-/* ===== NAVBAR ===== */
 .custom-navbar {
   background-color: #fff !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
@@ -83,7 +81,6 @@ body::-webkit-scrollbar { display: none; }
   transform: scale(1.05);
 }
 
-/* ===== HEADER ===== */
 header.text-center h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -97,7 +94,6 @@ header.text-center p {
   font-size: 15px;
 }
 
-/* ===== CARD ===== */
 .card {
   background: #fff;
   border: none;
@@ -121,7 +117,6 @@ header.text-center p {
   padding: 1.5rem 1.8rem;
 }
 
-/* ===== FORM ===== */
 label.form-label, .ribbon-label {
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
@@ -138,7 +133,6 @@ label.form-label, .ribbon-label {
   box-shadow: 0 0 0 2px rgba(86,124,141,0.15);
 }
 
-/* ===== BUTTON ===== */
 .btn-primary {
   background: linear-gradient(90deg, #2F4156, #567c8d);
   border: none;
@@ -154,7 +148,6 @@ label.form-label, .ribbon-label {
   transform: scale(1.03);
 }
 
-/* ===== CHAT FLOAT ===== */
 .chat-floating-btn {
   position: fixed;
   bottom: 25px;
@@ -175,7 +168,6 @@ label.form-label, .ribbon-label {
   background: linear-gradient(135deg, #567c8d, #2F4156);
 }
 
-/* ===== MODAL ===== */
 .modal-content {
   border-radius: 16px !important;
   border: none;
@@ -189,7 +181,6 @@ label.form-label, .ribbon-label {
   border-radius: 16px 16px 0 0;
 }
 
-/* ===== FOOTER ===== */
 footer {
   color: #7a858c;
   font-size: 0.9rem;
@@ -199,16 +190,12 @@ footer {
   font-family: 'Josefin Sans', sans-serif;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 991px) {
   .navbar-nav { text-align: center; }
   .navbar-nav .nav-item { margin: 4px 0; }
   .custom-navbar { height: auto; }
 }
 
-/* ============================================================
-   EMPLOYER REVIEW PAGE (match Freelancer look)
-   ============================================================ */
 .page-hero {
   padding-top: 90px;
   padding-bottom: 18px;
@@ -331,7 +318,6 @@ footer {
   .page-hero { padding-top: 70px; }
 }
 
-/* ===== EMPLOYER PROFILE PAGE ===== */
 .profile-left-card {
   background: #fff;
   border-radius: 16px;
@@ -381,9 +367,6 @@ footer {
   display: inline-block;
 }
 
-/* ==========================================================
-   EMPLOYER POSTS PAGE (History Pekerjaan)
-   ========================================================== */
 :root {
   --posts-bg: #f6f7f8;
   --posts-card-bg: #ffffff;
@@ -391,14 +374,12 @@ footer {
   --posts-accent: #0b6a66;
 }
 
-/* ===== BASE ===== */
 body.employer-posts {
   font-family: 'Josefin Sans', sans-serif;
   background-color: var(--posts-bg);
   color: #222;
 }
 
-/* ===== NAVBAR (konsisten abu-abu elegan) ===== */
 .custom-navbar {
   background-color: #ffffff !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
@@ -474,7 +455,6 @@ body.employer-posts {
   transform: scale(1.05);
 }
 
-/* ===== PAGE STRUCTURE ===== */
 main.container {
   max-width: 1200px;
 }
@@ -510,12 +490,10 @@ p.page-sub {
   color: #fff;
 }
 
-/* ===== SEARCH BAR ===== */
 .search-row {
   margin-bottom: 18px;
 }
 
-/* ===== JOB CARD ===== */
 .job-card {
   display: flex;
   align-items: center;
@@ -598,7 +576,6 @@ p.page-sub {
   color: #0b6a66;
 }
 
-/* ===== PAGINATION ===== */
 .pagination .page-link {
   color: var(--navbar-blue);
   border-radius: 8px;
@@ -611,7 +588,6 @@ p.page-sub {
   color: #fff;
 }
 
-/* ===== FLOATING CHAT BUTTON ===== */
 .chat-fab {
   position: fixed;
   right: 26px;
@@ -632,7 +608,6 @@ p.page-sub {
   background: #005ce6;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 767px) {
   .job-card {
     flex-direction: column;

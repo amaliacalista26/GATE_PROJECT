@@ -25,12 +25,12 @@
 }
 
 * {
-  font-family: 'Josefin Sans', sans-serif !important; /* Force Josefin Sans di semua elemen */
+  font-family: 'Josefin Sans', sans-serif !important; /* Font Josefin Sans di semua elemen */
 }
 
 body {
   background-color: var(--background);
-  color: var(--foreground); /* Hitam default */
+  color: var(--foreground); 
 }
 
 /* Dashboard role background dengan teks hitam */
@@ -40,14 +40,13 @@ body {
 }
 
 .role-dashboard h1, .role-dashboard p, .role-dashboard a, .role-dashboard label, .role-dashboard input, .role-dashboard textarea, .role-dashboard select, .role-dashboard button, .role-dashboard span, .role-dashboard li, .role-dashboard time {
-  color: var(--foreground) !important; /* Pastikan semua teks hitam */
+  color: var(--foreground) !important; 
 }
 
 .role-dashboard .navbar {
-  background-color: var(--navbar-blue); /* Warna biru untuk navbar */
+  background-color: var(--navbar-blue); 
 }
 
-/* Kustomisasi Bootstrap 4.3.1 */
 .btn-role {
   border-radius: 0.625rem;
   box-shadow: 0 1px 2px rgba(0,0,0,0.3);
@@ -56,7 +55,7 @@ body {
 
 .btn-role-freelancer {
   background-color: var(--role-freelancer);
-  color: var(--foreground); /* Hitam */
+  color: var(--foreground);
   border: none;
 }
 
@@ -89,14 +88,14 @@ body {
 
 .footer-dark {
   background-color: var(--role-employer);
-  color: var(--foreground); /* Hitam, tapi adjust jika perlu */
+  color: var(--foreground);
 }
 
 .section-transparency {
   background-color: var(--section-transparency);
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Shadow lebih dalam */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .text-foreground-70 {
@@ -107,12 +106,11 @@ body {
   color: var(--muted-foreground);
 }
 
-/* Override Bootstrap untuk konsistensi */
 .btn-primary {
   background-color: var(--primary);
   border-color: var(--primary);
   color: var(--primary-foreground);
-  border-radius: 9999px; /* Rounded full untuk tombol */
+  border-radius: 9999px; 
 }
 
 .btn-primary:hover {
@@ -133,9 +131,9 @@ body {
 
 .card {
   border-color: var(--border);
-  border-radius: 1.25rem; /* Lebih rounded */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Shadow lebih lembut */
-  transition: transform 0.3s ease; /* Animasi hover */
+  border-radius: 1.25rem; 
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1); 
+  transition: transform 0.3s ease; 
 }
 
 .card:hover {
@@ -148,7 +146,7 @@ body {
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, var(--role-freelancer), var(--role-employer), var(--role-fondation)); /* Gradient multi-color */
+  background: linear-gradient(135deg, var(--role-freelancer), var(--role-employer), var(--role-fondation));
   color: var(--foreground);
 }
 

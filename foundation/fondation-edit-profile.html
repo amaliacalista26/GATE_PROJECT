@@ -4,20 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GATE - Fondation Edit Profile</title>
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- LOCAL Bootstrap 4.3.1 -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
 
-  <!-- Global + page CSS -->
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="fondation.css">
 
-  <!-- Icons (Bootstrap Icons CDN; optional) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-  <!-- Optional Font Awesome for some older icon classes (if you used 'fas' in markup) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -27,7 +22,7 @@
   <div class="container d-flex align-items-center justify-content-between">
     
     <!-- Brand -->
-    <a class="navbar-brand d-flex align-items-center" href="../home.html">
+        <a class="navbar-brand d-flex align-items-center" href="fondation.html">
       <img src="../asset/gatelogo.png" alt="GATE Logo" class="logo-gate">
       <span class="brand-text">GATE - <span class="text-role">Fondation</span></span>
     </a>
@@ -50,7 +45,6 @@
 <div class="d-flex align-items-center gap-3">
       <!-- Notifikasi -->
       <div class="position-relative">
-        <!-- ubah href ke '#' dan tambahkan data-toggle/data-target -->
         <a href="#" class="nav-icon text-dark" data-toggle="modal" data-target="#notifModal" aria-label="Notifikasi">
           <i class="bi bi-bell-fill fs-5"></i>
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -165,7 +159,6 @@
       </div>
       <div class="modal-body p-0">
         <div class="list-group list-group-flush" id="notifList">
-          <!-- contoh item; data-target menunjuk ke modal detail -->
           <a href="#" class="list-group-item list-group-item-action" data-target="#notifDetail1">Lowongan UI Designer</a>
           <a href="#" class="list-group-item list-group-item-action" data-target="#notifDetail2">Saldo GatePay Diperbarui</a>
           <a href="#" class="list-group-item list-group-item-action" data-target="#notifDetail3">Review Diperlukan</a>
@@ -178,7 +171,7 @@
   </div>
 </div>
 
-    <!-- DETAIL MODALS (tetap ada dan berfungsi) -->
+    <!-- DETAIL MODALS -->
 <div class="modal fade" id="notifDetail1" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content border-0 rounded-4 shadow">
@@ -228,7 +221,6 @@
   <!-- FOOTER -->
   <footer class="text-center py-4 text-muted small mt-5">© 2025 GATE. All Rights Reserved.</footer>
 
-  <!-- SCRIPTS: jQuery (CDN) + Popper + Bootstrap (lokal) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>

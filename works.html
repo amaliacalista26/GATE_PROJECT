@@ -29,7 +29,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active-link" href="works.html">Works</a></li>
+        <li class="nav-item active"><a class="nav-link active-link" href="works.html">Works</a></li>
         <li class="nav-item"><a class="nav-link" href="why.html">Why</a></li>
         <li class="nav-item"><a class="nav-link" href="impact.html">Impact</a></li>
       </ul>
@@ -118,15 +118,12 @@
 <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
 <script>
-  // Saat halaman selesai dimuat, jalankan animasi fade-in-up langsung
   document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll('.fade-in-up');
-
-    // tambahkan sedikit jeda untuk efek berurutan (staggered)
     elements.forEach((el, index) => {
       setTimeout(() => {
         el.classList.add('visible');
-      }, index * 150); // 150ms antar elemen
+      }, index * 150); 
     });
   });
 </script>

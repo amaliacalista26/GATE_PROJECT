@@ -4,20 +4,18 @@
   --gate-blue: #567c8d;
 }
 
-/* ==== BODY ==== */
 body {
   font-family: 'Josefin Sans', sans-serif;
   background-color: #f9fafc;
   color: #333;
   padding-top: 80px;
   overflow-x: hidden;
-  scrollbar-width: none; /* hilangin scroll di Firefox */
+  scrollbar-width: none; 
 }
 body::-webkit-scrollbar {
-  display: none; /* hilangin scroll di Chrome */
+  display: none; 
 }
 
-/* ==== NAVBAR ==== */
 .custom-navbar {
   background-color: #ffffff !important;
   border-bottom: 1px solid #eee;
@@ -73,7 +71,6 @@ body::-webkit-scrollbar {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Sub-header mirip halaman freelancer/employer */
 .sub-header {
   background-color: #ffffff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -114,7 +111,6 @@ footer {
   border-top: 1px solid #eaeaea;
   margin-top: 60px;
 }
-/* fondation.css - styling for fondation pages (works with global.css) */
 
 /* Hero */
 .header-section{
@@ -168,10 +164,7 @@ footer {
 .btn-primary.rounded-pill{ border-radius:999px; }
 .btn-outline-secondary.rounded-pill{ border-radius:999px; }
 
-/* small utilities */
 .text-primary{ color:#2f4156 !important; }
-
-/* fondation-posting.css - page specific styles (works with global.css) */
 
 /* Hero */
 .page-hero {
@@ -300,15 +293,12 @@ h1.display-5 { font-family: 'Poppins', sans-serif; font-weight:700; color:#1f2e3
 .small-muted { color:var(--muted); }
 .btn-primary { background: linear-gradient(90deg, #2F4156, #567c8d); border:none; }
 
-/* responsive grid: 3 col desktop */
 @media (min-width: 992px) {
   #postsGrid .col-md-4 { width:33.333%; float:left; }
 }
 @media (max-width: 991px) {
   #postsGrid .col-md-4 { width:100%; display:block; }
 }
-
-/* === Tambahan CSS khusus perbaikan Fondation Home === */
 
 /* Hover efek pada gambar galeri */
 .gallery .media-thumb {
@@ -347,11 +337,10 @@ h1.display-5 { font-family: 'Poppins', sans-serif; font-weight:700; color:#1f2e3
   opacity: 1;
 }
 
-/* YouTube iframe styling (seperti halaman Impact) */
 .youtube-frame {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%; 
   height: 0;
   overflow: hidden;
   border-radius: 12px;
@@ -406,7 +395,6 @@ h1.display-5 { font-family: 'Poppins', sans-serif; font-weight:700; color:#1f2e3
   margin: 0 auto;
 }
 
-/* === NAVBAR FIX untuk halaman Home === */
 .custom-navbar {
   background-color: #ffffff !important;
   border-bottom: 1px solid #e5e7eb;
@@ -471,7 +459,6 @@ h1.display-5 { font-family: 'Poppins', sans-serif; font-weight:700; color:#1f2e3
   box-shadow: 0 0 0 3px rgba(86,124,141,0.15);
 }
 
-/* Responsive fix */
 @media (max-width: 991px) {
   .navbar-nav {
     text-align: center;
@@ -484,8 +471,6 @@ h1.display-5 { font-family: 'Poppins', sans-serif; font-weight:700; color:#1f2e3
   }
 }
 
-/* === PROFIL FONDATION CSS === */
-
 /* Warna dasar */
 :root {
   --navbar-blue: #2F4156;
@@ -493,7 +478,6 @@ h1.display-5 { font-family: 'Poppins', sans-serif; font-weight:700; color:#1f2e3
   --light-gray: #8c9aa3;
 }
 
-/* === NAVBAR === */
 .custom-navbar {
   background: #ffffff !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
@@ -547,14 +531,12 @@ h1.display-5 { font-family: 'Poppins', sans-serif; font-weight:700; color:#1f2e3
   border: 2px solid var(--navbar-blue);
 }
 
-/* Tombol kanan */
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-/* Urutan: [Edit Profile] [Keluar] [Notifikasi] [PP] */
 .nav-actions .action-buttons {
   display: flex;
   align-items: center;
@@ -567,7 +549,6 @@ h1.display-5 { font-family: 'Poppins', sans-serif; font-weight:700; color:#1f2e3
   font-size: 0.85rem;
 }
 
-/* === PROFILE CONTENT === */
 .profile-left-card {
   background: #fff;
   border-radius: 12px;
@@ -628,8 +609,6 @@ h1.display-5 { font-family: 'Poppins', sans-serif; font-weight:700; color:#1f2e3
   }
 }
 
-/* === FIX: Card styling & Shadow hilang === */
-
 /* Card utama */
 .card,
 .profile-left-card,
@@ -641,7 +620,7 @@ h1.display-5 { font-family: 'Poppins', sans-serif; font-weight:700; color:#1f2e3
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Hover efek elegan */
+/* Hover efek */
 .card:hover,
 .profile-left-card:hover,
 .card-right:hover {
@@ -671,7 +650,6 @@ h1.display-5 { font-family: 'Poppins', sans-serif; font-weight:700; color:#1f2e3
   margin-bottom: 1.5rem;
 }
 
-/* Pastikan shadow tampil di background abu muda */
 body {
   background-color: #f6f7f8 !important;
 }

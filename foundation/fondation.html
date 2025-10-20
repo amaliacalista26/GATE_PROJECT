@@ -4,28 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GATE - Fondation</title>
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- LOCAL Bootstrap 4.3.1 -->
   <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
-
-  <!-- Global + page CSS -->
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="fondation.css">
-
-  <!-- Icons (Bootstrap Icons CDN; optional) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-  <!-- Optional Font Awesome for some older icon classes (if you used 'fas' in markup) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top custom-navbar shadow-sm" aria-label="Main navigation">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="../home.html">
+    <a class="navbar-brand d-flex align-items-center" href="fondation.html">
         <img src="../asset/gatelogo.png" alt="GATE logo" class="logo-gate">
         <span class="brand-text ml-2">GATE — <span class="text-role">Fondation</span></span>
       </a>
@@ -43,8 +34,6 @@
         </ul>
         </div>
 
-         <!-- Right Icons -->
-<!-- Right icons + Edit/Keluar -->
       <div class="d-flex align-items-center gap-3">
         <div class="position-relative">
           <a href="#" class="nav-icon text-dark" data-toggle="modal" data-target="#notifModal" aria-label="Notifikasi">
@@ -213,7 +202,7 @@
     </div>
   </main>
 
-  <!-- MEDIA MODAL (reused) -->
+  <!-- MEDIA MODAL -->
   <div class="modal fade" id="mediaModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content bg-transparent border-0">
@@ -261,6 +250,7 @@
       </div>
     </div>
   </div>
+
  <!-- MODAL MASTER: Daftar Notifikasi -->
   <div class="modal fade" id="notifModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -288,7 +278,6 @@
   <!-- FOOTER -->
   <footer class="text-center py-4 text-muted small mt-5">© 2025 GATE. All Rights Reserved.</footer>
 
-  <!-- SCRIPTS: jQuery + Popper + Bootstrap (lokal) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>

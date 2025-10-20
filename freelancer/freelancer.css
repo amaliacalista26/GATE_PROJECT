@@ -4,20 +4,20 @@
   --gate-blue: #567c8d;
 }
 
-/* ==== BODY ==== */
+/* BODY */
 body {
   font-family: 'Josefin Sans', sans-serif;
   background-color: #f9fafc;
   color: #333;
   padding-top: 80px;
   overflow-x: hidden;
-  scrollbar-width: none; /* hilangin scroll di Firefox */
+  scrollbar-width: none; 
 }
 body::-webkit-scrollbar {
-  display: none; /* hilangin scroll di Chrome */
+  display: none; 
 }
 
-/* ==== NAVBAR ==== */
+/* NAVBAR */
 .custom-navbar {
   background-color: #ffffff !important;
   border-bottom: 1px solid #eee;
@@ -65,7 +65,6 @@ body::-webkit-scrollbar {
   object-fit: cover;
 }
 
-/* ==== REVIEW CARD ==== */
 .review-card {
   border: none;
   border-radius: 15px;
@@ -105,7 +104,7 @@ textarea {
       position: fixed;
       bottom: 25px;
       right: 25px;
-      background-color: #0d6efd; /* warna biru Bootstrap */
+      background-color: #0d6efd; 
       color: #fff;
       padding: 12px 20px;
       border-radius: 30px;
@@ -121,9 +120,9 @@ textarea {
       background-color: #0b5ed7;
       transform: scale(1.1);
     }
-/* === STYLE POPUP NOTIFIKASI === */
+
 #notifModal .modal-dialog {
-  max-width: 600px; /* sedikit lebih lebar biar proporsional */
+  max-width: 600px; 
 }
 
 #notifModal .modal-content {
@@ -132,7 +131,6 @@ textarea {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
-/* Header lebih tegas */
 #notifModal .modal-header {
   background: linear-gradient(90deg, #0d6efd, #0b5ed7);
   color: white;
@@ -188,7 +186,6 @@ textarea {
   }
 }
 
-/* ===== Feed enhancements ===== */
 .svg-chart-wrapper { width: 100%; overflow: visible; }
 .kpi-badge { display:flex; flex-direction:column; align-items:center; justify-content:center; width:72px; height:72px; background:#f1f5f7; border-radius:12px; }
 .kpi-number { font-weight:700; font-size:1.25rem; color:#2f4156; }
@@ -214,19 +211,15 @@ textarea {
 #mediaModal .modal-content { background: rgba(0,0,0,0.78); border-radius:10px; padding:12px; }
 #mediaModal img, #mediaModal video { width:100%; height:auto; display:block; border-radius:8px; }
 
-/* small screens adjust image heights */
 @media (max-width: 767px) {
   .media-thumb img { height:180px; }
 }
 
-/* line chart styles (paths animated) */
 #linePath { stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 1.2s ease; }
 #areaPath { opacity:0; transition: opacity 0.8s ease 0.2s; }
 
-/* subtle card title */
 .activity-card .card-title { font-family: 'Poppins', sans-serif; font-weight:600; color:#1f2e3f; }
 
-/* ===== freelancer-review page styles (append) ===== */
 .page-hero { padding-top: 100px; padding-bottom: 18px; }
 .summary-card { background:#fff; border-radius:12px; padding:12px 16px; min-width:120px; }
 .summary-rating { font-size:1.9rem; font-weight:700; color:#2f4156; }
@@ -247,40 +240,30 @@ textarea {
 
 #myReviewsContainer .card { border-radius:12px; margin-bottom:0.9rem; }
 
-/* Received list */
 #receivedList .list-group-item { border: none; border-bottom: 1px solid #f1f1f1; padding: 1rem; }
 .meta-small { font-size:0.85rem; color:#6b7280; }
 
-/* small utilities */
 @media (max-width:767px){
   .summary-flex { flex-direction:column; gap:.5rem; align-items:flex-start; }
   .summary-right { text-align:left; }
 }
 
-/* sementara untuk debugging: */
 .fade-in { opacity: 1 !important; transform: none !important; }
 
-
-/* ======= FIX: spacing for fixed-top navbar =======
-   Sesuaikan angka 70px jika navbar-mu lebih tinggi/lebih rendah.
-   Menambahkan padding-top ke body supaya isi tidak tertutup/terlalu jauh. */
 body {
-  padding-top: 70px; /* <-- sesuaikan jika navbar tinggi/pendek (mis. 60px / 80px) */
+  padding-top: 70px; 
 }
 
-/* Jika header/page-hero masih punya margin besar, kecilkan sedikit */
 .page-hero {
-  margin-top: 8px;    /* kurangi jarak atas jika masih terasa longgar */
-  padding-top: 8px;   /* opsional, agar tampilan tetap rapi */
+  margin-top: 8px;   
+  padding-top: 8px;  
 }
 
-/* ======= FIX: ukuran foto profil di card sebelah kiri =======
-   .profile-lg kemungkinan kelas yang sudah ada; kita override ukurannya. */
 .profile-lg {
-  width: 190px;       /* ukuran baru (sesuaikan: 140px / 160px / 180px) */
-  height: 190px;      /* jaga proporsi bulat/ kotak sesuai aslinya */
-  object-fit: cover;  /* potong gambar rapi bila aspect ratio beda */
-  border-radius: 8px; /* kalau mau tetap bulat, ubah ke 50% */
+  width: 190px;      
+  height: 190px;      
+  object-fit: cover;  
+  border-radius: 8px; 
 }
 
 /* contoh untuk foto bulat: */
@@ -289,14 +272,11 @@ body {
   border-radius: 50%;
 }
 
-/* ======= Responsif: kecilkan lebih lagi di layar kecil ======= */
 @media (max-width: 767px) {
   body { padding-top: 64px; }
   .profile-lg { width: 140px; height: 140px; }
 }
 
-  <style>
-    /* ===== CSS untuk History Section ===== */
     .history-container {
       max-width: 1100px;
       margin: 90px auto 120px;
@@ -387,131 +367,124 @@ body {
     }
 
     body { padding-bottom: 80px; }
-/* === NAVBAR ACTIVE COLOR FIX (GatePay dll) === */
-.navbar-nav .nav-link {
-  color: var(--light-gray);
-  font-weight: 500;
-  padding: 6px 14px;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active-link {
-  color: var(--navbar-blue);
-  transform: translateY(-1px);
-  font-weight: 600;
-}
-.navbar-nav .nav-link.active-link[href*="gatepay"],
-.navbar-nav .nav-link[href*="gatepay"]:hover {
-  color: var(--navbar-blue);
-}
-
-/* === HISTORY SECTION STYLE === */
-.history-container {
-  max-width: 1100px;
-  margin: 100px auto 120px;
-  padding: 0 24px;
-}
-.history-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-}
-.history-card {
-  border-radius: 16px;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.05);
-  box-shadow: 0 4px 14px rgba(47,65,86,0.06);
-  padding: 22px 28px;
-  margin-bottom: 18px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.6s ease forwards;
-}
-.history-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(47,65,86,0.1);
-}
-
-/* === TEXTS === */
-.history-item-title {
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-  color: #1f2d3d;
-  font-family: 'Poppins', sans-serif;
-}
-.history-item-sub {
-  color: #6b7280;
-  font-size: 0.95rem;
-  margin-bottom: 6px;
-}
-.history-item-meta small {
-  color: #94a3b8;
-  font-size: 0.85rem;
-}
-
-/* === AMOUNT === */
-.history-amount {
-  text-align: right;
-  min-width: 180px;
-}
-.history-amount .amount-top {
-  display: block;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #2f4156;
-  margin-bottom: 4px;
-}
-.history-amount .amount-currency {
-  font-size: 0.9rem;
-  color: #6b7280;
-}
-
-/* === BADGE === */
-.badge-done {
-  display: inline-block;
-  font-size: 12px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: #e6f8ef;
-  color: #0f8a4b;
-  border: 1px solid #c6f0d7;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .history-card {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 18px;
-  }
-  .history-amount {
-    text-align: left;
-    width: 100%;
-    margin-top: 10px;
-  }
-  .history-container {
-    padding: 0 16px;
-    margin: 90px auto 100px;
-  }
-}
-
-/* === ANIMASI === */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
- body {
-      background: #f9fafc;
-      padding-top: 70px;
-      font-family: 'Josefin Sans', sans-serif;
+    .navbar-nav .nav-link {
+      color: var(--light-gray);
+      font-weight: 500;
+      padding: 6px 14px;
+      transition: color 0.3s ease, transform 0.2s ease;
     }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active-link {
+      color: var(--navbar-blue);
+      transform: translateY(-1px);
+      font-weight: 600;
+    }
+    .navbar-nav .nav-link.active-link[href*="gatepay"],
+    .navbar-nav .nav-link[href*="gatepay"]:hover {
+      color: var(--navbar-blue);
+    }
+
+    .history-container {
+      max-width: 1100px;
+      margin: 100px auto 120px;
+      padding: 0 24px;
+    }
+    .history-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .history-card {
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 4px 14px rgba(47,65,86,0.06);
+      padding: 22px 28px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+    .history-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(47,65,86,0.1);
+    }
+
+    .history-item-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: #1f2d3d;
+      font-family: 'Poppins', sans-serif;
+    }
+    .history-item-sub {
+      color: #6b7280;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+    .history-item-meta small {
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+
+    .history-amount {
+      text-align: right;
+      min-width: 180px;
+    }
+    .history-amount .amount-top {
+      display: block;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #2f4156;
+      margin-bottom: 4px;
+    }
+    .history-amount .amount-currency {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    .badge-done {
+      display: inline-block;
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: #e6f8ef;
+      color: #0f8a4b;
+      border: 1px solid #c6f0d7;
+    }
+
+    @media (max-width: 768px) {
+      .history-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px;
+      }
+      .history-amount {
+        text-align: left;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .history-container {
+        padding: 0 16px;
+        margin: 90px auto 100px;
+      }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body {
+          background: #f9fafc;
+          padding-top: 70px;
+          font-family: 'Josefin Sans', sans-serif;
+        }
 
     /* Chat Window */
     .chat-window {
