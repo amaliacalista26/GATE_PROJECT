@@ -4,6 +4,10 @@
 
 > Status: prototipe front-end statis (tugas UTS). Belum ada backend; semua interaksi disimulasikan di sisi klien.
 
+## Preview
+
+![Tampilan halaman Home GATE](asset/preview-home.png)
+
 ## Fitur
 
 - **Halaman publik:** Home, Works, Why, Impact, Sign In, dan Sign Up (pilih peran).
